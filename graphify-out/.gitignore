@@ -1,0 +1,9 @@
+# Keep durable, queryable project memory. Ignore machine-local extraction state and backups.
+*
+!.gitignore
+!graph.json
+!GRAPH_REPORT.md
+!graph.html
+!manifest.json
+!.graphify_labels.json
+!cost.json
