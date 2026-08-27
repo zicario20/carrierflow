@@ -1,0 +1,453 @@
+[
+  {
+    "id": "E1-T1",
+    "title": "Inicializar monorepo y calidad base",
+    "epic": "01-foundation",
+    "dependencies": [],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN pnpm install runs THE SYSTEM SHALL create a reproducible workspace lockfile and resolve the pinned Node/Next toolchain.",
+      "WHEN pnpm exec playwright test tests/smoke/admin-http.spec.ts runs THE SYSTEM SHALL start the admin application and receive HTTP 200 from its CarrierFlow home page.",
+      "WHEN pnpm --filter @carrierflow/admin typecheck runs THE SYSTEM SHALL exit 0 with strict TypeScript enabled."
+    ],
+    "verify": [
+      "pnpm install",
+      "pnpm exec playwright install chromium",
+      "pnpm --filter @carrierflow/admin typecheck",
+      "pnpm --filter @carrierflow/admin build",
+      "pnpm exec playwright test tests/smoke/admin-http.spec.ts"
+    ],
+    "checkpoint": "step-01-workspace",
+    "files": [
+      "package.json",
+      "pnpm-workspace.yaml",
+      "apps/admin/package.json",
+      "apps/admin/src/app/page.tsx",
+      "tests/smoke/admin-http.spec.ts"
+    ],
+    "status": "pending",
+    "do": "Create the five listed root/admin/smoke files, including admin dev, build and start scripts. Run `pnpm add -Dw typescript@6.0.3 vitest@4.1.11 @playwright/test@1.62.1 supabase@2.116.0 tailwindcss@4.3.3 shadcn@4.19.0`, then `pnpm --filter @carrierflow/admin add next@16.3.3 react@19.2.8 react-dom@19.2.8 maplibre-gl@6.6.0` for the future operations map; create the HTTP smoke test before Verify."
+  },
+  {
+    "id": "E1-T2",
+    "title": "Crear tenant base, schema y RLS",
+    "epic": "01-foundation",
+    "dependencies": [
+      "E1-T1"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN the foundation migration is applied to a local Supabase database THE SYSTEM SHALL create companies, memberships, roles, audit events and RLS policies.",
+      "WHEN a member queries a company-scoped row THE SYSTEM SHALL return only rows in that member’s company.",
+      "WHEN an unauthenticated or cross-company query is attempted THE SYSTEM SHALL return zero protected rows."
+    ],
+    "verify": [
+      "pnpm exec supabase db reset",
+      "pnpm exec supabase test db",
+      "pnpm --filter @carrierflow/admin typecheck"
+    ],
+    "checkpoint": "step-02-tenant-foundation",
+    "files": [
+      "supabase/migrations/0001_foundation.sql",
+      "supabase/tests/database/0001_foundation.sql",
+      "supabase/tests/database/helpers/tenant-fixtures.sql",
+      "apps/admin/src/lib/supabase/server.ts",
+      "apps/admin/src/lib/env.ts"
+    ],
+    "status": "pending",
+    "do": "Create the listed foundation migration, pgTAP database test/tenant fixture and server env/client files. Before importing them run `pnpm --filter @carrierflow/admin add @supabase/supabase-js@2.112.4 @supabase/ssr@0.12.5`; apply RLS and test it locally."
+  },
+  {
+    "id": "E1-T3",
+    "title": "Implementar invitaciones, roles y auditoría",
+    "epic": "01-foundation",
+    "dependencies": [
+      "E1-T2"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN an owner creates an invitation THE SYSTEM SHALL create a pending membership scoped to that owner’s company.",
+      "WHEN a driver invokes an administrative mutation THE SYSTEM SHALL return a typed forbidden result and write no business change.",
+      "WHEN an authorized mutation succeeds THE SYSTEM SHALL write actor, timestamp, before and after values to the audit log."
+    ],
+    "verify": [
+      "pnpm exec supabase db reset",
+      "pnpm exec supabase test db",
+      "pnpm --filter @carrierflow/admin test"
+    ],
+    "checkpoint": "step-03-roles-audit",
+    "files": [
+      "supabase/migrations/0002_identity_and_roles.sql",
+      "supabase/tests/database/0002_identity_and_roles.sql",
+      "apps/admin/src/server/auth/authorize.ts",
+      "apps/admin/src/server/result.ts",
+      "apps/admin/src/server/audit/write-audit.ts"
+    ],
+    "status": "pending",
+    "do": "Create the listed identity migration, pgTAP role test, authorize/result/audit modules. Implement invitation, typed forbidden result and same-transaction audit, then author unit coverage inside the admin test suite."
+  },
+  {
+    "id": "E1-T4",
+    "title": "Construir shell administrativo bilingüe",
+    "epic": "01-foundation",
+    "dependencies": [
+      "E1-T1"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN the locale is en or es THE SYSTEM SHALL render the navigation and operational labels in that locale without missing keys.",
+      "WHEN the shell is rendered by the accessibility test THE SYSTEM SHALL expose a labelled main landmark and no color-only status control.",
+      "WHEN a control is interactive THE SYSTEM SHALL use the shared token set and a 44 px minimum target contract."
+    ],
+    "verify": [
+      "pnpm --filter @carrierflow/admin test tests/ui/shell-a11y.test.tsx",
+      "pnpm --filter @carrierflow/admin lint",
+      "pnpm --filter @carrierflow/admin typecheck"
+    ],
+    "checkpoint": "step-04-admin-shell",
+    "files": [
+      "packages/design-tokens/src/tokens.ts",
+      "apps/admin/src/app/layout.tsx",
+      "apps/admin/src/i18n/en.json",
+      "apps/admin/src/i18n/es.json",
+      "apps/admin/tests/ui/shell-a11y.test.tsx"
+    ],
+    "status": "pending",
+    "do": "Create the five listed token, layout, en/es and accessibility-test files. Define the operational light-first tokens, translate navigation/state labels, render a labelled main landmark and test 44 px/non-color contract."
+  },
+  {
+    "id": "E1-T5",
+    "title": "Añadir conductor, vehículo y turno",
+    "epic": "01-foundation",
+    "dependencies": [
+      "E1-T2",
+      "E1-T3"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN dispatcher creates a driver or vehicle THE SYSTEM SHALL persist it only within the dispatcher’s company.",
+      "WHEN a driver starts or ends a shift THE SYSTEM SHALL record on_duty or off_duty with an audit event.",
+      "WHEN an inactive driver or vehicle is selected for assignment THE SYSTEM SHALL reject the operation with a typed validation error."
+    ],
+    "verify": [
+      "pnpm exec supabase db reset",
+      "pnpm exec supabase test db",
+      "pnpm --filter @carrierflow/admin test tests/fleet-service.test.ts"
+    ],
+    "checkpoint": "step-05-fleet-shifts",
+    "files": [
+      "supabase/migrations/0003_fleet.sql",
+      "supabase/tests/database/0003_fleet.sql",
+      "apps/admin/src/server/fleet/fleet-service.ts",
+      "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "apps/admin/tests/fleet-service.test.ts"
+    ],
+    "status": "pending",
+    "do": "Create the listed fleet migration, pgTAP test, fleet service, fleet page and test. Add driver/vehicle CRUD, shift audit, and server validation that rejects inactive assignment."
+  },
+  {
+    "id": "E2-T1",
+    "title": "Modelar cargas, evidencia y estados",
+    "epic": "02-dispatch",
+    "dependencies": [
+      "E1-T5"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN a load is created THE SYSTEM SHALL store ordered pickup/delivery stops while allowing the pilot form to create exactly one of each.",
+      "WHEN an actor attempts delivered before picked_up THE SYSTEM SHALL reject the transition and retain the prior state.",
+      "WHEN evidence requirements are configured THE SYSTEM SHALL block delivery until each required non-photo item has valid evidence.",
+      "WHEN a problem is reported THE SYSTEM SHALL create an incident without cancelling or bypassing the active load state."
+    ],
+    "verify": [
+      "pnpm exec supabase db reset",
+      "pnpm exec supabase test db",
+      "pnpm --filter @carrierflow/admin test src/server/loads/load-state-machine.test.ts"
+    ],
+    "checkpoint": "step-06-load-domain",
+    "files": [
+      "supabase/migrations/0004_loads.sql",
+      "supabase/tests/database/0004_loads.sql",
+      "apps/admin/src/server/loads/load-service.ts",
+      "apps/admin/src/server/loads/load-state-machine.test.ts",
+      "apps/admin/src/app/(ops)/loads/[loadId]/page.tsx"
+    ],
+    "status": "pending",
+    "do": "Create the listed load migration, pgTAP test, load service, state-machine test and load detail page. Model ordered stops/evidence/incidents, enforce transition order in server and show the read-only load detail."
+  },
+  {
+    "id": "E2-T2",
+    "title": "Calcular millas y revisiones de tarifa",
+    "epic": "02-dispatch",
+    "dependencies": [
+      "E2-T1"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN a proposed load has a quoted amount and route THE SYSTEM SHALL persist empty miles, loaded miles, total miles and quote_usd divided by total_miles as separate values.",
+      "WHEN a driver has an active load THE SYSTEM SHALL calculate the next load’s empty miles from the final planned active stop, not current GPS.",
+      "WHEN final stop, driver or assignment changes THE SYSTEM SHALL invalidate the previous estimate, persist a new immutable revision and create a dispatcher notification."
+    ],
+    "verify": [
+      "pnpm --filter @carrierflow/admin test src/server/routing/estimate-service.test.ts",
+      "pnpm --filter @carrierflow/admin typecheck"
+    ],
+    "checkpoint": "step-07-routing-pricing",
+    "files": [
+      "supabase/migrations/0005_route_estimates.sql",
+      "apps/admin/src/server/routing/routing-provider.ts",
+      "apps/admin/src/server/routing/estimate-service.ts",
+      "apps/admin/src/server/routing/estimate-service.test.ts",
+      "packages/routing-contract/src/index.ts"
+    ],
+    "status": "pending",
+    "do": "Create the listed route-estimate migration, provider interface, service, unit test and routing contract. Persist empty/loaded/total/rate revisions and invalidate/recalculate from active final stop."
+  },
+  {
+    "id": "E2-T3",
+    "title": "Crear flujo web de propuesta y asignación",
+    "epic": "02-dispatch",
+    "dependencies": [
+      "E2-T1",
+      "E2-T2",
+      "E1-T4"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN dispatcher enters quote and stops THE SYSTEM SHALL show empty, loaded and total miles separately plus the quoted dollars per total mile.",
+      "WHEN dispatcher assigns a load THE SYSTEM SHALL show the assignment as mandatory and expose no driver acceptance or rejection control.",
+      "WHEN dispatcher reassigns or cancels a load THE SYSTEM SHALL require authority, retain the event history and refresh the assignee-facing state.",
+      "WHEN the operations map route is opened THE SYSTEM SHALL render the authorised current-location surface and a textual fallback without accessing historical locations."
+    ],
+    "verify": [
+      "pnpm --filter @carrierflow/admin test tests/load-dispatch-flow.spec.ts",
+      "pnpm --filter @carrierflow/admin typecheck",
+      "pnpm --filter @carrierflow/admin lint"
+    ],
+    "checkpoint": "step-08-dispatch-ui",
+    "files": [
+      "apps/admin/src/app/(ops)/loads/new/page.tsx",
+      "apps/admin/src/components/loads/load-form.tsx",
+      "apps/admin/src/components/loads/mileage-breakdown.tsx",
+      "apps/admin/tests/load-dispatch-flow.spec.ts",
+      "apps/admin/src/app/(ops)/map/page.tsx"
+    ],
+    "status": "pending",
+    "do": "Create the listed proposal form, mileage breakdown, dispatch test and operations map page. The map page uses the MapLibre dependency provisioned in Paso 1, shows authorised current location/text fallback, and does not expose raw history; the form exposes no accept/reject control."
+  },
+  {
+    "id": "E2-T4",
+    "title": "Inicializar Flutter y lista actual/siguiente",
+    "epic": "02-dispatch",
+    "dependencies": [
+      "E2-T1",
+      "E1-T4"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN a driver with a valid session opens the app THE SYSTEM SHALL show the current load prominently and a next assigned load without blocking the current workflow.",
+      "WHEN the app locale is English or Spanish THE SYSTEM SHALL render driver-facing load labels from locale resources.",
+      "WHEN no load is assigned THE SYSTEM SHALL show a safe empty state rather than another driver’s data."
+    ],
+    "verify": [
+      "cd apps/driver && flutter pub get",
+      "cd apps/driver && flutter test test/load_home_page_test.dart",
+      "cd apps/driver && flutter analyze"
+    ],
+    "checkpoint": "step-09-driver-shell",
+    "files": [
+      "apps/driver/pubspec.yaml",
+      "apps/driver/lib/main.dart",
+      "apps/driver/lib/features/auth/auth_gate.dart",
+      "apps/driver/lib/features/loads/load_home_page.dart",
+      "apps/driver/test/load_home_page_test.dart"
+    ],
+    "status": "pending",
+    "do": "Create the listed Flutter pubspec, main, auth gate, load home and widget test. Before any Flutter package usage run each literal command: `cd apps/driver && flutter pub add supabase_flutter:2.17.2`; `cd apps/driver && flutter pub add firebase_core:4.14.0`; `cd apps/driver && flutter pub add firebase_messaging:16.6.0`; `cd apps/driver && flutter pub add drift:2.34.3`; `cd apps/driver && flutter pub add drift_flutter:0.3.1`; `cd apps/driver && flutter pub add connectivity_plus:7.3.1`; `cd apps/driver && flutter pub add url_launcher:6.3.2`; `cd apps/driver && flutter pub add geolocator:14.0.3`; `cd apps/driver && flutter pub add workmanager:0.10.9`; `cd apps/driver && flutter pub add maplibre_gl:0.27.0`. Then show current then next load and localized empty state."
+  },
+  {
+    "id": "E2-T5",
+    "title": "Ejecutar carga y evidencia en móvil",
+    "epic": "02-dispatch",
+    "dependencies": [
+      "E2-T1",
+      "E2-T4"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN a driver advances a load THE SYSTEM SHALL allow only the server-defined ordered transitions.",
+      "WHEN configured evidence is incomplete THE SYSTEM SHALL disable delivery and identify the missing required evidence without making photos universally required.",
+      "WHEN a driver reports an incident THE SYSTEM SHALL send its category, text, location when available and attachments without cancelling the load."
+    ],
+    "verify": [
+      "cd apps/driver && flutter test test/load_state_controller_test.dart",
+      "cd apps/driver && flutter test test/evidence_requirements_test.dart",
+      "cd apps/driver && flutter analyze"
+    ],
+    "checkpoint": "step-10-driver-execution",
+    "files": [
+      "apps/driver/lib/features/loads/load_detail_page.dart",
+      "apps/driver/lib/features/loads/load_state_controller.dart",
+      "apps/driver/lib/features/evidence/evidence_capture.dart",
+      "apps/driver/test/load_state_controller_test.dart",
+      "apps/driver/test/evidence_requirements_test.dart"
+    ],
+    "status": "pending",
+    "do": "Create the listed Flutter detail/state/evidence files and tests. Call server-defined transitions only, check configurable evidence before delivery and enqueue incident information without cancelling a load."
+  },
+  {
+    "id": "E3-T1",
+    "title": "Añadir outbox offline e idempotencia",
+    "epic": "03-reliability-release",
+    "dependencies": [
+      "E2-T5"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN network is unavailable THE SYSTEM SHALL queue state/evidence mutations locally with a unique client mutation ID.",
+      "WHEN the same mutation is replayed after reconnecting THE SYSTEM SHALL return the original server result and create no second delivery or evidence item.",
+      "WHEN synchronization fails transiently THE SYSTEM SHALL retain the item, expose retry state and preserve order where dependency requires it."
+    ],
+    "verify": [
+      "pnpm exec supabase db reset",
+      "cd apps/driver && flutter test test/outbox_test.dart",
+      "pnpm --filter @carrierflow/admin test src/server/sync/idempotency-service.test.ts"
+    ],
+    "checkpoint": "step-11-offline-sync",
+    "files": [
+      "supabase/migrations/0006_sync_operations.sql",
+      "apps/driver/lib/core/sync/outbox.dart",
+      "apps/driver/lib/core/sync/sync_worker.dart",
+      "apps/driver/test/outbox_test.dart",
+      "apps/admin/src/server/sync/idempotency-service.test.ts"
+    ],
+    "status": "pending",
+    "do": "Create the sync migration, outbox, worker and listed Flutter/admin tests. Persist client_mutation_id before send, replay exactly once, preserve dependency ordering and expose retry."
+  },
+  {
+    "id": "E3-T2",
+    "title": "Seguimiento, mapa y permisos degradados",
+    "epic": "03-reliability-release",
+    "dependencies": [
+      "E1-T5",
+      "E2-T3",
+      "E2-T5"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN an on-duty driver is visible or logged in with an active load THE SYSTEM SHALL record adaptive location samples and show their freshness/accuracy state.",
+      "WHEN a load is active and the interface is closed THE SYSTEM SHALL request platform-appropriate background tracking, while showing revoked, approximate or unavailable permission as degraded state.",
+      "WHEN the map loads THE SYSTEM SHALL display last authorized current location and load context without streaming unrestricted history.",
+      "WHEN a location is retained past policy THE SYSTEM SHALL roll it up or purge it according to the company retention job."
+    ],
+    "verify": [
+      "pnpm exec supabase db reset",
+      "cd apps/driver && flutter test test/tracking_service_test.dart",
+      "pnpm --filter @carrierflow/admin test"
+    ],
+    "checkpoint": "step-12-tracking-map",
+    "files": [
+      "supabase/migrations/0007_locations.sql",
+      "apps/driver/lib/features/tracking/tracking_service.dart",
+      "apps/driver/lib/features/tracking/tracking_permission_state.dart",
+      "apps/driver/test/tracking_service_test.dart",
+      "apps/driver/android/app/src/main/AndroidManifest.xml"
+    ],
+    "status": "pending",
+    "do": "Create the five listed location migration, tracking service/permission state/test and Android manifest. Use MapLibre packages already provisioned by Pasos 1 and 9; write current/history/retention data that the existing Paso 8 map surface reads, and model denied/approximate/stale/background states without force-quit promises."
+  },
+  {
+    "id": "E3-T3",
+    "title": "Notificar y compartir tracking limitado",
+    "epic": "03-reliability-release",
+    "dependencies": [
+      "E3-T2"
+    ],
+    "priority": "p1",
+    "acceptance": [
+      "WHEN a load is assigned, reassigned, changed or cancelled THE SYSTEM SHALL create a minimal notification addressed to the affected device.",
+      "WHEN a valid public tracking token is used THE SYSTEM SHALL return only the allowed load status, ETA and configured location data for that single load.",
+      "WHEN a public token is expired or revoked THE SYSTEM SHALL return no load data and an HTTP 404 response."
+    ],
+    "verify": [
+      "pnpm exec supabase db reset",
+      "pnpm --filter @carrierflow/admin test tests/public-tracking-link.test.ts",
+      "cd apps/driver && flutter analyze"
+    ],
+    "checkpoint": "step-13-notifications-tracking",
+    "files": [
+      "supabase/migrations/0008_notifications_public_links.sql",
+      "apps/admin/src/server/notifications/notification-service.ts",
+      "apps/admin/src/app/api/public/track/[token]/route.ts",
+      "apps/driver/lib/core/push/push_service.dart",
+      "apps/admin/tests/public-tracking-link.test.ts"
+    ],
+    "status": "pending",
+    "do": "Create the listed notification/public-link migration, server service, public route, Flutter push service and test. Send minimal ID payloads and return only scoped/expiring/revocable tracking data."
+  },
+  {
+    "id": "E3-T4",
+    "title": "Aplicar entitlements y retención piloto",
+    "epic": "03-reliability-release",
+    "dependencies": [
+      "E1-T5",
+      "E3-T1"
+    ],
+    "priority": "p1",
+    "acceptance": [
+      "WHEN a company attempts to activate a driver above its pilot plan capacity THE SYSTEM SHALL reject activation without modifying existing drivers.",
+      "WHEN a company is in private pilot THE SYSTEM SHALL expose plan capacity and trial state without initiating a payment or checkout request.",
+      "WHEN retention jobs run THE SYSTEM SHALL record the policy action and preserve only permitted location/evidence metadata."
+    ],
+    "verify": [
+      "pnpm exec supabase db reset",
+      "pnpm --filter @carrierflow/admin test tests/entitlement-service.test.ts",
+      "pnpm --filter @carrierflow/admin typecheck"
+    ],
+    "checkpoint": "step-14-pilot-privacy",
+    "files": [
+      "supabase/migrations/0009_entitlements_retention.sql",
+      "apps/admin/src/server/billing/entitlement-service.ts",
+      "apps/admin/src/server/privacy/retention-service.ts",
+      "apps/admin/src/app/(ops)/settings/plan/page.tsx",
+      "apps/admin/tests/entitlement-service.test.ts"
+    ],
+    "status": "pending",
+    "do": "Create the listed entitlement/retention migration, services, plan page and test. Enforce pilot capacity, show trial without checkout and record privacy retention action."
+  },
+  {
+    "id": "E3-T5",
+    "title": "Verificar manifiestos Dokploy y gates de piloto",
+    "epic": "03-reliability-release",
+    "dependencies": [
+      "E3-T1",
+      "E3-T2",
+      "E3-T3",
+      "E3-T4"
+    ],
+    "priority": "p0",
+    "acceptance": [
+      "WHEN the production compose configuration is rendered THE SYSTEM SHALL isolate proxy, application, Supabase/data and monitoring on private networks and expose only TLS proxy ports.",
+      "WHEN the disposable local restore verifier runs in dry-run mode THE SYSTEM SHALL validate required backup inputs without contacting production or claiming an off-server restore.",
+      "WHEN the CI workflow declaration is inspected THE SYSTEM SHALL contain separate typecheck, lint, unit, pgTAP, production build and critical E2E commands.",
+      "WHEN tenant-boundary and critical accessibility suites run THE SYSTEM SHALL report no protected cross-company response and no automated violation in labelled critical controls."
+    ],
+    "verify": [
+      "docker compose -f infra/dokploy/docker-compose.production.yml config",
+      "node scripts/verify-local-restore.mjs --dry-run",
+      "node -e \"const fs=require('fs');const y=fs.readFileSync('.github/workflows/verify.yml','utf8');for(const x of ['pnpm typecheck','pnpm lint','pnpm test','pnpm exec supabase test db','pnpm --filter @carrierflow/admin build','pnpm exec playwright test'])if(!y.includes(x))process.exit(1)\"",
+      "pnpm exec playwright test tests/security/tenant-boundary.spec.ts tests/a11y/critical-flows.spec.ts"
+    ],
+    "checkpoint": "step-15-release-gates",
+    "files": [
+      "infra/dokploy/docker-compose.production.yml",
+      "scripts/verify-local-restore.mjs",
+      ".github/workflows/verify.yml",
+      "tests/security/tenant-boundary.spec.ts",
+      "tests/a11y/critical-flows.spec.ts"
+    ],
+    "status": "pending",
+    "do": "Create the five listed Compose, local restore verifier, CI workflow, security test and a11y test files. Compose exposes only Traefik TLS; the script validates disposable inputs without production contact; CI declares separate typecheck/lint/test/pgTAP/admin-build/Playwright gates."
+  }
+]
+

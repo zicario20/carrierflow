@@ -1,0 +1,24 @@
+# Generated graph artifacts and repository metadata
+graphify-out/
+.git/
+
+# Installed skills and third-party/plugin payloads are tooling, not CarrierFlow knowledge.
+.codex/skills/
+.codex/plugins/
+
+# Dependency and build output
+node_modules/
+.next/
+dist/
+build/
+coverage/
+.dart_tool/
+**/Pods/
+**/.gradle/
+
+# Runtime-only or sensitive material
+.env
+.env.*
+*.log
+*.sqlite
+*.db
