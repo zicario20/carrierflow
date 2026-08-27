@@ -7,3 +7,7 @@
 !manifest.json
 !.graphify_labels.json
 !cost.json
+!memory/
+!memory/*.md
+!reflections/
+!reflections/LESSONS.md
