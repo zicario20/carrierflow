@@ -331,20 +331,23 @@ begin
     raise exception using errcode = '42501', message = 'only active owners, admins, or dispatchers may manage fleet resources';
   end if;
 
+  -- Driver profile and membership are one access unit. Lock the linked
+  -- company membership after the driver row so deactivation/reactivation and
+  -- assignment follow a single, consistent lock order.
+  select * into linked_membership
+  from public.company_memberships
+  where id = existing_driver.membership_id
+    and company_id = target_company_id
+  for update;
+  if not found then
+    raise exception using errcode = '22023', message = 'the driver membership is not available';
+  end if;
+
   -- A deactivation is an access revocation, not merely a display-status
   -- change. This SECURITY DEFINER function owns every related transition so
   -- membership, assignment, shift, and audit history commit or roll back as
   -- one transaction.
   if driver_status = 'inactive' and existing_driver.status <> 'inactive' then
-    select * into linked_membership
-    from public.company_memberships
-    where id = existing_driver.membership_id
-      and company_id = target_company_id
-    for update;
-    if not found then
-      raise exception using errcode = '22023', message = 'the driver membership is not available';
-    end if;
-
     if linked_membership.status = 'active'::public.membership_status then
       update public.company_memberships
       set status = 'suspended'::public.membership_status, updated_at = timezone('utc', now())
@@ -438,6 +441,35 @@ begin
         closed_shift.id
       );
     end loop;
+  elsif driver_status = 'active' and existing_driver.status <> 'active' then
+    if linked_membership.status <> 'suspended'::public.membership_status then
+      raise exception using
+        errcode = '22023',
+        message = 'a suspended driver membership is required to reactivate the driver';
+    end if;
+
+    update public.company_memberships
+    set status = 'active'::public.membership_status, updated_at = timezone('utc', now())
+    where id = linked_membership.id and company_id = target_company_id;
+
+    insert into public.audit_events (
+      company_id, actor_id, action, before_data, after_data, entity_type, entity_id
+    ) values (
+      target_company_id,
+      actor_id,
+      'membership.reactivated',
+      jsonb_build_object(
+        'role', linked_membership.role::text,
+        'status', linked_membership.status::text
+      ),
+      jsonb_build_object(
+        'role', linked_membership.role::text,
+        'status', 'active',
+        'reason', 'driver_reactivated'
+      ),
+      'company_membership',
+      linked_membership.id
+    );
   end if;
 
   update public.drivers
@@ -639,6 +671,7 @@ as $$
 declare
   actor_id uuid := (select auth.uid());
   target_driver public.drivers%rowtype;
+  target_driver_membership public.company_memberships%rowtype;
   target_vehicle public.vehicles%rowtype;
   created_assignment public.driver_vehicle_assignments%rowtype;
   previous_assignments jsonb;
@@ -665,6 +698,20 @@ begin
   end if;
   if target_driver.status <> 'active' then
     raise exception using errcode = '22023', message = 'driver must be active to receive a vehicle assignment';
+  end if;
+
+  select * into target_driver_membership
+  from public.company_memberships
+  where id = target_driver.membership_id
+    and company_id = target_company_id
+  for update;
+  if not found
+    or target_driver_membership.status <> 'active'::public.membership_status
+    or target_driver_membership.role <> 'driver'::public.company_role
+    or target_driver_membership.user_id is null then
+    raise exception using
+      errcode = '22023',
+      message = 'an active driver membership is required to receive a vehicle assignment';
   end if;
 
   select * into target_vehicle

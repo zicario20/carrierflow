@@ -1,6 +1,6 @@
 begin;
 
-select plan(75);
+select plan(83);
 
 \set tenant_fixture_setup true
 \ir helpers/tenant-fixtures.sql
@@ -456,6 +456,67 @@ select lives_ok(
   )$$,
   'a dispatcher can reactivate their driver'
 );
+select is(
+  (select status::text from public.company_memberships where id = '41414141-4141-4141-4141-414141414141'::uuid),
+  'active',
+  'reactivation restores the linked driver membership'
+);
+select is(
+  (select count(*) from public.audit_events where action = 'membership.reactivated' and entity_id = '41414141-4141-4141-4141-414141414141'::uuid),
+  1::bigint,
+  'reactivation audits the linked membership restoration'
+);
+
+reset role;
+set local role authenticated;
+select set_config('request.jwt.claim.sub', '99999999-9999-9999-9999-999999999999', true);
+select results_eq(
+  'select status from public.drivers order by id',
+  array['active'::text],
+  'a reactivated driver can read their permitted profile again'
+);
+select lives_ok(
+  format('select * from public.start_driver_shift(%L::uuid)', :'driver_a_id'),
+  'a reactivated driver can start a shift again'
+);
+select lives_ok(
+  format('select * from public.end_driver_shift(%L::uuid)', :'driver_a_id'),
+  'a reactivated driver can end their shift again'
+);
+
+reset role;
+update public.company_memberships
+set status = 'suspended'::public.membership_status
+where id = '41414141-4141-4141-4141-414141414141'::uuid;
+set local role authenticated;
+select set_config('request.jwt.claim.sub', '12121212-1212-1212-1212-121212121212', true);
+select throws_ok(
+  $$select * from public.assign_driver_vehicle(
+    '11111111-1111-1111-1111-111111111111'::uuid,
+    (select id from public.drivers where membership_id = '41414141-4141-4141-4141-414141414141'::uuid),
+    (select id from public.vehicles where unit_number = 'A-101')
+  )$$,
+  '22023',
+  'an active driver membership is required to receive a vehicle assignment',
+  'an active profile with suspended membership cannot receive an assignment'
+);
+select is(
+  (select count(*) from public.driver_vehicle_assignments),
+  1::bigint,
+  'a suspended membership assignment denial leaves no additional assignment'
+);
+select is(
+  (select count(*) from public.audit_events where action = 'driver_vehicle.assigned'),
+  1::bigint,
+  'a suspended membership assignment denial leaves no assignment audit event'
+);
+
+reset role;
+update public.company_memberships
+set status = 'active'::public.membership_status
+where id = '41414141-4141-4141-4141-414141414141'::uuid;
+set local role authenticated;
+select set_config('request.jwt.claim.sub', '12121212-1212-1212-1212-121212121212', true);
 select lives_ok(
   $$select * from public.update_vehicle(
     '11111111-1111-1111-1111-111111111111'::uuid,
