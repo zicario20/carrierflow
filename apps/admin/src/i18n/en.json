@@ -16,5 +16,12 @@
   "status": {
     "label": "Load status",
     "onTime": "On time"
+  },
+  "fleet": {
+    "heading": "Fleet",
+    "setupHeading": "Fleet setup",
+    "emptyState": "No drivers or vehicles are available yet.",
+    "unavailableDescription": "Dispatcher-managed fleet controls will appear here once the authenticated operations workflow is connected.",
+    "returnToOverview": "Return to operations overview"
   }
 }

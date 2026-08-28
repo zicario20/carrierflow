@@ -56,7 +56,7 @@
       "file_type": "code",
       "norm_label": "assigndrivervehicleinput",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L107"
+      "source_location": "L138"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_createdriverinput",
@@ -69,7 +69,7 @@
       "file_type": "code",
       "norm_label": "createdriverinput",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L78"
+      "source_location": "L103"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_createvehicleinput",
@@ -82,7 +82,33 @@
       "file_type": "code",
       "norm_label": "createvehicleinput",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L91"
+      "source_location": "L119"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_deactivatedriverinput",
+      "label": "DeactivateDriverInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "deactivatedriverinput",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L117"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_deactivatevehicleinput",
+      "label": "DeactivateVehicleInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "deactivatevehicleinput",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L136"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_drivershift",
@@ -95,7 +121,7 @@
       "file_type": "code",
       "norm_label": "drivershift",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L64"
+      "source_location": "L89"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_drivervehicleassignment",
@@ -108,7 +134,7 @@
       "file_type": "code",
       "norm_label": "drivervehicleassignment",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L55"
+      "source_location": "L80"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_fleetdriver",
@@ -121,7 +147,7 @@
       "file_type": "code",
       "norm_label": "fleetdriver",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L38"
+      "source_location": "L63"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_fleetmutationname",
@@ -137,6 +163,32 @@
       "source_location": "L11"
     },
     {
+      "id": "apps_admin_src_server_fleet_fleet_service_fleetreadquery",
+      "label": "FleetReadQuery",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "fleetreadquery",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_fleetreadresponse",
+      "label": "FleetReadResponse",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "fleetreadresponse",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L24"
+    },
+    {
       "id": "apps_admin_src_server_fleet_fleet_service_fleetstatus",
       "label": "FleetStatus",
       "_callable": true,
@@ -147,7 +199,7 @@
       "file_type": "code",
       "norm_label": "fleetstatus",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L36"
+      "source_location": "L61"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_fleetvehicle",
@@ -160,7 +212,46 @@
       "file_type": "code",
       "norm_label": "fleetvehicle",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L46"
+      "source_location": "L71"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_getdriverinput",
+      "label": "GetDriverInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "getdriverinput",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L155"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_getvehicleinput",
+      "label": "GetVehicleInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "getvehicleinput",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L160"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_listfleetinput",
+      "label": "ListFleetInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "listfleetinput",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L150"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_managerinput",
@@ -173,7 +264,7 @@
       "file_type": "code",
       "norm_label": "managerinput",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L72"
+      "source_location": "L97"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_owndrivershiftinput",
@@ -186,7 +277,7 @@
       "file_type": "code",
       "norm_label": "owndrivershiftinput",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L113"
+      "source_location": "L144"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_rpcerror",
@@ -202,6 +293,19 @@
       "source_location": "L20"
     },
     {
+      "id": "apps_admin_src_server_fleet_fleet_service_trustedfleetreadclient",
+      "label": "TrustedFleetReadClient",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "trustedfleetreadclient",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L51"
+    },
+    {
       "id": "apps_admin_src_server_fleet_fleet_service_trustedfleetsupabaseclient",
       "label": "TrustedFleetSupabaseClient",
       "_callable": true,
@@ -212,7 +316,7 @@
       "file_type": "code",
       "norm_label": "trustedfleetsupabaseclient",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L29"
+      "source_location": "L40"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_updatedriverinput",
@@ -225,7 +329,7 @@
       "file_type": "code",
       "norm_label": "updatedriverinput",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L84"
+      "source_location": "L109"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_updatevehicleinput",
@@ -238,7 +342,7 @@
       "file_type": "code",
       "norm_label": "updatevehicleinput",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L98"
+      "source_location": "L126"
     },
     {
       "id": "apps_admin_src_lib_env_supabasepublicenv",
@@ -304,6 +408,32 @@
       "norm_label": "translation",
       "source_file": "apps/admin/src/app/layout.tsx",
       "source_location": "L15"
+    },
+    {
+      "id": "apps_admin_src_app_ops_fleet_page_fleetcopy",
+      "label": "FleetCopy",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "fleetcopy",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "apps_admin_src_app_ops_fleet_page_fleetpageprops",
+      "label": "FleetPageProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "fleetpageprops",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L13"
     },
     {
       "id": "packages_design_tokens_src_tokens_operationaltokens",
@@ -488,6 +618,18 @@
       "source_location": "L14"
     },
     {
+      "id": "apps_admin_src_server_audit_write_audit_createcompanyinvitation",
+      "label": "createCompanyInvitation()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "createcompanyinvitation()",
+      "source_file": "apps/admin/src/server/audit/write-audit.ts",
+      "source_location": "L62"
+    },
+    {
       "id": "apps_admin_src_server_fleet_fleet_service_assigndrivervehicle",
       "label": "assignDriverVehicle()",
       "_callable": true,
@@ -497,7 +639,7 @@
       "file_type": "code",
       "norm_label": "assigndrivervehicle()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L310"
+      "source_location": "L439"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_authorizemanager",
@@ -509,7 +651,7 @@
       "file_type": "code",
       "norm_label": "authorizemanager()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L228"
+      "source_location": "L349"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_createdriver",
@@ -521,7 +663,7 @@
       "file_type": "code",
       "norm_label": "createdriver()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L233"
+      "source_location": "L354"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_createvehicle",
@@ -533,7 +675,7 @@
       "file_type": "code",
       "norm_label": "createvehicle()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L270"
+      "source_location": "L395"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_databasefailure",
@@ -545,7 +687,31 @@
       "file_type": "code",
       "norm_label": "databasefailure()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L221"
+      "source_location": "L267"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_deactivatedriver",
+      "label": "deactivateDriver()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "deactivatedriver()",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L391"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_deactivatevehicle",
+      "label": "deactivateVehicle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "deactivatevehicle()",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L435"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_endowndrivershift",
@@ -557,7 +723,31 @@
       "file_type": "code",
       "norm_label": "endowndrivershift()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L356"
+      "source_location": "L485"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_getdriver",
+      "label": "getDriver()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "getdriver()",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L300"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_getvehicle",
+      "label": "getVehicle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "getvehicle()",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L332"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_isrecord",
@@ -569,7 +759,7 @@
       "file_type": "code",
       "norm_label": "isrecord()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L119"
+      "source_location": "L165"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_isstatus",
@@ -581,7 +771,31 @@
       "file_type": "code",
       "norm_label": "isstatus()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L123"
+      "source_location": "L169"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_listdrivers",
+      "label": "listDrivers()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "listdrivers()",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L286"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_listvehicles",
+      "label": "listVehicles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "listvehicles()",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L318"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_mutateownshift",
@@ -593,7 +807,7 @@
       "file_type": "code",
       "norm_label": "mutateownshift()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L336"
+      "source_location": "L465"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_parseassignment",
@@ -605,7 +819,7 @@
       "file_type": "code",
       "norm_label": "parseassignment()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L173"
+      "source_location": "L219"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_parsedriver",
@@ -617,7 +831,19 @@
       "file_type": "code",
       "norm_label": "parsedriver()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L127"
+      "source_location": "L173"
+    },
+    {
+      "id": "apps_admin_src_server_fleet_fleet_service_parserows",
+      "label": "parseRows()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "parserows()",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L274"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_parseshift",
@@ -629,7 +855,7 @@
       "file_type": "code",
       "norm_label": "parseshift()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L198"
+      "source_location": "L244"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_parsevehicle",
@@ -641,7 +867,7 @@
       "file_type": "code",
       "norm_label": "parsevehicle()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L149"
+      "source_location": "L195"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_startowndrivershift",
@@ -653,7 +879,7 @@
       "file_type": "code",
       "norm_label": "startowndrivershift()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L352"
+      "source_location": "L481"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_updatedriver",
@@ -665,7 +891,7 @@
       "file_type": "code",
       "norm_label": "updatedriver()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L251"
+      "source_location": "L372"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_updatevehicle",
@@ -677,7 +903,19 @@
       "file_type": "code",
       "norm_label": "updatevehicle()",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L289"
+      "source_location": "L414"
+    },
+    {
+      "id": "apps_admin_src_server_result_forbidden",
+      "label": "forbidden()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "forbidden()",
+      "source_file": "apps/admin/src/server/result.ts",
+      "source_location": "L29"
     },
     {
       "id": "apps_admin_src_server_result_ok",
@@ -704,6 +942,18 @@
       "source_location": "L39"
     },
     {
+      "id": "apps_admin_tests_fleet_service_test_from",
+      "label": "from()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "fleet-service.ts",
+      "file_type": "code",
+      "norm_label": "from()",
+      "source_file": "apps/admin/tests/fleet-service.test.ts",
+      "source_location": "L158"
+    },
+    {
       "id": "apps_admin_tests_fleet_service_test_rpc",
       "label": "rpc()",
       "_callable": true,
@@ -713,7 +963,7 @@
       "file_type": "code",
       "norm_label": "rpc()",
       "source_file": "apps/admin/tests/fleet-service.test.ts",
-      "source_location": "L23"
+      "source_location": "L28"
     },
     {
       "id": "apps_admin_src_lib_env_getsupabasepublicenv",
@@ -800,6 +1050,18 @@
       "source_location": "L98"
     },
     {
+      "id": "apps_admin_src_app_ops_fleet_page_fleetcontent",
+      "label": "FleetContent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "fleetcontent()",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L18"
+    },
+    {
       "id": "apps_admin_src_app_ops_fleet_page_fleetpage",
       "label": "FleetPage()",
       "_callable": true,
@@ -809,7 +1071,7 @@
       "file_type": "code",
       "norm_label": "fleetpage()",
       "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L3"
+      "source_location": "L46"
     },
     {
       "id": "apps_admin_src_app_page_homepage",
@@ -822,18 +1084,6 @@
       "norm_label": "homepage()",
       "source_file": "apps/admin/src/app/page.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "apps_admin_src_server_audit_write_audit_createcompanyinvitation",
-      "label": "createCompanyInvitation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "write-audit.ts",
-      "file_type": "code",
-      "norm_label": "createcompanyinvitation()",
-      "source_file": "apps/admin/src/server/audit/write-audit.ts",
-      "source_location": "L62"
     },
     {
       "id": "apps_admin_src_server_audit_write_audit_test_rpc",
@@ -870,18 +1120,6 @@
       "norm_label": "haspermission()",
       "source_file": "apps/admin/src/server/auth/authorize.ts",
       "source_location": "L16"
-    },
-    {
-      "id": "apps_admin_src_server_result_forbidden",
-      "label": "forbidden()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "write-audit.ts",
-      "file_type": "code",
-      "norm_label": "forbidden()",
-      "source_file": "apps/admin/src/server/result.ts",
-      "source_location": "L29"
     },
     {
       "id": "tsconfig_base",
@@ -1393,6 +1631,17 @@
       "source_location": "L1"
     },
     {
+      "id": "apps_admin_src_app_ops_fleet_page_fleetmessages",
+      "label": "fleetMessages",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "fleetmessages",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L8"
+    },
+    {
       "id": "apps_admin_tests_fleet_page_test",
       "label": "fleet-page.test.tsx",
       "_origin": "ast",
@@ -1481,11 +1730,22 @@
       "source_location": "L1"
     },
     {
+      "id": "apps_admin_package",
+      "label": "admin/package.json",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "admin/package.json",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L1"
+    },
+    {
       "id": "apps_admin_package_devdependencies",
       "label": "devDependencies",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "apps/admin/package.json",
@@ -1496,7 +1756,7 @@
       "label": "jsdom",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "code",
       "norm_label": "jsdom",
       "source_file": "apps/admin/package.json",
@@ -1507,7 +1767,7 @@
       "label": "@testing-library/react",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "code",
       "norm_label": "@testing-library/react",
       "source_file": "apps/admin/package.json",
@@ -1518,7 +1778,7 @@
       "label": "@types/node",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "apps/admin/package.json",
@@ -1529,7 +1789,7 @@
       "label": "@types/react",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "code",
       "norm_label": "@types/react",
       "source_file": "apps/admin/package.json",
@@ -1540,18 +1800,139 @@
       "label": "@types/react-dom",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "code",
       "norm_label": "@types/react-dom",
       "source_file": "apps/admin/package.json",
       "source_location": "L27"
     },
     {
+      "id": "apps_admin_package_name",
+      "label": "name",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "name",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "apps_admin_package_private",
+      "label": "private",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "private",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "apps_admin_package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "apps_admin_package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "apps_admin_package_scripts_dev",
+      "label": "dev",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "dev",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "apps_admin_package_scripts_lint",
+      "label": "lint",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "lint",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "apps_admin_package_scripts_start",
+      "label": "start",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "start",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "apps_admin_package_scripts_test",
+      "label": "test",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "test",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "apps_admin_package_scripts_typecheck",
+      "label": "typecheck",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "typecheck",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "apps_admin_package_type",
+      "label": "type",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "type",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "apps_admin_package_version",
+      "label": "version",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "version",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L4"
+    },
+    {
       "id": "jsdom",
       "label": "jsdom",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "concept",
       "norm_label": "jsdom",
       "source_file": "apps/admin/package.json",
@@ -1562,7 +1943,7 @@
       "label": "@testing-library/react",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "concept",
       "norm_label": "@testing-library/react",
       "source_file": "apps/admin/package.json",
@@ -1573,7 +1954,7 @@
       "label": "@types/node",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "apps/admin/package.json",
@@ -1584,7 +1965,7 @@
       "label": "@types/react",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "concept",
       "norm_label": "@types/react",
       "source_file": "apps/admin/package.json",
@@ -1595,7 +1976,7 @@
       "label": "@types/react-dom",
       "_origin": "ast",
       "community": 2,
-      "community_name": "devDependencies",
+      "community_name": "admin/package.json",
       "file_type": "concept",
       "norm_label": "@types/react-dom",
       "source_file": "apps/admin/package.json",
@@ -2577,17 +2958,6 @@
       "source_location": "L23"
     },
     {
-      "id": "apps_admin_package",
-      "label": "admin/package.json",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "admin/package.json",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_admin_package_dependencies",
       "label": "dependencies",
       "_origin": "ast",
@@ -2674,127 +3044,6 @@
       "norm_label": "@supabase/supabase-js",
       "source_file": "apps/admin/package.json",
       "source_location": "L16"
-    },
-    {
-      "id": "apps_admin_package_name",
-      "label": "name",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "name",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "apps_admin_package_private",
-      "label": "private",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "private",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "apps_admin_package_scripts",
-      "label": "scripts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "apps_admin_package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "apps_admin_package_scripts_dev",
-      "label": "dev",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "dev",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "apps_admin_package_scripts_lint",
-      "label": "lint",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "lint",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "apps_admin_package_scripts_start",
-      "label": "start",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "start",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "apps_admin_package_scripts_test",
-      "label": "test",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "test",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "apps_admin_package_scripts_typecheck",
-      "label": "typecheck",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "typecheck",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L12"
-    },
-    {
-      "id": "apps_admin_package_type",
-      "label": "type",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "type",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "apps_admin_package_version",
-      "label": "version",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "version",
-      "source_file": "apps/admin/package.json",
-      "source_location": "L4"
     },
     {
       "id": "maplibre_gl",
@@ -4055,7 +4304,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L313",
+      "source_location": "L442",
       "weight": 1.0
     },
     {
@@ -4067,7 +4316,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L324",
+      "source_location": "L453",
       "weight": 1.0
     },
     {
@@ -4079,7 +4328,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L330",
+      "source_location": "L459",
       "weight": 1.0
     },
     {
@@ -4091,7 +4340,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L332",
+      "source_location": "L461",
       "weight": 1.0
     },
     {
@@ -4103,7 +4352,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L333",
+      "source_location": "L462",
       "weight": 1.0
     },
     {
@@ -4115,7 +4364,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L229",
+      "source_location": "L350",
       "weight": 1.0
     },
     {
@@ -4127,7 +4376,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L234",
+      "source_location": "L355",
       "weight": 1.0
     },
     {
@@ -4139,7 +4388,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L245",
+      "source_location": "L366",
       "weight": 1.0
     },
     {
@@ -4151,7 +4400,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L247",
+      "source_location": "L368",
       "weight": 1.0
     },
     {
@@ -4163,7 +4412,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L248",
+      "source_location": "L369",
       "weight": 1.0
     },
     {
@@ -4175,7 +4424,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L248",
+      "source_location": "L369",
       "weight": 1.0
     },
     {
@@ -4187,7 +4436,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L271",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
@@ -4199,7 +4448,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L283",
+      "source_location": "L408",
       "weight": 1.0
     },
     {
@@ -4211,7 +4460,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L285",
+      "source_location": "L410",
       "weight": 1.0
     },
     {
@@ -4223,7 +4472,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L286",
+      "source_location": "L411",
       "weight": 1.0
     },
     {
@@ -4235,7 +4484,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L286",
+      "source_location": "L411",
       "weight": 1.0
     },
     {
@@ -4247,7 +4496,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L223",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -4259,7 +4508,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L225",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_deactivatedriver",
+      "target": "apps_admin_src_server_fleet_fleet_service_updatedriver",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L392",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_deactivatevehicle",
+      "target": "apps_admin_src_server_fleet_fleet_service_updatevehicle",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L436",
       "weight": 1.0
     },
     {
@@ -4271,7 +4544,223 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L357",
+      "source_location": "L486",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getdriver",
+      "target": "apps_admin_src_server_fleet_fleet_service_databasefailure",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getdriver",
+      "target": "apps_admin_src_server_result_forbidden",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L311",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getdriver",
+      "target": "apps_admin_src_server_fleet_fleet_service_parsedriver",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L313",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getdriver",
+      "target": "apps_admin_src_server_result_ok",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getdriver",
+      "target": "apps_admin_src_server_result_validationerror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getvehicle",
+      "target": "apps_admin_src_server_fleet_fleet_service_databasefailure",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L340",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getvehicle",
+      "target": "apps_admin_src_server_result_forbidden",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L343",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getvehicle",
+      "target": "apps_admin_src_server_fleet_fleet_service_parsevehicle",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L345",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getvehicle",
+      "target": "apps_admin_src_server_result_ok",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L346",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_getvehicle",
+      "target": "apps_admin_src_server_result_validationerror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L346",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listdrivers",
+      "target": "apps_admin_src_server_fleet_fleet_service_databasefailure",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L293",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listdrivers",
+      "target": "apps_admin_src_server_fleet_fleet_service_parserows",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L295",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listdrivers",
+      "target": "apps_admin_src_server_result_ok",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L296",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listdrivers",
+      "target": "apps_admin_src_server_result_validationerror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L296",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listvehicles",
+      "target": "apps_admin_src_server_fleet_fleet_service_databasefailure",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L325",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listvehicles",
+      "target": "apps_admin_src_server_fleet_fleet_service_parserows",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L327",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listvehicles",
+      "target": "apps_admin_src_server_result_ok",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L328",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listvehicles",
+      "target": "apps_admin_src_server_result_validationerror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L328",
       "weight": 1.0
     },
     {
@@ -4283,7 +4772,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L341",
+      "source_location": "L470",
       "weight": 1.0
     },
     {
@@ -4295,7 +4784,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L346",
+      "source_location": "L475",
       "weight": 1.0
     },
     {
@@ -4307,7 +4796,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L348",
+      "source_location": "L477",
       "weight": 1.0
     },
     {
@@ -4319,7 +4808,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L349",
+      "source_location": "L478",
       "weight": 1.0
     },
     {
@@ -4331,11 +4820,23 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L349",
+      "source_location": "L478",
       "weight": 1.0
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service_parseassignment",
+      "target": "apps_admin_src_server_fleet_fleet_service_isrecord",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_parsedriver",
       "target": "apps_admin_src_server_fleet_fleet_service_isrecord",
       "relation": "calls",
       "_origin": "ast",
@@ -4348,18 +4849,6 @@
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service_parsedriver",
-      "target": "apps_admin_src_server_fleet_fleet_service_isrecord",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L128",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service_parsedriver",
       "target": "apps_admin_src_server_fleet_fleet_service_isstatus",
       "relation": "calls",
       "_origin": "ast",
@@ -4367,7 +4856,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L128",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -4379,7 +4868,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L199",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -4391,7 +4880,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L150",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -4403,7 +4892,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L150",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -4415,7 +4904,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L353",
+      "source_location": "L482",
       "weight": 1.0
     },
     {
@@ -4427,7 +4916,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L252",
+      "source_location": "L373",
       "weight": 1.0
     },
     {
@@ -4439,7 +4928,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L264",
+      "source_location": "L385",
       "weight": 1.0
     },
     {
@@ -4451,7 +4940,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L266",
+      "source_location": "L387",
       "weight": 1.0
     },
     {
@@ -4463,7 +4952,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L267",
+      "source_location": "L388",
       "weight": 1.0
     },
     {
@@ -4475,7 +4964,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L267",
+      "source_location": "L388",
       "weight": 1.0
     },
     {
@@ -4487,7 +4976,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L290",
+      "source_location": "L415",
       "weight": 1.0
     },
     {
@@ -4499,7 +4988,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L304",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -4511,7 +5000,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L306",
+      "source_location": "L431",
       "weight": 1.0
     },
     {
@@ -4523,7 +5012,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L307",
+      "source_location": "L432",
       "weight": 1.0
     },
     {
@@ -4535,7 +5024,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L307",
+      "source_location": "L432",
       "weight": 1.0
     },
     {
@@ -4935,6 +5424,18 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_app_layout_adminlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_src_lib_supabase_server",
       "target": "apps_admin_src_lib_env_getsupabasepublicenv",
       "relation": "imports",
@@ -5212,7 +5713,67 @@
     },
     {
       "source": "apps_admin_tests_fleet_service_test",
+      "target": "apps_admin_src_server_fleet_fleet_service_getdriver",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/fleet-service.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_fleet_service_test",
+      "target": "apps_admin_src_server_fleet_fleet_service_getvehicle",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/fleet-service.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_fleet_service_test",
+      "target": "apps_admin_src_server_fleet_fleet_service_listdrivers",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/fleet-service.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_fleet_service_test",
+      "target": "apps_admin_src_server_fleet_fleet_service_listvehicles",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/fleet-service.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_fleet_service_test",
       "target": "apps_admin_src_server_fleet_fleet_service_startowndrivershift",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/fleet-service.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_fleet_service_test",
+      "target": "apps_admin_src_server_fleet_fleet_service_trustedfleetreadclient",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5424,6 +5985,18 @@
       "context": "import",
       "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_app_layout",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -5968,13 +6541,57 @@
     },
     {
       "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_app_ops_fleet_page_fleetpageprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_app_ops_fleet_page_fleetcontent",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
       "target": "apps_admin_src_app_ops_fleet_page_fleetpage",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L3",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_app_ops_fleet_page_fleetcopy",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_app_ops_fleet_page_fleetmessages",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -6188,13 +6805,24 @@
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_assigndrivervehicleinput",
+      "target": "apps_admin_src_server_fleet_fleet_service_createdriverinput",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L107",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_updatedriverinput",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -6210,18 +6838,18 @@
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_owndrivershiftinput",
+      "target": "apps_admin_src_server_fleet_fleet_service_deactivatedriverinput",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L113",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_isrecord",
+      "target": "apps_admin_src_server_fleet_fleet_service_createvehicleinput",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6232,13 +6860,101 @@
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_updatevehicleinput",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_deactivatevehicleinput",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_assigndrivervehicleinput",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_owndrivershiftinput",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_listfleetinput",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_getdriverinput",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_getvehicleinput",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_isrecord",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
       "target": "apps_admin_src_server_fleet_fleet_service_isstatus",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L123",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -6249,7 +6965,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L127",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -6260,29 +6976,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L149",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_parseassignment",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L173",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_parseshift",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L198",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -6298,73 +6992,73 @@
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_parseassignment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_fleetreadresponse",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_parseshift",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
       "target": "apps_admin_src_server_fleet_fleet_service_databasefailure",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L221",
+      "source_location": "L267",
       "weight": 1.0
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_authorizemanager",
+      "target": "apps_admin_src_server_fleet_fleet_service_parserows",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L228",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_createdriver",
+      "target": "apps_admin_src_server_fleet_fleet_service_listdrivers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L233",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_updatedriver",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L251",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_createvehicle",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L270",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_updatevehicle",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L289",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_trustedfleetsupabaseclient",
+      "target": "apps_admin_src_server_fleet_fleet_service_fleetreadquery",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6375,13 +7069,134 @@
     },
     {
       "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_getdriver",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_listvehicles",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L318",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_getvehicle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L332",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_authorizemanager",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L349",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_createdriver",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L354",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_updatedriver",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L372",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_deactivatedriver",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L391",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_createvehicle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L395",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_trustedfleetsupabaseclient",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_updatevehicle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L414",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_deactivatevehicle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L435",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
       "target": "apps_admin_src_server_fleet_fleet_service_assigndrivervehicle",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L310",
+      "source_location": "L439",
       "weight": 1.0
     },
     {
@@ -6392,7 +7207,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L336",
+      "source_location": "L465",
       "weight": 1.0
     },
     {
@@ -6403,7 +7218,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L352",
+      "source_location": "L481",
       "weight": 1.0
     },
     {
@@ -6414,7 +7229,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L356",
+      "source_location": "L485",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service",
+      "target": "apps_admin_src_server_fleet_fleet_service_trustedfleetreadclient",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -6425,7 +7251,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L36",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -6436,7 +7262,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L38",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -6447,7 +7273,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L46",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -6458,7 +7284,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L55",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -6469,7 +7295,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L64",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -6480,51 +7306,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L72",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_createdriverinput",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L78",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_updatedriverinput",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L84",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_createvehicleinput",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L91",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_server_fleet_fleet_service",
-      "target": "apps_admin_src_server_fleet_fleet_service_updatevehicleinput",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
-      "source_location": "L98",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -6606,13 +7388,24 @@
     },
     {
       "source": "apps_admin_tests_fleet_service_test",
+      "target": "apps_admin_tests_fleet_service_test_from",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/tests/fleet-service.test.ts",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_fleet_service_test",
       "target": "apps_admin_tests_fleet_service_test_rpc",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/tests/fleet-service.test.ts",
-      "source_location": "L116",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -7815,6 +8608,30 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_src_server_fleet_fleet_service_listdrivers",
+      "target": "apps_admin_src_server_fleet_fleet_service_parsedriver",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L295",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_server_fleet_fleet_service_listvehicles",
+      "target": "apps_admin_src_server_fleet_fleet_service_parsevehicle",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "apps/admin/src/server/fleet/fleet-service.ts",
+      "source_location": "L327",
+      "weight": 1.0
+    },
+    {
       "source": "docs_architecture_adr_001_self_hosted_dokploy_official_citations",
       "target": "docs_architecture_adr_001_self_hosted_dokploy_operating_decision",
       "relation": "cites",
@@ -8219,5 +9036,5 @@
       "source_file": "AGENTS.md"
     }
   ],
-  "built_at_commit": "ffc81175ac42b104f0ebca77a04bf47f6b6b0ed8"
+  "built_at_commit": "d271e26ecbaedd88189ea309de6ea835ba605434"
 }

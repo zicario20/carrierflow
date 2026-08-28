@@ -5,7 +5,12 @@ import {
   createDriver,
   createVehicle,
   endOwnDriverShift,
+  getDriver,
+  getVehicle,
+  listDrivers,
+  listVehicles,
   startOwnDriverShift,
+  type TrustedFleetReadClient,
 } from "../src/server/fleet/fleet-service";
 
 const companyId = "11111111-1111-1111-1111-111111111111";
@@ -108,6 +113,93 @@ describe("fleet service", () => {
         message: "The driver and vehicle must be active before assignment.",
       },
     });
+  });
+
+  test("maps a PostgreSQL permission failure to forbidden without exposing a raw error", async () => {
+    const result = await assignDriverVehicle({
+      actorRole: "dispatcher",
+      client: {
+        async rpc() {
+          return { data: null, error: { code: "42501" } };
+        },
+      },
+      companyId,
+      driverId,
+      vehicleId,
+    });
+
+    expect(result).toEqual({
+      ok: false,
+      error: {
+        code: "forbidden",
+        message: "You do not have permission to perform this action.",
+      },
+    });
+  });
+
+  test("uses authenticated RLS reads with explicit tenant filters for fleet lists and records", async () => {
+    const calls: string[] = [];
+    const driverRow = {
+      id: driverId,
+      company_id: companyId,
+      membership_id: membershipId,
+      display_name: "Taylor Driver",
+      status: "active",
+    };
+    const vehicleRow = {
+      id: vehicleId,
+      company_id: companyId,
+      unit_number: "A-1",
+      vehicle_type: "cargo_van",
+      capacity_lbs: 3500,
+      status: "active",
+    };
+    const client: TrustedFleetReadClient = {
+      from(table) {
+        calls.push(`from:${table}`);
+        return {
+          select(columns) {
+            calls.push(`select:${table}:${columns}`);
+            const query = {
+              eq(column: string, value: string) {
+                calls.push(`eq:${table}:${column}:${value}`);
+                return query;
+              },
+              async maybeSingle() {
+                return { data: table === "drivers" ? driverRow : vehicleRow, error: null };
+              },
+              async order(column: string) {
+                calls.push(`order:${table}:${column}`);
+                return { data: table === "drivers" ? [driverRow] : [vehicleRow], error: null };
+              },
+            };
+            return query;
+          },
+        };
+      },
+    };
+
+    await expect(listDrivers({ client, companyId })).resolves.toMatchObject({
+      ok: true,
+      data: [{ companyId, id: driverId }],
+    });
+    await expect(getDriver({ client, companyId, driverId })).resolves.toMatchObject({
+      ok: true,
+      data: { companyId, id: driverId },
+    });
+    await expect(listVehicles({ client, companyId })).resolves.toMatchObject({
+      ok: true,
+      data: [{ companyId, id: vehicleId }],
+    });
+    await expect(getVehicle({ client, companyId, vehicleId })).resolves.toMatchObject({
+      ok: true,
+      data: { companyId, id: vehicleId },
+    });
+
+    expect(calls).toContain(`eq:drivers:company_id:${companyId}`);
+    expect(calls).toContain(`eq:vehicles:company_id:${companyId}`);
+    expect(calls).toContain(`eq:drivers:id:${driverId}`);
+    expect(calls).toContain(`eq:vehicles:id:${vehicleId}`);
   });
 
   test("uses the own-shift RPCs only for a driver", async () => {

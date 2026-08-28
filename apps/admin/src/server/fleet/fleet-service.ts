@@ -21,6 +21,17 @@ type RpcError = Readonly<{
   code?: string;
 }>;
 
+type FleetReadResponse = Readonly<{
+  data: unknown | null;
+  error: RpcError | null;
+}>;
+
+type FleetReadQuery = Readonly<{
+  eq: (column: string, value: string) => FleetReadQuery;
+  maybeSingle: () => PromiseLike<FleetReadResponse>;
+  order: (column: string) => PromiseLike<FleetReadResponse>;
+}>;
+
 /**
  * This is deliberately an RLS-bound request client. It does not expose direct
  * table writes or a service-role credential; the fleet RPCs remain the final
@@ -33,6 +44,20 @@ export type TrustedFleetSupabaseClient = Readonly<{
   ) => Promise<Readonly<{ data: unknown | null; error: RpcError | null }>>;
 }>;
 
+/**
+ * Read clients are authenticated request clients, so PostgreSQL RLS remains
+ * authoritative. This intentionally exposes no service-role or table writes.
+ */
+export type TrustedFleetReadClient = Readonly<{
+  from: (table: "drivers" | "vehicles") => Readonly<{
+    select: (columns: string) => FleetReadQuery;
+  }>;
+}>;
+
+/**
+ * Records are deactivated instead of physically deleted so assignments,
+ * shifts, and immutable audit history remain verifiable.
+ */
 export type FleetStatus = "active" | "inactive";
 
 export type FleetDriver = Readonly<{
@@ -88,6 +113,9 @@ export type UpdateDriverInput = ManagerInput &
     status: FleetStatus;
   }>;
 
+/** Deliberate non-destructive replacement for deleting a driver profile. */
+export type DeactivateDriverInput = Omit<UpdateDriverInput, "status">;
+
 export type CreateVehicleInput = ManagerInput &
   Readonly<{
     unitNumber: string;
@@ -104,6 +132,9 @@ export type UpdateVehicleInput = ManagerInput &
     status: FleetStatus;
   }>;
 
+/** Deliberate non-destructive replacement for deleting a vehicle record. */
+export type DeactivateVehicleInput = Omit<UpdateVehicleInput, "status">;
+
 export type AssignDriverVehicleInput = ManagerInput &
   Readonly<{
     driverId: string;
@@ -115,6 +146,21 @@ export type OwnDriverShiftInput = Readonly<{
   client: TrustedFleetSupabaseClient;
   driverId: string;
 }>;
+
+export type ListFleetInput = Readonly<{
+  client: TrustedFleetReadClient;
+  companyId: string;
+}>;
+
+export type GetDriverInput = ListFleetInput &
+  Readonly<{
+    driverId: string;
+  }>;
+
+export type GetVehicleInput = ListFleetInput &
+  Readonly<{
+    vehicleId: string;
+  }>;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
@@ -225,6 +271,81 @@ function databaseFailure<T>(error: RpcError | null, message: string, field?: str
   return validationError(message, field);
 }
 
+function parseRows<T>(value: unknown, parser: (row: unknown) => T | null): readonly T[] | null {
+  if (!Array.isArray(value)) {
+    return null;
+  }
+  const parsedRows = value.map(parser);
+  return parsedRows.every((row): row is T => row !== null) ? parsedRows : null;
+}
+
+const driverColumns = "id,company_id,membership_id,display_name,status";
+const vehicleColumns = "id,company_id,unit_number,vehicle_type,capacity_lbs,status";
+
+/** Lists only records visible through the caller's authenticated PostgreSQL RLS policy. */
+export async function listDrivers(input: ListFleetInput): Promise<MutationResult<readonly FleetDriver[]>> {
+  const response = await input.client
+    .from("drivers")
+    .select(driverColumns)
+    .eq("company_id", input.companyId)
+    .order("display_name");
+  if (response.error) {
+    return databaseFailure(response.error, "Fleet drivers could not be loaded.");
+  }
+  const drivers = parseRows(response.data, parseDriver);
+  return drivers ? ok(drivers) : validationError("Fleet drivers could not be loaded.");
+}
+
+/** Reads one driver only when both the requested tenant filter and RLS allow it. */
+export async function getDriver(input: GetDriverInput): Promise<MutationResult<FleetDriver>> {
+  const response = await input.client
+    .from("drivers")
+    .select(driverColumns)
+    .eq("company_id", input.companyId)
+    .eq("id", input.driverId)
+    .maybeSingle();
+  if (response.error) {
+    return databaseFailure(response.error, "The fleet driver could not be loaded.");
+  }
+  if (response.data === null) {
+    return forbidden();
+  }
+  const driver = parseDriver(response.data);
+  return driver ? ok(driver) : validationError("The fleet driver could not be loaded.");
+}
+
+/** Lists only vehicles visible through the caller's authenticated PostgreSQL RLS policy. */
+export async function listVehicles(input: ListFleetInput): Promise<MutationResult<readonly FleetVehicle[]>> {
+  const response = await input.client
+    .from("vehicles")
+    .select(vehicleColumns)
+    .eq("company_id", input.companyId)
+    .order("unit_number");
+  if (response.error) {
+    return databaseFailure(response.error, "Fleet vehicles could not be loaded.");
+  }
+  const vehicles = parseRows(response.data, parseVehicle);
+  return vehicles ? ok(vehicles) : validationError("Fleet vehicles could not be loaded.");
+}
+
+/** Reads one vehicle only when both the requested tenant filter and RLS allow it. */
+export async function getVehicle(input: GetVehicleInput): Promise<MutationResult<FleetVehicle>> {
+  const response = await input.client
+    .from("vehicles")
+    .select(vehicleColumns)
+    .eq("company_id", input.companyId)
+    .eq("id", input.vehicleId)
+    .maybeSingle();
+  if (response.error) {
+    return databaseFailure(response.error, "The fleet vehicle could not be loaded.");
+  }
+  if (response.data === null) {
+    return forbidden();
+  }
+  const vehicle = parseVehicle(response.data);
+  return vehicle ? ok(vehicle) : validationError("The fleet vehicle could not be loaded.");
+}
+
 function authorizeManager<T>(role: CompanyRole, permission: "fleet.driver.manage" | "fleet.vehicle.manage" | "fleet.assignment.manage"): MutationResult<T> | null {
   const authorization = authorize({ permission, role });
   return authorization.ok ? null : authorization;
@@ -267,6 +388,10 @@ export async function updateDriver(input: UpdateDriverInput): Promise<MutationRe
   return driver ? ok(driver) : validationError("The driver could not be updated.");
 }
 
+export function deactivateDriver(input: DeactivateDriverInput): Promise<MutationResult<FleetDriver>> {
+  return updateDriver({ ...input, status: "inactive" });
+}
+
 export async function createVehicle(input: CreateVehicleInput): Promise<MutationResult<FleetVehicle>> {
   const authorization = authorizeManager<FleetVehicle>(input.actorRole, "fleet.vehicle.manage");
   if (authorization) {
@@ -305,6 +430,10 @@ export async function updateVehicle(input: UpdateVehicleInput): Promise<Mutation
   }
   const vehicle = parseVehicle(response.data);
   return vehicle ? ok(vehicle) : validationError("The vehicle could not be updated.");
+}
+
+export function deactivateVehicle(input: DeactivateVehicleInput): Promise<MutationResult<FleetVehicle>> {
+  return updateVehicle({ ...input, status: "inactive" });
 }
 
 export async function assignDriverVehicle(

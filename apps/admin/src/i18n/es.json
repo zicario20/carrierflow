@@ -16,5 +16,12 @@
   "status": {
     "label": "Estado de la carga",
     "onTime": "A tiempo"
+  },
+  "fleet": {
+    "heading": "Flota",
+    "setupHeading": "Configuración de flota",
+    "emptyState": "Todavía no hay conductores ni vehículos disponibles.",
+    "unavailableDescription": "Los controles de flota administrados por el despachador aparecerán aquí cuando el flujo de operaciones autenticado esté conectado.",
+    "returnToOverview": "Volver al resumen de operaciones"
   }
 }

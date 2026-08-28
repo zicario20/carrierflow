@@ -1,6 +1,6 @@
 begin;
 
-select plan(48);
+select plan(58);
 
 \set tenant_fixture_setup true
 \ir helpers/tenant-fixtures.sql
@@ -92,6 +92,10 @@ select ok((select relrowsecurity from pg_class where oid = 'public.drivers'::reg
 select ok((select relrowsecurity from pg_class where oid = 'public.vehicles'::regclass), 'enables RLS on vehicles');
 select ok((select relrowsecurity from pg_class where oid = 'public.driver_vehicle_assignments'::regclass), 'enables RLS on driver vehicle assignments');
 select ok((select relrowsecurity from pg_class where oid = 'public.driver_shifts'::regclass), 'enables RLS on driver shifts');
+select ok((select relforcerowsecurity from pg_class where oid = 'public.drivers'::regclass), 'forces RLS on drivers');
+select ok((select relforcerowsecurity from pg_class where oid = 'public.vehicles'::regclass), 'forces RLS on vehicles');
+select ok((select relforcerowsecurity from pg_class where oid = 'public.driver_vehicle_assignments'::regclass), 'forces RLS on driver vehicle assignments');
+select ok((select relforcerowsecurity from pg_class where oid = 'public.driver_shifts'::regclass), 'forces RLS on driver shifts');
 
 select ok(
   not has_table_privilege('authenticated', 'public.drivers', 'insert,update,delete'),
@@ -104,6 +108,10 @@ select ok(
 select ok(
   not has_table_privilege('authenticated', 'public.driver_shifts', 'insert,update,delete'),
   'authenticated clients have no direct shift mutations'
+);
+select ok(
+  not has_table_privilege('authenticated', 'public.driver_vehicle_assignments', 'insert,update,delete'),
+  'authenticated clients have no direct assignment mutations'
 );
 
 set local role authenticated;
@@ -165,6 +173,23 @@ select is(
   1::bigint,
   'an authorized assignment writes an audit event'
 );
+select throws_ok(
+  $$insert into public.driver_vehicle_assignments (company_id, driver_id, vehicle_id, assigned_by)
+    values (
+      '11111111-1111-1111-1111-111111111111'::uuid,
+      (select id from public.drivers where membership_id = '41414141-4141-4141-4141-414141414141'::uuid),
+      (select id from public.vehicles where unit_number = 'A-101'),
+      '12121212-1212-1212-1212-121212121212'::uuid
+    )$$,
+  '42501',
+  null,
+  'an authenticated dispatcher cannot write assignments outside the RPC boundary'
+);
+select is(
+  (select count(*) from public.driver_vehicle_assignments where unassigned_at is null),
+  1::bigint,
+  'a denied direct assignment mutation leaves the persisted assignment unchanged'
+);
 
 select throws_ok(
   $$select * from public.create_vehicle(
@@ -186,6 +211,26 @@ select is(
   (select count(*) from public.audit_events where after_data ->> 'unitNumber' = 'B-UNAUTHORIZED'),
   0::bigint,
   'a cross-company rejection does not audit a vehicle mutation'
+);
+select throws_ok(
+  $$select * from public.create_driver(
+    '22222222-2222-2222-2222-222222222222'::uuid,
+    '51515151-5151-5151-5151-515151515151'::uuid,
+    'Cross Tenant Driver'
+  )$$,
+  '42501',
+  'only active owners, admins, or dispatchers may manage fleet resources',
+  'a dispatcher cannot create a driver for another company'
+);
+select is(
+  (select count(*) from public.drivers where display_name = 'Cross Tenant Driver'),
+  0::bigint,
+  'a cross-company driver rejection does not create a driver'
+);
+select is(
+  (select count(*) from public.audit_events where after_data ->> 'displayName' = 'Cross Tenant Driver'),
+  0::bigint,
+  'a cross-company driver rejection does not audit a driver mutation'
 );
 
 reset role;

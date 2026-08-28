@@ -9,16 +9,31 @@ import FleetPage from "../src/app/(ops)/fleet/page";
 afterEach(cleanup);
 
 describe("FleetPage", () => {
-  test("offers a semantic empty fleet state without promising disconnected mutations", () => {
-    render(<FleetPage />);
+  test.each([
+    {
+      emptyState: "No drivers or vehicles are available yet.",
+      heading: "Fleet",
+      locale: "en" as const,
+      returnLabel: "Return to operations overview",
+      setup: "Fleet setup",
+    },
+    {
+      emptyState: "Todavía no hay conductores ni vehículos disponibles.",
+      heading: "Flota",
+      locale: "es" as const,
+      returnLabel: "Volver al resumen de operaciones",
+      setup: "Configuración de flota",
+    },
+  ])("offers a semantic $locale empty fleet state without promising disconnected mutations", (copy) => {
+    render(<FleetPage locale={copy.locale} />);
 
-    expect(screen.getByRole("heading", { level: 1, name: "Fleet" })).toBeTruthy();
-    const setup = screen.getByRole("region", { name: "Fleet setup" });
+    expect(screen.getByRole("heading", { level: 1, name: copy.heading })).toBeTruthy();
+    const setup = screen.getByRole("region", { name: copy.setup });
     expect(setup).toBeTruthy();
     expect(setup.getAttribute("style")).toContain("border-radius: 12px");
-    expect(screen.getByText("No drivers or vehicles are available yet.")).toBeTruthy();
+    expect(screen.getByText(copy.emptyState)).toBeTruthy();
 
-    const returnLink = screen.getByRole("link", { name: "Return to operations overview" });
+    const returnLink = screen.getByRole("link", { name: copy.returnLabel });
     expect(returnLink.getAttribute("href")).toBe("/");
   });
 });

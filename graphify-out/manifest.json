@@ -300,15 +300,15 @@
     "semantic_hash": ""
   },
   "apps/admin/src/i18n/en.json": {
-    "mtime": 1787892933.1554468,
-    "seen": 1787892970.713596,
-    "ast_hash": "a8aad8b29d799bd4daa2653512ab2597",
+    "mtime": 1787894546.4535232,
+    "seen": 1787894709.5084357,
+    "ast_hash": "227a7b44d68b30375a2ee0d48dcbd203",
     "semantic_hash": ""
   },
   "apps/admin/src/i18n/es.json": {
-    "mtime": 1787892933.1554468,
-    "seen": 1787892970.7135973,
-    "ast_hash": "7fe8376446fa2fb4bbc38acacc44cfe6",
+    "mtime": 1787894546.4545262,
+    "seen": 1787894709.5084364,
+    "ast_hash": "a7cbae2acb34ac7e886f9e7eb9f293bf",
     "semantic_hash": ""
   },
   "apps/admin/tests/ui/shell-a11y.test.tsx": {
@@ -330,27 +330,27 @@
     "semantic_hash": ""
   },
   "apps/admin/src/app/(ops)/fleet/page.tsx": {
-    "mtime": 1787893983.820601,
-    "seen": 1787894139.6923747,
-    "ast_hash": "e61f4b02e88e006f33ffe357b96d1bcb",
+    "mtime": 1787894546.4555256,
+    "seen": 1787894709.5083184,
+    "ast_hash": "198427b3b603f320eb7b9031c4d456fb",
     "semantic_hash": ""
   },
   "apps/admin/src/server/fleet/fleet-service.ts": {
-    "mtime": 1787893826.1796625,
-    "seen": 1787894139.6928742,
-    "ast_hash": "def640245291725462900e6472df07c6",
+    "mtime": 1787894626.8092647,
+    "seen": 1787894709.508778,
+    "ast_hash": "0749675dd94b0d97e0d4ab1a0389f49f",
     "semantic_hash": ""
   },
   "apps/admin/tests/fleet-page.test.tsx": {
-    "mtime": 1787893976.0394285,
-    "seen": 1787894139.6929848,
-    "ast_hash": "a5397ec8da855ac2557ba036294fe94d",
+    "mtime": 1787894509.7265875,
+    "seen": 1787894709.5088892,
+    "ast_hash": "974822db8d3a3f30dee98bece6bbfa26",
     "semantic_hash": ""
   },
   "apps/admin/tests/fleet-service.test.ts": {
-    "mtime": 1787893392.7352602,
-    "seen": 1787894139.6929855,
-    "ast_hash": "d4eee6ea35172d294c7ccbb8380ab65d",
+    "mtime": 1787894509.7265875,
+    "seen": 1787894709.5088902,
+    "ast_hash": "3f5ff754b1dcb9ed5702c7675b3141fc",
     "semantic_hash": ""
   }
 }

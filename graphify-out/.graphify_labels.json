@@ -1,7 +1,7 @@
 {
   "0": "compilerOptions",
   "1": "fleet-service.ts",
-  "2": "devDependencies",
+  "2": "admin/package.json",
   "3": "scripts",
   "4": "scripts",
   "5": "dependencies",
