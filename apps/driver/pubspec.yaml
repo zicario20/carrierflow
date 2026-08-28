@@ -1,0 +1,31 @@
+name: carrierflow_driver
+description: CarrierFlow's privacy-conscious driver companion for mandatory assigned loads.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.13.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  supabase_flutter: 2.17.2
+  firebase_core: 4.14.0
+  firebase_messaging: 16.6.0
+  drift: 2.34.3
+  drift_flutter: 0.3.1
+  connectivity_plus: 7.3.1
+  url_launcher: 6.3.2
+  geolocator: 14.0.3
+  workmanager: 0.10.9
+  maplibre_gl: 0.27.0
+  flutter_secure_storage: 11.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

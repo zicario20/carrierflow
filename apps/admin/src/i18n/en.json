@@ -1,0 +1,51 @@
+{
+  "brand": "CarrierFlow",
+  "navigation": {
+    "label": "Primary navigation",
+    "skipToMain": "Skip to main content",
+    "operations": "Operations",
+    "loads": "Loads",
+    "drivers": "Drivers",
+    "vehicles": "Vehicles",
+    "fleet": "Fleet",
+    "plan": "Plan"
+  },
+  "home": {
+    "heading": "CarrierFlow",
+    "description": "Carrier operations, connected."
+  },
+  "main": {
+    "label": "Operations workspace",
+    "heading": "Operations overview",
+    "description": "Dispatch work stays organized, visible, and ready for the road."
+  },
+  "status": {
+    "label": "Load status",
+    "onTime": "On time"
+  },
+  "fleet": {
+    "heading": "Fleet",
+    "setupHeading": "Fleet setup",
+    "emptyState": "No drivers or vehicles are available yet.",
+    "unavailableDescription": "Dispatcher-managed fleet controls will appear here once the authenticated operations workflow is connected.",
+    "returnToOverview": "Return to operations overview"
+  },
+  "placeholder": {
+    "operations": {
+      "heading": "Operations",
+      "description": "Operations tools will arrive in a later phase."
+    },
+    "loads": {
+      "heading": "Loads",
+      "description": "Load management will arrive in a later phase."
+    },
+    "drivers": {
+      "heading": "Drivers",
+      "description": "Driver management will arrive in a later phase."
+    },
+    "vehicles": {
+      "heading": "Vehicles",
+      "description": "Vehicle management will arrive in a later phase."
+    }
+  }
+}

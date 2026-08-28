@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Android 10+: requested only for an active load after foreground consent. -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application android:label="CarrierFlow">
+        <!-- Product disclosure only; this declaration does not promise tracking after force-quit. -->
+        <meta-data
+            android:name="carrierflow.tracking.notice"
+            android:value="Location is collected only while on duty or completing an assigned load. Background updates are best effort and stop after force-quit or permission revocation." />
+    </application>
+</manifest>

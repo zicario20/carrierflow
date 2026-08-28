@@ -1,0 +1,47 @@
+http:
+  middlewares:
+    redirect-to-tls:
+      redirectScheme:
+        scheme: https
+        permanent: true
+    secure-response-headers:
+      headers:
+        contentTypeNosniff: true
+        frameDeny: true
+        referrerPolicy: no-referrer
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+    strip-supabase-prefix:
+      stripPrefix:
+        prefixes: [/supabase]
+  routers:
+    carrierflow-http:
+      entryPoints: [web]
+      middlewares: [redirect-to-tls]
+      rule: "Host(`{{ env \"DOKPLOY_DOMAIN\" }}`)"
+      service: carrierflow-admin
+    carrierflow-admin:
+      entryPoints: [websecure]
+      middlewares: [secure-response-headers]
+      rule: "Host(`{{ env \"DOKPLOY_DOMAIN\" }}`)"
+      service: carrierflow-admin
+      tls:
+        certResolver: letsencrypt
+    carrierflow-supabase:
+      entryPoints: [websecure]
+      middlewares: [secure-response-headers, strip-supabase-prefix]
+      priority: 100
+      rule: "Host(`{{ env \"DOKPLOY_DOMAIN\" }}`) && PathPrefix(`/supabase`)"
+      service: supabase-api
+      tls:
+        certResolver: letsencrypt
+  services:
+    carrierflow-admin:
+      loadBalancer:
+        servers:
+          - url: http://carrierflow-admin:3000
+    supabase-api:
+      loadBalancer:
+        servers:
+          - url: http://supabase-api:8000

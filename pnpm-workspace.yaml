@@ -1,0 +1,14 @@
+packages:
+  - apps/*
+  - packages/*
+ignoredOptionalDependencies:
+  # CarrierFlow uses Firebase Admin only for FCM. These optional Admin SDK
+  # adapters are not imported and pull an unrelated vulnerable UUID chain.
+  - '@google-cloud/firestore'
+  - '@google-cloud/storage'
+allowBuilds:
+  # Both packages ship prebuilt runtime artifacts. Do not authorize their
+  # postinstall hooks: @firebase/util can read configuration and issue an
+  # external request, while protobufjs only prints a compatibility warning.
+  '@firebase/util': false
+  protobufjs: false

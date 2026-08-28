@@ -1,0 +1,145 @@
+name: carrierflow
+
+# Dokploy injects all ${...} values from its non-versioned environment store.
+# Never place credentials, backup targets, or production URLs in this repository.
+services:
+  tls-proxy:
+    image: ${CARRIERFLOW_TRAEFIK_IMAGE:?set a pinned Traefik image in Dokploy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    read_only: true
+    security_opt: [no-new-privileges:true]
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOKPLOY_DOMAIN: ${DOKPLOY_DOMAIN:?set the public TLS domain in Dokploy}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:?set the TLS certificate contact in Dokploy}
+    command:
+      - --api.dashboard=false
+      - --certificatesresolvers.letsencrypt.acme.email=$${LETSENCRYPT_EMAIL}
+      - --certificatesresolvers.letsencrypt.acme.storage=/data/acme.json
+      - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --providers.file.filename=/etc/traefik/dynamic.yml
+      - --providers.file.watch=true
+    volumes:
+      - ./traefik_dynamic.yml:/etc/traefik/dynamic.yml:ro
+      - tls_proxy_data:/data
+    tmpfs:
+      - /tmp
+    networks: [edge_public, app_private]
+
+  carrierflow-admin:
+    image: ${CARRIERFLOW_ADMIN_IMAGE:?set a pinned CarrierFlow admin image in Dokploy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file:
+      - ${CARRIERFLOW_ADMIN_ENV_FILE:?set the non-versioned admin env file in Dokploy}
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL:?set the public Supabase TLS URL in Dokploy}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY:?set the public anon key in Dokploy}
+      SUPABASE_URL: ${SUPABASE_URL:?set the private Supabase API URL in Dokploy}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY:?set only in Dokploy}
+      PUSH_TOKEN_ENCRYPTION_KEY: ${PUSH_TOKEN_ENCRYPTION_KEY:?set only in Dokploy}
+      FCM_SERVICE_ACCOUNT_JSON: ${FCM_SERVICE_ACCOUNT_JSON:?set only in Dokploy}
+      PUSH_WORKER_SECRET: ${PUSH_WORKER_SECRET:?set only in Dokploy}
+    depends_on:
+      supabase-api:
+        condition: service_started
+    networks: [app_private, monitor_private, egress_controlled]
+
+  push-dispatcher:
+    image: ${CARRIERFLOW_PUSH_DISPATCHER_IMAGE:?set a pinned curl-capable image in Dokploy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    read_only: true
+    security_opt: [no-new-privileges:true]
+    env_file:
+      - ${CARRIERFLOW_PUSH_DISPATCHER_ENV_FILE:?set the non-versioned dispatcher env file in Dokploy}
+    environment:
+      PUSH_WORKER_SECRET: ${PUSH_WORKER_SECRET:?set only in Dokploy}
+      PUSH_DISPATCH_INTERVAL_SECONDS: ${PUSH_DISPATCH_INTERVAL_SECONDS:-60}
+    command:
+      - sh
+      - -ec
+      - >-
+        while true; do
+          curl --fail --silent --show-error --request POST
+          --header "x-carrierflow-push-worker-secret: $${PUSH_WORKER_SECRET}"
+          http://carrierflow-admin:3000/api/internal/push/dispatch || true;
+          sleep "$${PUSH_DISPATCH_INTERVAL_SECONDS}";
+        done
+    depends_on:
+      carrierflow-admin:
+        condition: service_started
+    networks: [app_private]
+
+  supabase-db:
+    image: ${CARRIERFLOW_SUPABASE_DB_IMAGE:?set the approved pinned Supabase Postgres image in Dokploy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file:
+      - ${CARRIERFLOW_SUPABASE_DB_ENV_FILE:?set the non-versioned database env file in Dokploy}
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set only in Dokploy}
+    volumes:
+      - supabase_db_data:/var/lib/postgresql/data
+    networks: [data_private, monitor_private]
+
+  supabase-api:
+    image: ${CARRIERFLOW_SUPABASE_API_IMAGE:?set the approved pinned Supabase API image in Dokploy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file:
+      - ${CARRIERFLOW_SUPABASE_API_ENV_FILE:?set the non-versioned Supabase API env file in Dokploy}
+    depends_on:
+      supabase-db:
+        condition: service_started
+      supabase-storage:
+        condition: service_started
+    networks: [app_private, data_private]
+
+  supabase-storage:
+    image: ${CARRIERFLOW_SUPABASE_STORAGE_IMAGE:?set the approved pinned Supabase Storage image in Dokploy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file:
+      - ${CARRIERFLOW_SUPABASE_STORAGE_ENV_FILE:?set the non-versioned Supabase Storage env file in Dokploy}
+    volumes:
+      - supabase_storage_data:/var/lib/carrierflow/storage
+    networks: [data_private]
+
+  monitoring:
+    image: ${CARRIERFLOW_MONITORING_IMAGE:?set a pinned private monitoring image in Dokploy}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file:
+      - ${CARRIERFLOW_MONITORING_ENV_FILE:?set the non-versioned monitoring env file in Dokploy}
+    volumes:
+      - monitoring_data:/var/lib/carrierflow/monitoring
+    networks: [monitor_private]
+
+networks:
+  edge_public: {}
+  app_private:
+    internal: true
+  data_private:
+    internal: true
+  egress_controlled: {}
+  monitor_private:
+    internal: true
+
+volumes:
+  monitoring_data: {}
+  supabase_db_data: {}
+  supabase_storage_data: {}
+  tls_proxy_data: {}
