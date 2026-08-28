@@ -15,7 +15,7 @@ const localeExpectations = [
     mainName: "Operations workspace",
     statusName: "Load status: On time",
     statusText: "Load status: On time",
-    links: ["Operations", "Loads", "Drivers", "Vehicles"],
+    links: ["Operations", "Loads", "Drivers", "Vehicles", "Fleet"],
   },
   {
     locale: "es",
@@ -24,7 +24,7 @@ const localeExpectations = [
     mainName: "Espacio de trabajo de operaciones",
     statusName: "Estado de la carga: A tiempo",
     statusText: "Estado de la carga: A tiempo",
-    links: ["Operaciones", "Cargas", "Conductores", "Vehículos"],
+    links: ["Operaciones", "Cargas", "Conductores", "Vehículos", "Flota"],
   },
 ] as const;
 
@@ -39,8 +39,8 @@ describe("AdminShell", () => {
       const skipLink = screen.getByRole("link", { name: expectation.skipLinkName });
       const links = expectation.links.map((name) => within(navigation).getByRole("link", { name }));
 
-      expect(within(navigation).getAllByRole("link")).toHaveLength(4);
-      expect(links).toHaveLength(4);
+      expect(within(navigation).getAllByRole("link")).toHaveLength(5);
+      expect(links).toHaveLength(5);
       const main = screen.getByRole("main", { name: expectation.mainName });
       expect(main.id).toBe("operations-main");
       expect(skipLink.getAttribute("href")).toBe(`#${main.id}`);
@@ -61,7 +61,7 @@ describe("AdminShell", () => {
     const navigation = screen.getByRole("navigation", { name: "Primary navigation" });
     const controls = within(navigation).getAllByRole("link");
 
-    expect(controls).toHaveLength(4);
+    expect(controls).toHaveLength(5);
     for (const control of controls) {
       expect(control.classList.contains("carrierflow-control")).toBe(true);
       expect(control.textContent).not.toBe("");

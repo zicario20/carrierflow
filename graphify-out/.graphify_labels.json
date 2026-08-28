@@ -18,7 +18,7 @@
   "16": "layout.tsx",
   "17": "Private evidence needs authorized short-lived signed access, while public tracking is a load-scoped expiring/revocable minimal-data token with no session creation.",
   "18": "next-env.d.ts",
-  "19": "page.tsx",
+  "19": "admin-navigation.e2e.spec.ts",
   "20": "Workspace execution contract mandates authorized service/RPC architecture, current/history location separation, TLS-only public exposure, domain rules before edits, and declared verification commands.",
   "21": "workspace/playwright.config.ts",
   "22": "pnpm workspace intentionally includes only apps and packages, excluding blueprint artifacts from the application workspace.",

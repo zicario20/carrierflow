@@ -1,16 +1,16 @@
 # Graph Report - phase-1-foundation  (2026-08-28)
 
 ## Corpus Check
-- 64 files · ~31,803 words
+- 74 files · ~33,648 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 342 nodes · 423 edges · 34 communities (31 shown, 3 thin omitted)
+- 358 nodes · 478 edges · 34 communities (31 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d271e26e`
+- Built from commit: `42db9df6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,15 +39,15 @@
 - Design System Master File
 
 ## God Nodes (most connected - your core abstractions)
-1. `ok()` - 16 edges
-2. `validationError()` - 15 edges
-3. `databaseFailure()` - 13 edges
-4. `forbidden()` - 10 edges
-5. `compilerOptions` - 10 edges
-6. `authorize()` - 9 edges
-7. `compilerOptions` - 9 edges
-8. `mutateOwnShift()` - 8 edges
-9. `scripts` - 8 edges
+1. `getRequestLocale()` - 16 edges
+2. `ok()` - 16 edges
+3. `validationError()` - 15 edges
+4. `databaseFailure()` - 13 edges
+5. `forbidden()` - 10 edges
+6. `compilerOptions` - 10 edges
+7. `authorize()` - 9 edges
+8. `compilerOptions` - 9 edges
+9. `mutateOwnShift()` - 8 edges
 10. `scripts` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -78,7 +78,7 @@ Nodes (20): compilerOptions, baseUrl, ignoreDeprecations, module, moduleResoluti
 
 ### Community 1 - "fleet-service.ts"
 Cohesion: 0.09
-Nodes (50): createCompanyInvitation(), assignDriverVehicle(), AssignDriverVehicleInput, authorizeManager(), createDriver(), CreateDriverInput, createVehicle(), CreateVehicleInput (+42 more)
+Nodes (48): assignDriverVehicle(), AssignDriverVehicleInput, authorizeManager(), createDriver(), CreateDriverInput, createVehicle(), CreateVehicleInput, databaseFailure() (+40 more)
 
 ### Community 2 - "admin/package.json"
 Cohesion: 0.09
@@ -105,8 +105,8 @@ Cohesion: 0.10
 Nodes (21): Only authorized admin/dispatcher roles can assign, reassign, cancel, or close loads; drivers never receive those controls., Server-enforced auditable transitions, configurable evidence, consented GPS, durable offline idempotency, scoped public links, and bilingual accessible UX are inseparable product requirements., All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization., Web and Flutter use validated server handlers/RPC; direct table mutations are prohibited and authorized mutations are transactional, RLS-protected, audited, and typed., Dokploy production Compose exposes only the TLS proxy and isolates application, self-hosted Supabase/data, and monitoring; backup restore, security, accessibility, device, and CI evidence gate pilot release., Administrative and operational load states are server-only; delivery requires pickup plus configured evidence, while incidents preserve the active load., Empty, loaded, total estimated miles, and quote per total mile are separately persisted; next-load deadhead begins at the active load's final planned stop and invalidations create immutable revisions and notifications., Flutter persists mutations before networking and represents denied, approximate, stale, and force-quit location states as degraded; background tracking is best effort for active loads. (+13 more)
 
 ### Community 8 - "write-audit.ts"
-Cohesion: 0.13
-Nodes (15): CompanyInvitation, CreateCompanyInvitationInput, InvitationRpcArguments, InvitationRpcRow, RpcError, TrustedSupabaseServerClient, AdministrativePermission, authorize() (+7 more)
+Cohesion: 0.14
+Nodes (17): CompanyInvitation, createCompanyInvitation(), CreateCompanyInvitationInput, InvitationRpcArguments, InvitationRpcRow, RpcError, TrustedSupabaseServerClient, AdministrativePermission (+9 more)
 
 ### Community 9 - "compilerOptions"
 Cohesion: 0.10
@@ -137,8 +137,8 @@ Cohesion: 0.67
 Nodes (3): Architect, Superpowers, Cyber Neo, UI UX Pro Max, and Graphify have distinct delivery ownership; Graphify is consulted before broad exploration and updated after durable changes., Five tracked project-scoped skills are required build artifacts; governance augments but never replaces them, and bootstrap is idempotent without overwriting existing artifacts., CarrierFlow governance assigns architecture, disciplined implementation, security remediation, UX accessibility, and graph memory to named roles while allowing safe autonomous action.
 
 ### Community 16 - "layout.tsx"
-Cohesion: 0.12
-Nodes (16): AdminLocale, AdminShell(), adminShellCss, AdminShellProps, CssVariables, messages, metadata, tokenizedBodyStyle (+8 more)
+Cohesion: 0.11
+Nodes (25): AdminShell(), adminShellCss, AdminShellProps, CssVariables, metadata, RootLayout(), tokenizedBodyStyle, DriversPage() (+17 more)
 
 ### Community 17 - "Private evidence needs authorized short-lived signed access, while public tracking is a load-scoped expiring/revocable minimal-data token with no session creation."
 Cohesion: 0.67
@@ -149,7 +149,7 @@ Cohesion: 0.11
 Nodes (17): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, Cards, Color Palette, Component Specs, Design System Master File, Global Rules (+9 more)
 
 ## Knowledge Gaps
-- **178 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+173 more)
+- **175 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+170 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -157,13 +157,13 @@ Nodes (17): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, 
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `admin/package.json`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _178 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _175 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
 - **Should `fleet-service.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.08874912648497554 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08974358974358974 - nodes in this community are weakly interconnected._
 - **Should `admin/package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**

@@ -6,7 +6,12 @@
     "operations": "Operaciones",
     "loads": "Cargas",
     "drivers": "Conductores",
-    "vehicles": "Vehículos"
+    "vehicles": "Vehículos",
+    "fleet": "Flota"
+  },
+  "home": {
+    "heading": "CarrierFlow",
+    "description": "Operaciones de transporte conectadas."
   },
   "main": {
     "label": "Espacio de trabajo de operaciones",
@@ -23,5 +28,23 @@
     "emptyState": "Todavía no hay conductores ni vehículos disponibles.",
     "unavailableDescription": "Los controles de flota administrados por el despachador aparecerán aquí cuando el flujo de operaciones autenticado esté conectado.",
     "returnToOverview": "Volver al resumen de operaciones"
+  },
+  "placeholder": {
+    "operations": {
+      "heading": "Operaciones",
+      "description": "Las herramientas de operaciones estarán disponibles en una fase posterior."
+    },
+    "loads": {
+      "heading": "Cargas",
+      "description": "La gestión de cargas estará disponible en una fase posterior."
+    },
+    "drivers": {
+      "heading": "Conductores",
+      "description": "La gestión de conductores estará disponible en una fase posterior."
+    },
+    "vehicles": {
+      "heading": "Vehículos",
+      "description": "La gestión de vehículos estará disponible en una fase posterior."
+    }
   }
 }

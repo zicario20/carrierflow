@@ -6,7 +6,12 @@
     "operations": "Operations",
     "loads": "Loads",
     "drivers": "Drivers",
-    "vehicles": "Vehicles"
+    "vehicles": "Vehicles",
+    "fleet": "Fleet"
+  },
+  "home": {
+    "heading": "CarrierFlow",
+    "description": "Carrier operations, connected."
   },
   "main": {
     "label": "Operations workspace",
@@ -23,5 +28,23 @@
     "emptyState": "No drivers or vehicles are available yet.",
     "unavailableDescription": "Dispatcher-managed fleet controls will appear here once the authenticated operations workflow is connected.",
     "returnToOverview": "Return to operations overview"
+  },
+  "placeholder": {
+    "operations": {
+      "heading": "Operations",
+      "description": "Operations tools will arrive in a later phase."
+    },
+    "loads": {
+      "heading": "Loads",
+      "description": "Load management will arrive in a later phase."
+    },
+    "drivers": {
+      "heading": "Drivers",
+      "description": "Driver management will arrive in a later phase."
+    },
+    "vehicles": {
+      "heading": "Vehicles",
+      "description": "Vehicle management will arrive in a later phase."
+    }
   }
 }

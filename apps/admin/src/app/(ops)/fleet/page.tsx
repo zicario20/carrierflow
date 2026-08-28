@@ -1,22 +1,10 @@
 import { operationalTokens } from "../../../../../../packages/design-tokens/src/tokens";
-import type { AdminLocale } from "../../layout";
-import englishMessages from "../../../i18n/en.json";
-import spanishMessages from "../../../i18n/es.json";
-
-type FleetCopy = typeof englishMessages.fleet;
-
-const fleetMessages: Record<AdminLocale, FleetCopy> = {
-  en: englishMessages.fleet,
-  es: spanishMessages.fleet,
-};
-
-export type FleetPageProps = Readonly<{
-  /** Defaults to English until the authenticated locale preference is wired. */
-  locale?: AdminLocale;
-}>;
+import { adminMessages } from "../../../i18n/messages";
+import type { AdminLocale } from "../../../i18n/locale";
+import { getRequestLocale } from "../../../i18n/request-locale";
 
 export function FleetContent({ locale }: Readonly<{ locale: AdminLocale }>) {
-  const copy = fleetMessages[locale];
+  const copy = adminMessages[locale].fleet;
 
   return (
     <section aria-labelledby="fleet-heading">
@@ -43,6 +31,6 @@ export function FleetContent({ locale }: Readonly<{ locale: AdminLocale }>) {
   );
 }
 
-export default function FleetPage({ locale = "en" }: FleetPageProps = {}) {
-  return <FleetContent locale={locale} />;
+export default async function FleetPage() {
+  return <FleetContent locale={await getRequestLocale()} />;
 }

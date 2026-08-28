@@ -2,24 +2,18 @@ import type { Metadata } from "next";
 import type { CSSProperties, ReactNode } from "react";
 
 import { operationalCssVariables, operationalTokens } from "../../../../packages/design-tokens/src/tokens";
-import englishMessages from "../i18n/en.json";
-import spanishMessagesSource from "../i18n/es.json";
+import { adminMessages } from "../i18n/messages";
+import type { AdminLocale } from "../i18n/locale";
+import { getRequestLocale } from "../i18n/request-locale";
 
 export const metadata: Metadata = {
   title: "CarrierFlow",
   description: "Carrier operations platform",
 };
 
-export type AdminLocale = "en" | "es";
-
-type Translation = typeof englishMessages;
 type CssVariables = CSSProperties & Record<`--${string}`, string>;
 
-const spanishMessages: Translation = spanishMessagesSource;
-const messages: Record<AdminLocale, Translation> = {
-  en: englishMessages,
-  es: spanishMessages,
-};
+export type { AdminLocale } from "../i18n/locale";
 
 export const adminShellCss = `
   *, *::before, *::after { box-sizing: border-box; }
@@ -96,12 +90,13 @@ type AdminShellProps = Readonly<{
 }>;
 
 function ShellContent({ children, locale }: AdminShellProps) {
-  const copy = messages[locale];
+  const copy = adminMessages[locale];
   const navigationItems = [
     { href: "/operations", label: copy.navigation.operations },
     { href: "/loads", label: copy.navigation.loads },
     { href: "/drivers", label: copy.navigation.drivers },
     { href: "/vehicles", label: copy.navigation.vehicles },
+    { href: "/fleet", label: copy.navigation.fleet },
   ];
 
   return (
@@ -166,11 +161,13 @@ export function AdminShell({ children, locale }: AdminShellProps) {
   return <ShellContent locale={locale}>{children}</ShellContent>;
 }
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  const locale = await getRequestLocale();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body style={{ margin: 0 }}>
-        <AdminShell locale="en">{children}</AdminShell>
+        <AdminShell locale={locale}>{children}</AdminShell>
       </body>
     </html>
   );

@@ -358,19 +358,6 @@
       "source_location": "L1"
     },
     {
-      "id": "apps_admin_src_app_layout_adminlocale",
-      "label": "AdminLocale",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "layout.tsx",
-      "file_type": "code",
-      "norm_label": "adminlocale",
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L13"
-    },
-    {
       "id": "apps_admin_src_app_layout_adminshellprops",
       "label": "AdminShellProps",
       "_callable": true,
@@ -381,7 +368,7 @@
       "file_type": "code",
       "norm_label": "adminshellprops",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L93"
+      "source_location": "L87"
     },
     {
       "id": "apps_admin_src_app_layout_cssvariables",
@@ -394,46 +381,59 @@
       "file_type": "code",
       "norm_label": "cssvariables",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L16"
+      "source_location": "L14"
     },
     {
-      "id": "apps_admin_src_app_layout_translation",
-      "label": "Translation",
+      "id": "apps_admin_src_app_ops_operational_placeholder_placeholderdestination",
+      "label": "PlaceholderDestination",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "layout.tsx",
       "file_type": "code",
-      "norm_label": "translation",
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L15"
+      "norm_label": "placeholderdestination",
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L4"
     },
     {
-      "id": "apps_admin_src_app_ops_fleet_page_fleetcopy",
-      "label": "FleetCopy",
+      "id": "apps_admin_src_i18n_locale_adminlocale",
+      "label": "AdminLocale",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "layout.tsx",
       "file_type": "code",
-      "norm_label": "fleetcopy",
-      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L6"
+      "norm_label": "adminlocale",
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L1"
     },
     {
-      "id": "apps_admin_src_app_ops_fleet_page_fleetpageprops",
-      "label": "FleetPageProps",
+      "id": "apps_admin_src_i18n_locale_localecandidate",
+      "label": "LocaleCandidate",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "layout.tsx",
       "file_type": "code",
-      "norm_label": "fleetpageprops",
-      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L13"
+      "norm_label": "localecandidate",
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "apps_admin_src_i18n_messages_adminmessages",
+      "label": "AdminMessages",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "adminmessages",
+      "source_file": "apps/admin/src/i18n/messages.ts",
+      "source_location": "L5"
     },
     {
       "id": "packages_design_tokens_src_tokens_operationaltokens",
@@ -616,18 +616,6 @@
       "norm_label": "validationerrorresult",
       "source_file": "apps/admin/src/server/result.ts",
       "source_location": "L14"
-    },
-    {
-      "id": "apps_admin_src_server_audit_write_audit_createcompanyinvitation",
-      "label": "createCompanyInvitation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "fleet-service.ts",
-      "file_type": "code",
-      "norm_label": "createcompanyinvitation()",
-      "source_file": "apps/admin/src/server/audit/write-audit.ts",
-      "source_location": "L62"
     },
     {
       "id": "apps_admin_src_server_fleet_fleet_service_assigndrivervehicle",
@@ -906,18 +894,6 @@
       "source_location": "L414"
     },
     {
-      "id": "apps_admin_src_server_result_forbidden",
-      "label": "forbidden()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "fleet-service.ts",
-      "file_type": "code",
-      "norm_label": "forbidden()",
-      "source_file": "apps/admin/src/server/result.ts",
-      "source_location": "L29"
-    },
-    {
       "id": "apps_admin_src_server_result_ok",
       "label": "ok()",
       "_callable": true,
@@ -1023,7 +999,7 @@
       "file_type": "code",
       "norm_label": "adminshell()",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L165"
+      "source_location": "L160"
     },
     {
       "id": "apps_admin_src_app_layout_rootlayout",
@@ -1035,7 +1011,7 @@
       "file_type": "code",
       "norm_label": "rootlayout()",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L169"
+      "source_location": "L164"
     },
     {
       "id": "apps_admin_src_app_layout_shellcontent",
@@ -1047,7 +1023,19 @@
       "file_type": "code",
       "norm_label": "shellcontent()",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L98"
+      "source_location": "L92"
+    },
+    {
+      "id": "apps_admin_src_app_ops_drivers_page_driverspage",
+      "label": "DriversPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "driverspage()",
+      "source_file": "apps/admin/src/app/(ops)/drivers/page.tsx",
+      "source_location": "L4"
     },
     {
       "id": "apps_admin_src_app_ops_fleet_page_fleetcontent",
@@ -1059,7 +1047,7 @@
       "file_type": "code",
       "norm_label": "fleetcontent()",
       "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L18"
+      "source_location": "L6"
     },
     {
       "id": "apps_admin_src_app_ops_fleet_page_fleetpage",
@@ -1071,19 +1059,115 @@
       "file_type": "code",
       "norm_label": "fleetpage()",
       "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L46"
+      "source_location": "L34"
+    },
+    {
+      "id": "apps_admin_src_app_ops_loads_page_loadspage",
+      "label": "LoadsPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "loadspage()",
+      "source_file": "apps/admin/src/app/(ops)/loads/page.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "apps_admin_src_app_ops_operational_placeholder_operationalplaceholder",
+      "label": "OperationalPlaceholder()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "operationalplaceholder()",
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "apps_admin_src_app_ops_operations_page_operationspage",
+      "label": "OperationsPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "operationspage()",
+      "source_file": "apps/admin/src/app/(ops)/operations/page.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "apps_admin_src_app_ops_vehicles_page_vehiclespage",
+      "label": "VehiclesPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "vehiclespage()",
+      "source_file": "apps/admin/src/app/(ops)/vehicles/page.tsx",
+      "source_location": "L4"
     },
     {
       "id": "apps_admin_src_app_page_homepage",
       "label": "HomePage()",
       "_callable": true,
       "_origin": "ast",
-      "community": 19,
-      "community_name": "page.tsx",
+      "community": 16,
+      "community_name": "layout.tsx",
       "file_type": "code",
       "norm_label": "homepage()",
       "source_file": "apps/admin/src/app/page.tsx",
-      "source_location": "L1"
+      "source_location": "L4"
+    },
+    {
+      "id": "apps_admin_src_i18n_locale_parsequality",
+      "label": "parseQuality()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "parsequality()",
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "apps_admin_src_i18n_locale_resolveadminlocale",
+      "label": "resolveAdminLocale()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "resolveadminlocale()",
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "label": "getRequestLocale()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "getrequestlocale()",
+      "source_file": "apps/admin/src/i18n/request-locale.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "apps_admin_src_server_audit_write_audit_createcompanyinvitation",
+      "label": "createCompanyInvitation()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "write-audit.ts",
+      "file_type": "code",
+      "norm_label": "createcompanyinvitation()",
+      "source_file": "apps/admin/src/server/audit/write-audit.ts",
+      "source_location": "L62"
     },
     {
       "id": "apps_admin_src_server_audit_write_audit_test_rpc",
@@ -1120,6 +1204,18 @@
       "norm_label": "haspermission()",
       "source_file": "apps/admin/src/server/auth/authorize.ts",
       "source_location": "L16"
+    },
+    {
+      "id": "apps_admin_src_server_result_forbidden",
+      "label": "forbidden()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "write-audit.ts",
+      "file_type": "code",
+      "norm_label": "forbidden()",
+      "source_file": "apps/admin/src/server/result.ts",
+      "source_location": "L29"
     },
     {
       "id": "tsconfig_base",
@@ -1584,18 +1680,7 @@
       "file_type": "code",
       "norm_label": "adminshellcss",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L24"
-    },
-    {
-      "id": "apps_admin_src_app_layout_messages",
-      "label": "messages",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "layout.tsx",
-      "file_type": "code",
-      "norm_label": "messages",
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L19"
+      "source_location": "L18"
     },
     {
       "id": "apps_admin_src_app_layout_metadata",
@@ -1606,7 +1691,7 @@
       "file_type": "code",
       "norm_label": "metadata",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "apps_admin_src_app_layout_tokenizedbodystyle",
@@ -1617,7 +1702,18 @@
       "file_type": "code",
       "norm_label": "tokenizedbodystyle",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L83"
+      "source_location": "L77"
+    },
+    {
+      "id": "apps_admin_src_app_ops_drivers_page",
+      "label": "drivers/page.tsx",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "drivers/page.tsx",
+      "source_file": "apps/admin/src/app/(ops)/drivers/page.tsx",
+      "source_location": "L1"
     },
     {
       "id": "apps_admin_src_app_ops_fleet_page",
@@ -1631,15 +1727,92 @@
       "source_location": "L1"
     },
     {
-      "id": "apps_admin_src_app_ops_fleet_page_fleetmessages",
-      "label": "fleetMessages",
+      "id": "apps_admin_src_app_ops_loads_page",
+      "label": "loads/page.tsx",
       "_origin": "ast",
       "community": 16,
       "community_name": "layout.tsx",
       "file_type": "code",
-      "norm_label": "fleetmessages",
-      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L8"
+      "norm_label": "loads/page.tsx",
+      "source_file": "apps/admin/src/app/(ops)/loads/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_admin_src_app_ops_operational_placeholder",
+      "label": "operational-placeholder.tsx",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "operational-placeholder.tsx",
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_admin_src_app_ops_operations_page",
+      "label": "operations/page.tsx",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "operations/page.tsx",
+      "source_file": "apps/admin/src/app/(ops)/operations/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_admin_src_app_ops_vehicles_page",
+      "label": "vehicles/page.tsx",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "vehicles/page.tsx",
+      "source_file": "apps/admin/src/app/(ops)/vehicles/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_admin_src_app_page",
+      "label": "app/page.tsx",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "app/page.tsx",
+      "source_file": "apps/admin/src/app/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_admin_src_i18n_locale",
+      "label": "locale.ts",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "locale.ts",
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_admin_src_i18n_messages",
+      "label": "messages.ts",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "messages.ts",
+      "source_file": "apps/admin/src/i18n/messages.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_admin_src_i18n_request_locale",
+      "label": "request-locale.ts",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "request-locale.ts",
+      "source_file": "apps/admin/src/i18n/request-locale.ts",
+      "source_location": "L1"
     },
     {
       "id": "apps_admin_tests_fleet_page_test",
@@ -1650,6 +1823,17 @@
       "file_type": "code",
       "norm_label": "fleet-page.test.tsx",
       "source_file": "apps/admin/tests/fleet-page.test.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_admin_tests_request_locale_test",
+      "label": "request-locale.test.ts",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "request-locale.test.ts",
+      "source_file": "apps/admin/tests/request-locale.test.ts",
       "source_location": "L1"
     },
     {
@@ -1719,14 +1903,14 @@
       "source_location": "L6"
     },
     {
-      "id": "apps_admin_src_app_page",
-      "label": "app/page.tsx",
+      "id": "tests_admin_navigation_e2e_spec",
+      "label": "admin-navigation.e2e.spec.ts",
       "_origin": "ast",
       "community": 19,
-      "community_name": "page.tsx",
+      "community_name": "admin-navigation.e2e.spec.ts",
       "file_type": "code",
-      "norm_label": "app/page.tsx",
-      "source_file": "apps/admin/src/app/page.tsx",
+      "norm_label": "admin-navigation.e2e.spec.ts",
+      "source_file": "tests/admin-navigation.e2e.spec.ts",
       "source_location": "L1"
     },
     {
@@ -4176,6 +4360,114 @@
   ],
   "links": [
     {
+      "source": "apps_admin_src_app_layout_rootlayout",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_drivers_page_driverspage",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/app/(ops)/drivers/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page_fleetpage",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_loads_page_loadspage",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/app/(ops)/loads/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operations_page_operationspage",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/app/(ops)/operations/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_vehicles_page_vehiclespage",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/app/(ops)/vehicles/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_page_homepage",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/app/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_locale_resolveadminlocale",
+      "target": "apps_admin_src_i18n_locale_parsequality",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "target": "apps_admin_src_i18n_locale_resolveadminlocale",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/admin/src/i18n/request-locale.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_src_lib_env_getsupabasepublicenv",
       "target": "apps_admin_src_lib_env_validatesupabaseurl",
       "relation": "calls",
@@ -5028,6 +5320,18 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_i18n_locale",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "export",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_tsconfig",
       "target": "ref_tsconfig_base_json",
       "relation": "extends",
@@ -5412,6 +5716,54 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_i18n_messages_adminmessages",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_drivers_page",
+      "target": "apps_admin_src_app_ops_operational_placeholder_operationalplaceholder",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/drivers/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_drivers_page",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/drivers/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_src_app_ops_fleet_page",
       "target": "packages_design_tokens_src_tokens_operationaltokens",
       "relation": "imports",
@@ -5425,7 +5777,7 @@
     },
     {
       "source": "apps_admin_src_app_ops_fleet_page",
-      "target": "apps_admin_src_app_layout_adminlocale",
+      "target": "apps_admin_src_i18n_messages_adminmessages",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5433,6 +5785,174 @@
       "context": "import",
       "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_i18n_locale_adminlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_loads_page",
+      "target": "apps_admin_src_app_ops_operational_placeholder_operationalplaceholder",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/loads/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_loads_page",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/loads/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operational_placeholder",
+      "target": "apps_admin_src_i18n_messages_adminmessages",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operational_placeholder",
+      "target": "apps_admin_src_i18n_locale_adminlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operations_page",
+      "target": "apps_admin_src_app_ops_operational_placeholder_operationalplaceholder",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/operations/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operations_page",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/operations/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_vehicles_page",
+      "target": "apps_admin_src_app_ops_operational_placeholder_operationalplaceholder",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/vehicles/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_vehicles_page",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/vehicles/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_page",
+      "target": "apps_admin_src_i18n_messages_adminmessages",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_page",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_messages",
+      "target": "apps_admin_src_i18n_locale_adminlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/i18n/messages.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_request_locale",
+      "target": "apps_admin_src_i18n_locale_resolveadminlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/i18n/request-locale.ts",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -5653,7 +6173,7 @@
     },
     {
       "source": "apps_admin_tests_fleet_page_test",
-      "target": "apps_admin_src_app_ops_fleet_page_fleetpage",
+      "target": "apps_admin_src_app_ops_fleet_page_fleetcontent",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5780,6 +6300,18 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tests/fleet-service.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_request_locale_test",
+      "target": "apps_admin_src_i18n_locale_resolveadminlocale",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/request-locale.test.ts",
       "source_location": "L3",
       "weight": 1.0
     },
@@ -5976,6 +6508,54 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_i18n_messages",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_i18n_request_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_drivers_page",
+      "target": "apps_admin_src_app_ops_operational_placeholder",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/drivers/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_drivers_page",
+      "target": "apps_admin_src_i18n_request_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/drivers/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_src_app_ops_fleet_page",
       "target": "packages_design_tokens_src_tokens",
       "relation": "imports_from",
@@ -5989,7 +6569,7 @@
     },
     {
       "source": "apps_admin_src_app_ops_fleet_page",
-      "target": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_i18n_messages",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5997,6 +6577,174 @@
       "context": "import",
       "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_i18n_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_fleet_page",
+      "target": "apps_admin_src_i18n_request_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_loads_page",
+      "target": "apps_admin_src_app_ops_operational_placeholder",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/loads/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_loads_page",
+      "target": "apps_admin_src_i18n_request_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/loads/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operational_placeholder",
+      "target": "apps_admin_src_i18n_messages",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operational_placeholder",
+      "target": "apps_admin_src_i18n_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operations_page",
+      "target": "apps_admin_src_app_ops_operational_placeholder",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/operations/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operations_page",
+      "target": "apps_admin_src_i18n_request_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/operations/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_vehicles_page",
+      "target": "apps_admin_src_app_ops_operational_placeholder",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/vehicles/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_vehicles_page",
+      "target": "apps_admin_src_i18n_request_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/(ops)/vehicles/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_page",
+      "target": "apps_admin_src_i18n_messages",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_page",
+      "target": "apps_admin_src_i18n_request_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_messages",
+      "target": "apps_admin_src_i18n_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/i18n/messages.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_request_locale",
+      "target": "apps_admin_src_i18n_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/i18n/request-locale.ts",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -6120,6 +6868,18 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_tests_request_locale_test",
+      "target": "apps_admin_src_i18n_locale",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/request-locale.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_tests_ui_shell_a11y_test",
       "target": "apps_admin_src_app_layout",
       "relation": "imports_from",
@@ -6141,6 +6901,18 @@
       "context": "import",
       "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_i18n_locale_adminlocale",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "re-export",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -6420,35 +7192,13 @@
     },
     {
       "source": "apps_admin_src_app_layout",
-      "target": "apps_admin_src_app_layout_adminlocale",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_app_layout",
-      "target": "apps_admin_src_app_layout_translation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_app_layout",
       "target": "apps_admin_src_app_layout_cssvariables",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -6459,7 +7209,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L165",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -6470,18 +7220,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L169",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_app_layout",
-      "target": "apps_admin_src_app_layout_messages",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L19",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -6492,18 +7231,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_app_layout",
-      "target": "apps_admin_src_app_layout_metadata",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L8",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -6514,7 +7242,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L83",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -6525,7 +7253,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L93",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_metadata",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -6536,29 +7275,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L98",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
-      "source": "apps_admin_src_app_ops_fleet_page",
-      "target": "apps_admin_src_app_ops_fleet_page_fleetpageprops",
+      "source": "apps_admin_src_app_ops_drivers_page",
+      "target": "apps_admin_src_app_ops_drivers_page_driverspage",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_app_ops_fleet_page",
-      "target": "apps_admin_src_app_ops_fleet_page_fleetcontent",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L18",
+      "source_file": "apps/admin/src/app/(ops)/drivers/page.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -6569,12 +7297,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L46",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
       "source": "apps_admin_src_app_ops_fleet_page",
-      "target": "apps_admin_src_app_ops_fleet_page_fleetcopy",
+      "target": "apps_admin_src_app_ops_fleet_page_fleetcontent",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6584,14 +7312,58 @@
       "weight": 1.0
     },
     {
-      "source": "apps_admin_src_app_ops_fleet_page",
-      "target": "apps_admin_src_app_ops_fleet_page_fleetmessages",
+      "source": "apps_admin_src_app_ops_loads_page",
+      "target": "apps_admin_src_app_ops_loads_page_loadspage",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/(ops)/fleet/page.tsx",
-      "source_location": "L8",
+      "source_file": "apps/admin/src/app/(ops)/loads/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operational_placeholder",
+      "target": "apps_admin_src_app_ops_operational_placeholder_placeholderdestination",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operational_placeholder",
+      "target": "apps_admin_src_app_ops_operational_placeholder_operationalplaceholder",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/(ops)/operational-placeholder.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_operations_page",
+      "target": "apps_admin_src_app_ops_operations_page_operationspage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/(ops)/operations/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_ops_vehicles_page",
+      "target": "apps_admin_src_app_ops_vehicles_page_vehiclespage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/(ops)/vehicles/page.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -6602,7 +7374,73 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_locale",
+      "target": "apps_admin_src_i18n_locale_adminlocale",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/i18n/locale.ts",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_locale",
+      "target": "apps_admin_src_i18n_locale_parsequality",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_locale",
+      "target": "apps_admin_src_i18n_locale_resolveadminlocale",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_locale",
+      "target": "apps_admin_src_i18n_locale_localecandidate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/i18n/locale.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_messages",
+      "target": "apps_admin_src_i18n_messages_adminmessages",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/i18n/messages.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_i18n_request_locale",
+      "target": "apps_admin_src_i18n_request_locale_getrequestlocale",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/i18n/request-locale.ts",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -9036,5 +9874,5 @@
       "source_file": "AGENTS.md"
     }
   ],
-  "built_at_commit": "d271e26ecbaedd88189ea309de6ea835ba605434"
+  "built_at_commit": "42db9df65e3e545ab8d6ce9ce34faa8c796013b4"
 }
