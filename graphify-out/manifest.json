@@ -276,9 +276,9 @@
     "semantic_hash": ""
   },
   "apps/admin/src/server/auth/authorize.ts": {
-    "mtime": 1787890626.5422819,
-    "seen": 1787891161.0229921,
-    "ast_hash": "c4dcf1f204495fb2ee35b795d647d001",
+    "mtime": 1787893826.1791394,
+    "seen": 1787894139.6928732,
+    "ast_hash": "9b49c9bcdac9e304a94cf59487017676",
     "semantic_hash": ""
   },
   "apps/admin/src/server/result.ts": {
@@ -327,6 +327,30 @@
     "mtime": 1787891651.8080566,
     "seen": 1787892056.700688,
     "ast_hash": "2969446a9162e86e21971beeeb3fdfd2",
+    "semantic_hash": ""
+  },
+  "apps/admin/src/app/(ops)/fleet/page.tsx": {
+    "mtime": 1787893983.820601,
+    "seen": 1787894139.6923747,
+    "ast_hash": "e61f4b02e88e006f33ffe357b96d1bcb",
+    "semantic_hash": ""
+  },
+  "apps/admin/src/server/fleet/fleet-service.ts": {
+    "mtime": 1787893826.1796625,
+    "seen": 1787894139.6928742,
+    "ast_hash": "def640245291725462900e6472df07c6",
+    "semantic_hash": ""
+  },
+  "apps/admin/tests/fleet-page.test.tsx": {
+    "mtime": 1787893976.0394285,
+    "seen": 1787894139.6929848,
+    "ast_hash": "a5397ec8da855ac2557ba036294fe94d",
+    "semantic_hash": ""
+  },
+  "apps/admin/tests/fleet-service.test.ts": {
+    "mtime": 1787893392.7352602,
+    "seen": 1787894139.6929855,
+    "ast_hash": "d4eee6ea35172d294c7ccbb8380ab65d",
     "semantic_hash": ""
   }
 }

@@ -2,7 +2,11 @@ import { forbidden, ok, type MutationResult } from "../result";
 
 export type CompanyRole = "owner" | "admin" | "dispatcher" | "driver";
 
-export type AdministrativePermission = "company.invitation.create";
+export type AdministrativePermission =
+  | "company.invitation.create"
+  | "fleet.driver.manage"
+  | "fleet.vehicle.manage"
+  | "fleet.assignment.manage";
 
 export type AuthorizeInput = Readonly<{
   role: CompanyRole;
@@ -15,9 +19,10 @@ function hasPermission(
 ): boolean {
   switch (role) {
     case "owner":
-      return permission === "company.invitation.create";
+      return true;
     case "admin":
     case "dispatcher":
+      return permission.startsWith("fleet.");
     case "driver":
       return false;
   }

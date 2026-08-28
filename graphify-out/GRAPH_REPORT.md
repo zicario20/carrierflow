@@ -1,23 +1,23 @@
-# Graph Report - phase-1-foundation  (2026-08-27)
+# Graph Report - phase-1-foundation  (2026-08-28)
 
 ## Corpus Check
-- 58 files · ~25,244 words
+- 64 files · ~30,660 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 285 nodes · 282 edges · 35 communities (32 shown, 3 thin omitted)
+- 322 nodes · 374 edges · 34 communities (31 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d68579a9`
+- Built from commit: `ffc81175`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - compilerOptions
+- fleet-service.ts
 - devDependencies
-- admin/package.json
 - scripts
 - scripts
 - dependencies
@@ -36,20 +36,19 @@
 - next-env.d.ts
 - Workspace execution contract mandates authorized service/RPC architecture, current/history location separation, TLS-only public exposure, domain rules before edits, and declared verification commands.
 - pnpm workspace intentionally includes only apps and packages, excluding blueprint artifacts from the application workspace.
-- devDependencies
 - Design System Master File
 
 ## God Nodes (most connected - your core abstractions)
-1. `compilerOptions` - 10 edges
-2. `compilerOptions` - 9 edges
-3. `scripts` - 8 edges
-4. `scripts` - 8 edges
-5. `scripts` - 7 edges
-6. `authorize()` - 7 edges
-7. `Design System Master File` - 7 edges
-8. `createCompanyInvitation()` - 6 edges
-9. `compilerOptions` - 6 edges
-10. `getSupabasePublicEnv()` - 5 edges
+1. `ok()` - 12 edges
+2. `validationError()` - 11 edges
+3. `compilerOptions` - 10 edges
+4. `authorize()` - 9 edges
+5. `databaseFailure()` - 9 edges
+6. `compilerOptions` - 9 edges
+7. `mutateOwnShift()` - 8 edges
+8. `forbidden()` - 8 edges
+9. `scripts` - 8 edges
+10. `scripts` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Production is self-hosted Ubuntu/Dokploy/Compose with private networks, TLS proxy, backups, monitoring, rollback, and explicit single-host limits; no real pilot billing.` --implements--> `Accepted decision: operate Dokploy on owner-controlled Ubuntu with Docker Compose and official Docker-based self-hosted Supabase for the private pilot.`  [EXTRACTED]
@@ -71,31 +70,31 @@
 - **Pilot readiness combines self-hosted operational controls, reliability/release implementation, and cross-role physical, security, accessibility, and restore review.** — docs_architecture_adr_001_self_hosted_dokploy_pre_pilot_controls, blueprints_carrierflow_epics_03_reliability_pilot_release, docs_superpowers_specs_2026_08_27_carrierflow_design_pre_pilot_review_gates [EXTRACTED 1.00]
 - **Tenant authorization, server-audited state/evidence enforcement, and durable offline idempotency jointly define a retry-safe trusted mutation boundary.** — agents_tenant_authorization_boundary, blueprints_carrierflow_blueprint_load_state_and_evidence_contract, docs_product_carrierflow_prd_privacy_offline_contract [INFERRED 0.95]
 
-## Communities (35 total, 3 thin omitted)
+## Communities (34 total, 3 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.10
 Nodes (20): compilerOptions, baseUrl, ignoreDeprecations, module, moduleResolution, noImplicitOverride, noUncheckedIndexedAccess, paths (+12 more)
 
-### Community 1 - "devDependencies"
-Cohesion: 0.15
-Nodes (13): devDependencies, @playwright/test, shadcn, supabase, tailwindcss, typescript, vitest, @playwright/test (+5 more)
+### Community 1 - "fleet-service.ts"
+Cohesion: 0.12
+Nodes (33): assignDriverVehicle(), AssignDriverVehicleInput, authorizeManager(), createDriver(), CreateDriverInput, createVehicle(), CreateVehicleInput, databaseFailure() (+25 more)
 
-### Community 2 - "admin/package.json"
-Cohesion: 0.09
-Nodes (22): devDependencies, jsdom, @testing-library/react, @types/node, @types/react, @types/react-dom, name, private (+14 more)
+### Community 2 - "devDependencies"
+Cohesion: 0.18
+Nodes (11): devDependencies, jsdom, @testing-library/react, @types/node, @types/react, @types/react-dom, jsdom, @testing-library/react (+3 more)
 
 ### Community 3 - "scripts"
-Cohesion: 0.13
-Nodes (14): engines, node, name, packageManager, private, scripts, db:reset, db:start (+6 more)
+Cohesion: 0.07
+Nodes (27): devDependencies, @playwright/test, shadcn, supabase, tailwindcss, typescript, vitest, engines (+19 more)
 
 ### Community 4 - "scripts"
-Cohesion: 0.14
-Nodes (13): engines, node, name, packageManager, private, scripts, db:reset, db:start (+5 more)
+Cohesion: 0.07
+Nodes (26): devDependencies, @playwright/test, shadcn, supabase, tailwindcss, typescript, vitest, engines (+18 more)
 
 ### Community 5 - "dependencies"
-Cohesion: 0.13
-Nodes (15): dependencies, maplibre-gl, next, react, react-dom, server-only, @supabase/ssr, @supabase/supabase-js (+7 more)
+Cohesion: 0.07
+Nodes (26): dependencies, maplibre-gl, next, react, react-dom, server-only, @supabase/ssr, @supabase/supabase-js (+18 more)
 
 ### Community 6 - "compilerOptions"
 Cohesion: 0.12
@@ -107,7 +106,7 @@ Nodes (21): Only authorized admin/dispatcher roles can assign, reassign, cancel,
 
 ### Community 8 - "write-audit.ts"
 Cohesion: 0.14
-Nodes (19): CompanyInvitation, createCompanyInvitation(), CreateCompanyInvitationInput, InvitationRpcArguments, InvitationRpcRow, RpcError, TrustedSupabaseServerClient, AdministrativePermission (+11 more)
+Nodes (17): CompanyInvitation, createCompanyInvitation(), CreateCompanyInvitationInput, InvitationRpcArguments, InvitationRpcRow, RpcError, TrustedSupabaseServerClient, AdministrativePermission (+9 more)
 
 ### Community 9 - "compilerOptions"
 Cohesion: 0.10
@@ -138,40 +137,36 @@ Cohesion: 0.67
 Nodes (3): Architect, Superpowers, Cyber Neo, UI UX Pro Max, and Graphify have distinct delivery ownership; Graphify is consulted before broad exploration and updated after durable changes., Five tracked project-scoped skills are required build artifacts; governance augments but never replaces them, and bootstrap is idempotent without overwriting existing artifacts., CarrierFlow governance assigns architecture, disciplined implementation, security remediation, UX accessibility, and graph memory to named roles while allowing safe autonomous action.
 
 ### Community 16 - "layout.tsx"
-Cohesion: 0.16
-Nodes (12): AdminLocale, AdminShell(), adminShellCss, AdminShellProps, CssVariables, messages, metadata, tokenizedBodyStyle (+4 more)
+Cohesion: 0.14
+Nodes (13): AdminLocale, AdminShell(), adminShellCss, AdminShellProps, CssVariables, messages, metadata, tokenizedBodyStyle (+5 more)
 
 ### Community 17 - "Private evidence needs authorized short-lived signed access, while public tracking is a load-scoped expiring/revocable minimal-data token with no session creation."
 Cohesion: 0.67
 Nodes (3): Private evidence needs authorized short-lived signed access, while public tracking is a load-scoped expiring/revocable minimal-data token with no session creation., HTTP/RPC inputs require typed safe errors; credentials stay out of clients/logs; public tokens are opaque, hashed, scoped, expiring, revocable, and rate-limited., Evidence is configurable and private; optional public tracking exposes only agreed single-load status/ETA/location through a revocable expiring opaque secret and excludes private documents and fleet data.
-
-### Community 31 - "devDependencies"
-Cohesion: 0.15
-Nodes (13): devDependencies, @playwright/test, shadcn, supabase, tailwindcss, typescript, vitest, @playwright/test (+5 more)
 
 ### Community 34 - "Design System Master File"
 Cohesion: 0.11
 Nodes (17): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, Cards, Color Palette, Component Specs, Design System Master File, Global Rules (+9 more)
 
 ## Knowledge Gaps
-- **154 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+149 more)
+- **169 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+164 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `admin/package.json`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `devDependencies` to `scripts`?**
+- **Why does `devDependencies` connect `devDependencies` to `dependencies`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _154 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _169 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
-- **Should `admin/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
+- **Should `fleet-service.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.12380952380952381 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
+- **Should `dependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._

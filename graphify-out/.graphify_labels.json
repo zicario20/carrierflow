@@ -1,7 +1,7 @@
 {
   "0": "compilerOptions",
-  "1": "devDependencies",
-  "2": "admin/package.json",
+  "1": "fleet-service.ts",
+  "2": "devDependencies",
   "3": "scripts",
   "4": "scripts",
   "5": "dependencies",
@@ -30,7 +30,6 @@
   "28": "playwright.config.ts",
   "29": "admin-http.spec.ts",
   "30": "vitest.workspace.ts",
-  "31": "devDependencies",
   "32": "server-only.ts",
   "33": "vitest.config.ts",
   "34": "Design System Master File"
