@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "incremental": true,
+    "skipLibCheck": true,
     "plugins": [
       {
         "name": "next"
