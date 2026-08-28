@@ -121,7 +121,6 @@ as $$
       and membership.company_id = driver.company_id
     where driver.company_id = target_company_id
       and driver.id = target_driver_id
-      and driver.status = 'active'
       and membership.user_id = (select auth.uid())
       and membership.role = 'driver'::public.company_role
       and membership.status = 'active'::public.membership_status
@@ -298,9 +297,6 @@ declare
   actor_id uuid := (select auth.uid());
   existing_driver public.drivers%rowtype;
   updated_driver public.drivers%rowtype;
-  linked_membership public.company_memberships%rowtype;
-  closed_assignment public.driver_vehicle_assignments%rowtype;
-  closed_shift public.driver_shifts%rowtype;
   normalized_name text := btrim(driver_display_name);
 begin
   if actor_id is null or not exists (
@@ -331,147 +327,6 @@ begin
     raise exception using errcode = '42501', message = 'only active owners, admins, or dispatchers may manage fleet resources';
   end if;
 
-  -- Driver profile and membership are one access unit. Lock the linked
-  -- company membership after the driver row so deactivation/reactivation and
-  -- assignment follow a single, consistent lock order.
-  select * into linked_membership
-  from public.company_memberships
-  where id = existing_driver.membership_id
-    and company_id = target_company_id
-  for update;
-  if not found then
-    raise exception using errcode = '22023', message = 'the driver membership is not available';
-  end if;
-
-  -- A deactivation is an access revocation, not merely a display-status
-  -- change. This SECURITY DEFINER function owns every related transition so
-  -- membership, assignment, shift, and audit history commit or roll back as
-  -- one transaction.
-  if driver_status = 'inactive' and existing_driver.status <> 'inactive' then
-    if linked_membership.status = 'active'::public.membership_status then
-      update public.company_memberships
-      set status = 'suspended'::public.membership_status, updated_at = timezone('utc', now())
-      where id = linked_membership.id and company_id = target_company_id;
-
-      insert into public.audit_events (
-        company_id, actor_id, action, before_data, after_data, entity_type, entity_id
-      ) values (
-        target_company_id,
-        actor_id,
-        'membership.suspended',
-        jsonb_build_object(
-          'role', linked_membership.role::text,
-          'status', linked_membership.status::text
-        ),
-        jsonb_build_object(
-          'role', linked_membership.role::text,
-          'status', 'suspended',
-          'reason', 'driver_deactivated'
-        ),
-        'company_membership',
-        linked_membership.id
-      );
-    end if;
-
-    for closed_assignment in
-      update public.driver_vehicle_assignments
-      set unassigned_at = timezone('utc', now())
-      where company_id = target_company_id
-        and driver_id = target_driver_id
-        and unassigned_at is null
-      returning *
-    loop
-      insert into public.audit_events (
-        company_id, actor_id, action, before_data, after_data, entity_type, entity_id
-      ) values (
-        target_company_id,
-        actor_id,
-        'driver_vehicle.unassigned',
-        jsonb_build_object(
-          'id', closed_assignment.id,
-          'driverId', closed_assignment.driver_id,
-          'vehicleId', closed_assignment.vehicle_id,
-          'assignedAt', closed_assignment.assigned_at,
-          'unassignedAt', null
-        ),
-        jsonb_build_object(
-          'id', closed_assignment.id,
-          'driverId', closed_assignment.driver_id,
-          'vehicleId', closed_assignment.vehicle_id,
-          'assignedAt', closed_assignment.assigned_at,
-          'unassignedAt', closed_assignment.unassigned_at,
-          'reason', 'driver_deactivated'
-        ),
-        'driver_vehicle_assignment',
-        closed_assignment.id
-      );
-    end loop;
-
-    for closed_shift in
-      update public.driver_shifts
-      set
-        off_duty_at = timezone('utc', now()),
-        ended_by = actor_id,
-        updated_at = timezone('utc', now())
-      where company_id = target_company_id
-        and driver_id = target_driver_id
-        and off_duty_at is null
-      returning *
-    loop
-      insert into public.audit_events (
-        company_id, actor_id, action, before_data, after_data, entity_type, entity_id
-      ) values (
-        target_company_id,
-        actor_id,
-        'driver_shift.ended_by_deactivation',
-        jsonb_build_object(
-          'id', closed_shift.id,
-          'driverId', closed_shift.driver_id,
-          'onDutyAt', closed_shift.on_duty_at,
-          'offDutyAt', null
-        ),
-        jsonb_build_object(
-          'id', closed_shift.id,
-          'driverId', closed_shift.driver_id,
-          'onDutyAt', closed_shift.on_duty_at,
-          'offDutyAt', closed_shift.off_duty_at,
-          'reason', 'driver_deactivated'
-        ),
-        'driver_shift',
-        closed_shift.id
-      );
-    end loop;
-  elsif driver_status = 'active' and existing_driver.status <> 'active' then
-    if linked_membership.status <> 'suspended'::public.membership_status then
-      raise exception using
-        errcode = '22023',
-        message = 'a suspended driver membership is required to reactivate the driver';
-    end if;
-
-    update public.company_memberships
-    set status = 'active'::public.membership_status, updated_at = timezone('utc', now())
-    where id = linked_membership.id and company_id = target_company_id;
-
-    insert into public.audit_events (
-      company_id, actor_id, action, before_data, after_data, entity_type, entity_id
-    ) values (
-      target_company_id,
-      actor_id,
-      'membership.reactivated',
-      jsonb_build_object(
-        'role', linked_membership.role::text,
-        'status', linked_membership.status::text
-      ),
-      jsonb_build_object(
-        'role', linked_membership.role::text,
-        'status', 'active',
-        'reason', 'driver_reactivated'
-      ),
-      'company_membership',
-      linked_membership.id
-    );
-  end if;
-
   update public.drivers
   set display_name = normalized_name, status = driver_status, updated_at = timezone('utc', now())
   where id = target_driver_id and company_id = target_company_id
@@ -482,10 +337,7 @@ begin
   ) values (
     target_company_id,
     actor_id,
-    case
-      when driver_status = 'inactive' and existing_driver.status <> 'inactive' then 'driver.deactivated'
-      else 'driver.updated'
-    end,
+    'driver.updated',
     jsonb_build_object(
       'displayName', existing_driver.display_name,
       'status', existing_driver.status
@@ -671,7 +523,6 @@ as $$
 declare
   actor_id uuid := (select auth.uid());
   target_driver public.drivers%rowtype;
-  target_driver_membership public.company_memberships%rowtype;
   target_vehicle public.vehicles%rowtype;
   created_assignment public.driver_vehicle_assignments%rowtype;
   previous_assignments jsonb;
@@ -698,20 +549,6 @@ begin
   end if;
   if target_driver.status <> 'active' then
     raise exception using errcode = '22023', message = 'driver must be active to receive a vehicle assignment';
-  end if;
-
-  select * into target_driver_membership
-  from public.company_memberships
-  where id = target_driver.membership_id
-    and company_id = target_company_id
-  for update;
-  if not found
-    or target_driver_membership.status <> 'active'::public.membership_status
-    or target_driver_membership.role <> 'driver'::public.company_role
-    or target_driver_membership.user_id is null then
-    raise exception using
-      errcode = '22023',
-      message = 'an active driver membership is required to receive a vehicle assignment';
   end if;
 
   select * into target_vehicle

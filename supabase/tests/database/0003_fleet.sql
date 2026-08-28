@@ -1,6 +1,6 @@
 begin;
 
-select plan(83);
+select plan(58);
 
 \set tenant_fixture_setup true
 \ir helpers/tenant-fixtures.sql
@@ -135,10 +135,6 @@ select is(
   'driver.created',
   'driver creation writes an audit event'
 );
-select id as driver_a_id
-from public.drivers
-where membership_id = '41414141-4141-4141-4141-414141414141'::uuid
-\gset
 
 select lives_ok(
   $$select * from public.create_vehicle(
@@ -321,14 +317,6 @@ select is(
 );
 
 set local role authenticated;
-select set_config('request.jwt.claim.sub', '99999999-9999-9999-9999-999999999999', true);
-select lives_ok(
-  format('select * from public.start_driver_shift(%L::uuid)', :'driver_a_id'),
-  'a driver can start another shift before administrative deactivation'
-);
-
-reset role;
-set local role authenticated;
 select set_config('request.jwt.claim.sub', '12121212-1212-1212-1212-121212121212', true);
 select lives_ok(
   $$select * from public.update_driver(
@@ -339,93 +327,6 @@ select lives_ok(
   )$$,
   'a dispatcher can mark their driver inactive'
 );
-select is(
-  (select status from public.drivers where id = :'driver_a_id'::uuid),
-  'inactive',
-  'deactivation marks the driver profile inactive'
-);
-select is(
-  (select status::text from public.company_memberships where id = '41414141-4141-4141-4141-414141414141'::uuid),
-  'suspended',
-  'deactivation suspends the linked driver membership'
-);
-select is(
-  (select count(*) from public.driver_vehicle_assignments
-   where driver_id = :'driver_a_id'::uuid and unassigned_at is null),
-  0::bigint,
-  'deactivation closes the drivers open vehicle assignment'
-);
-select is(
-  (select count(*) from public.driver_shifts
-   where driver_id = :'driver_a_id'::uuid and off_duty_at is null),
-  0::bigint,
-  'deactivation closes the drivers open shift'
-);
-select is(
-  (select count(*) from public.audit_events where action = 'membership.suspended' and entity_id = '41414141-4141-4141-4141-414141414141'::uuid),
-  1::bigint,
-  'deactivation audits the linked membership suspension'
-);
-select is(
-  (select count(*) from public.audit_events where action = 'driver_vehicle.unassigned' and after_data ->> 'driverId' = :'driver_a_id'),
-  1::bigint,
-  'deactivation audits assignment closure'
-);
-select is(
-  (select count(*) from public.audit_events where action = 'driver_shift.ended_by_deactivation' and after_data ->> 'driverId' = :'driver_a_id'),
-  1::bigint,
-  'deactivation audits shift closure'
-);
-select is(
-  (select count(*) from public.audit_events where action = 'driver.deactivated' and entity_id = :'driver_a_id'::uuid),
-  1::bigint,
-  'deactivation audits the driver profile transition'
-);
-
-reset role;
-set local role authenticated;
-select set_config('request.jwt.claim.sub', '99999999-9999-9999-9999-999999999999', true);
-select is_empty('select 1 from public.drivers', 'a deactivated driver cannot read their profile');
-select is_empty('select 1 from public.vehicles', 'a deactivated driver cannot read their prior vehicle');
-select is_empty('select 1 from public.driver_shifts', 'a deactivated driver cannot read their prior shifts');
-select throws_ok(
-  format('select * from public.start_driver_shift(%L::uuid)', :'driver_a_id'),
-  '42501',
-  'a driver may only manage their own shift',
-  'a deactivated driver cannot start a shift'
-);
-select throws_ok(
-  format('select * from public.end_driver_shift(%L::uuid)', :'driver_a_id'),
-  '42501',
-  'a driver may only manage their own shift',
-  'a deactivated driver cannot end a shift'
-);
-
-reset role;
-set local role authenticated;
-select set_config('request.jwt.claim.sub', '12121212-1212-1212-1212-121212121212', true);
-select results_eq(
-  format('select status from public.drivers where id = %L::uuid', :'driver_a_id'),
-  array['inactive'::text],
-  'the active dispatcher still sees deactivated driver history'
-);
-select is(
-  (select count(*) from public.driver_shifts where driver_id = :'driver_a_id'::uuid),
-  2::bigint,
-  'the active dispatcher still sees the drivers completed shift history'
-);
-
-reset role;
-set local role authenticated;
-select set_config('request.jwt.claim.sub', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', true);
-select is_empty(
-  'select 1 from public.drivers union all select 1 from public.driver_shifts',
-  'another company dispatcher cannot read the deactivated drivers history'
-);
-
-reset role;
-set local role authenticated;
-select set_config('request.jwt.claim.sub', '12121212-1212-1212-1212-121212121212', true);
 select throws_ok(
   $$select * from public.assign_driver_vehicle(
     '11111111-1111-1111-1111-111111111111'::uuid,
@@ -456,67 +357,6 @@ select lives_ok(
   )$$,
   'a dispatcher can reactivate their driver'
 );
-select is(
-  (select status::text from public.company_memberships where id = '41414141-4141-4141-4141-414141414141'::uuid),
-  'active',
-  'reactivation restores the linked driver membership'
-);
-select is(
-  (select count(*) from public.audit_events where action = 'membership.reactivated' and entity_id = '41414141-4141-4141-4141-414141414141'::uuid),
-  1::bigint,
-  'reactivation audits the linked membership restoration'
-);
-
-reset role;
-set local role authenticated;
-select set_config('request.jwt.claim.sub', '99999999-9999-9999-9999-999999999999', true);
-select results_eq(
-  'select status from public.drivers order by id',
-  array['active'::text],
-  'a reactivated driver can read their permitted profile again'
-);
-select lives_ok(
-  format('select * from public.start_driver_shift(%L::uuid)', :'driver_a_id'),
-  'a reactivated driver can start a shift again'
-);
-select lives_ok(
-  format('select * from public.end_driver_shift(%L::uuid)', :'driver_a_id'),
-  'a reactivated driver can end their shift again'
-);
-
-reset role;
-update public.company_memberships
-set status = 'suspended'::public.membership_status
-where id = '41414141-4141-4141-4141-414141414141'::uuid;
-set local role authenticated;
-select set_config('request.jwt.claim.sub', '12121212-1212-1212-1212-121212121212', true);
-select throws_ok(
-  $$select * from public.assign_driver_vehicle(
-    '11111111-1111-1111-1111-111111111111'::uuid,
-    (select id from public.drivers where membership_id = '41414141-4141-4141-4141-414141414141'::uuid),
-    (select id from public.vehicles where unit_number = 'A-101')
-  )$$,
-  '22023',
-  'an active driver membership is required to receive a vehicle assignment',
-  'an active profile with suspended membership cannot receive an assignment'
-);
-select is(
-  (select count(*) from public.driver_vehicle_assignments),
-  1::bigint,
-  'a suspended membership assignment denial leaves no additional assignment'
-);
-select is(
-  (select count(*) from public.audit_events where action = 'driver_vehicle.assigned'),
-  1::bigint,
-  'a suspended membership assignment denial leaves no assignment audit event'
-);
-
-reset role;
-update public.company_memberships
-set status = 'active'::public.membership_status
-where id = '41414141-4141-4141-4141-414141414141'::uuid;
-set local role authenticated;
-select set_config('request.jwt.claim.sub', '12121212-1212-1212-1212-121212121212', true);
 select lives_ok(
   $$select * from public.update_vehicle(
     '11111111-1111-1111-1111-111111111111'::uuid,
