@@ -2,6 +2,7 @@
   "brand": "CarrierFlow",
   "navigation": {
     "label": "Navegación principal",
+    "skipToMain": "Saltar al contenido principal",
     "operations": "Operaciones",
     "loads": "Cargas",
     "drivers": "Conductores",

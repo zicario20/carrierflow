@@ -23,8 +23,35 @@ const messages: Record<AdminLocale, Translation> = {
 
 export const adminShellCss = `
   *, *::before, *::after { box-sizing: border-box; }
-  .carrierflow-shell { min-block-size: 100dvh; overflow-x: hidden; }
+  .carrierflow-shell { min-block-size: 100dvh; overflow-x: hidden; position: relative; }
   .carrierflow-navigation { display: flex; flex-wrap: wrap; gap: var(--cf-space-standard); }
+  .carrierflow-skip-link {
+    align-items: center;
+    background-color: var(--cf-color-surface);
+    border: 1px solid var(--cf-color-border);
+    border-radius: var(--cf-radius-control);
+    color: var(--cf-color-foreground);
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-weight: 600;
+    inset-block-start: var(--cf-space-standard);
+    inset-inline-start: var(--cf-space-standard);
+    justify-content: center;
+    min-inline-size: var(--cf-control-target);
+    min-block-size: var(--cf-control-target);
+    padding-inline: var(--cf-space-comfortable);
+    position: absolute;
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: transform var(--cf-motion-feedback) ease;
+    z-index: 1;
+  }
+  .carrierflow-skip-link:focus-visible {
+    outline: var(--cf-focus-ring-width) solid var(--cf-color-ring);
+    outline-offset: var(--cf-focus-offset);
+    transform: translateY(0);
+  }
   .carrierflow-control {
     align-items: center;
     border: 1px solid transparent;
@@ -49,7 +76,7 @@ export const adminShellCss = `
     outline-offset: var(--cf-focus-offset);
   }
   @media (prefers-reduced-motion: reduce) {
-    .carrierflow-control { transition: none; }
+    .carrierflow-control, .carrierflow-skip-link { transition: none; }
   }
 `;
 
@@ -80,6 +107,9 @@ function ShellContent({ children, locale }: AdminShellProps) {
   return (
     <div className="carrierflow-shell" style={tokenizedBodyStyle}>
       <style>{adminShellCss}</style>
+      <a className="carrierflow-skip-link" href="#operations-main">
+        {copy.navigation.skipToMain}
+      </a>
       <header
         style={{
           backgroundColor: operationalTokens.color.surface,
@@ -110,6 +140,7 @@ function ShellContent({ children, locale }: AdminShellProps) {
       </header>
       <main
         aria-label={copy.main.label}
+        id="operations-main"
         style={{
           margin: "0 auto",
           maxWidth: "80rem",

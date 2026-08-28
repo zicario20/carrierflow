@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "apps/admin/src/app/layout.tsx": {
-    "mtime": 1787892161.8338058,
-    "seen": 1787892176.1308792,
-    "ast_hash": "c8062c02ac6332456c079082d3fbec75",
+    "mtime": 1787893008.8068142,
+    "seen": 1787893032.9016206,
+    "ast_hash": "9bde0a878e0020c52cf234dd661cf50c",
     "semantic_hash": ""
   },
   "apps/admin/src/app/page.tsx": {
@@ -300,21 +300,21 @@
     "semantic_hash": ""
   },
   "apps/admin/src/i18n/en.json": {
-    "mtime": 1787892006.4233148,
-    "seen": 1787892056.6985176,
-    "ast_hash": "fc2c32c75867a6ce870a5b3f7edb3e8e",
+    "mtime": 1787892933.1554468,
+    "seen": 1787892970.713596,
+    "ast_hash": "a8aad8b29d799bd4daa2653512ab2597",
     "semantic_hash": ""
   },
   "apps/admin/src/i18n/es.json": {
-    "mtime": 1787892006.4246712,
-    "seen": 1787892056.698518,
-    "ast_hash": "339790d75d0824e8bcdda940376b5f41",
+    "mtime": 1787892933.1554468,
+    "seen": 1787892970.7135973,
+    "ast_hash": "7fe8376446fa2fb4bbc38acacc44cfe6",
     "semantic_hash": ""
   },
   "apps/admin/tests/ui/shell-a11y.test.tsx": {
-    "mtime": 1787892501.433982,
-    "seen": 1787892599.6087885,
-    "ast_hash": "7b55c36ca53b8f0efc277f89bceaae3c",
+    "mtime": 1787892999.0165784,
+    "seen": 1787893032.9022317,
+    "ast_hash": "46cf1451ef41709f23ca51edeff6e740",
     "semantic_hash": ""
   },
   "packages/design-tokens/src/tokens.ts": {

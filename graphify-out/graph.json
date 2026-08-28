@@ -82,7 +82,7 @@
       "file_type": "code",
       "norm_label": "adminshellprops",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L66"
+      "source_location": "L93"
     },
     {
       "id": "apps_admin_src_app_layout_cssvariables",
@@ -350,7 +350,7 @@
       "file_type": "code",
       "norm_label": "adminshell()",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L134"
+      "source_location": "L165"
     },
     {
       "id": "apps_admin_src_app_layout_rootlayout",
@@ -362,7 +362,7 @@
       "file_type": "code",
       "norm_label": "rootlayout()",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L138"
+      "source_location": "L169"
     },
     {
       "id": "apps_admin_src_app_layout_shellcontent",
@@ -374,7 +374,7 @@
       "file_type": "code",
       "norm_label": "shellcontent()",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L71"
+      "source_location": "L98"
     },
     {
       "id": "apps_admin_src_app_page_homepage",
@@ -1089,7 +1089,7 @@
       "file_type": "code",
       "norm_label": "tokenizedbodystyle",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L56"
+      "source_location": "L83"
     },
     {
       "id": "apps_admin_tests_ui_shell_a11y_test",
@@ -4695,28 +4695,6 @@
     },
     {
       "source": "apps_admin_src_app_layout",
-      "target": "apps_admin_src_app_layout_adminshell",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L134",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_app_layout",
-      "target": "apps_admin_src_app_layout_rootlayout",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L138",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_app_layout",
       "target": "apps_admin_src_app_layout_translation",
       "relation": "contains",
       "_origin": "ast",
@@ -4735,6 +4713,28 @@
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
       "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_adminshell",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_rootlayout",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -4761,13 +4761,24 @@
     },
     {
       "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_metadata",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
       "target": "apps_admin_src_app_layout_tokenizedbodystyle",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L56",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -4778,7 +4789,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L66",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -4789,18 +4800,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L71",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_src_app_layout",
-      "target": "apps_admin_src_app_layout_metadata",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L8",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -6693,5 +6693,5 @@
       "source_file": "AGENTS.md"
     }
   ],
-  "built_at_commit": "93de0ac97163e865d0e67177fcb5a1016af9b017"
+  "built_at_commit": "d68579a92c226ad470e7c874ec02ba65aba35eae"
 }

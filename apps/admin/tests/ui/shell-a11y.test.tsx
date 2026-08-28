@@ -10,6 +10,7 @@ import { operationalTokens } from "../../../../packages/design-tokens/src/tokens
 const localeExpectations = [
   {
     locale: "en",
+    skipLinkName: "Skip to main content",
     navigationName: "Primary navigation",
     mainName: "Operations workspace",
     statusName: "Load status: On time",
@@ -18,6 +19,7 @@ const localeExpectations = [
   },
   {
     locale: "es",
+    skipLinkName: "Saltar al contenido principal",
     navigationName: "Navegación principal",
     mainName: "Espacio de trabajo de operaciones",
     statusName: "Estado de la carga: A tiempo",
@@ -34,11 +36,19 @@ describe("AdminShell", () => {
       render(<AdminShell locale={expectation.locale} />);
 
       const navigation = screen.getByRole("navigation", { name: expectation.navigationName });
+      const skipLink = screen.getByRole("link", { name: expectation.skipLinkName });
       const links = expectation.links.map((name) => within(navigation).getByRole("link", { name }));
 
       expect(within(navigation).getAllByRole("link")).toHaveLength(4);
       expect(links).toHaveLength(4);
-      expect(screen.getByRole("main", { name: expectation.mainName })).toBeTruthy();
+      const main = screen.getByRole("main", { name: expectation.mainName });
+      expect(main.id).toBe("operations-main");
+      expect(skipLink.getAttribute("href")).toBe(`#${main.id}`);
+      expect(skipLink.compareDocumentPosition(navigation) & Node.DOCUMENT_POSITION_FOLLOWING).toBe(
+        Node.DOCUMENT_POSITION_FOLLOWING,
+      );
+      skipLink.focus();
+      expect(document.activeElement).toBe(skipLink);
 
       const status = screen.getByRole("status", { name: expectation.statusName });
       expect(status.textContent).toContain(expectation.statusText);
@@ -59,5 +69,11 @@ describe("AdminShell", () => {
     expect(Number.parseInt(operationalTokens.interaction.minimumTarget, 10)).toBeGreaterThanOrEqual(44);
     expect(adminShellCss).toContain("min-inline-size: var(--cf-control-target)");
     expect(adminShellCss).toContain("min-block-size: var(--cf-control-target)");
+    expect(adminShellCss).toMatch(
+      /\.carrierflow-skip-link\s*\{[\s\S]*?min-block-size:\s*var\(--cf-control-target\)/,
+    );
+    expect(adminShellCss).toContain(".carrierflow-skip-link:focus-visible");
+    expect(adminShellCss).toMatch(/\.carrierflow-skip-link\s*\{[^}]*cursor:\s*pointer/);
+    expect(adminShellCss).toContain("transform: translateY(0)");
   });
 });
