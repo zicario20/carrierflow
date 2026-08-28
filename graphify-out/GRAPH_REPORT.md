@@ -1,16 +1,16 @@
 # Graph Report - phase-1-foundation  (2026-08-27)
 
 ## Corpus Check
-- 39 files · ~20,004 words
+- 39 files · ~20,024 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 205 nodes · 178 edges · 30 communities (26 shown, 4 thin omitted)
+- 206 nodes · 179 edges · 30 communities (26 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `45f5859b`
+- Built from commit: `893a25b8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -49,16 +49,16 @@
 10. `exclude` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `Only authorized admin/dispatcher roles can assign, reassign, cancel, or close loads; drivers never receive those controls.` --implements--> `Dispatchers create, quote, assign, reassign, cancel, and monitor loads; drivers may execute only their own authorized work and cannot accept, reject, cancel, reassign, alter addresses, or view unauthorized financial data.`  [EXTRACTED]
+  AGENTS.md → docs/product/carrierflow-prd.md
 - `Server-enforced auditable transitions, configurable evidence, consented GPS, durable offline idempotency, scoped public links, and bilingual accessible UX are inseparable product requirements.` --implements--> `Administrative and operational load states are server-only; delivery requires pickup plus configured evidence, while incidents preserve the active load.`  [EXTRACTED]
   AGENTS.md → blueprints/carrierflow/blueprint.md
 - `Server-enforced auditable transitions, configurable evidence, consented GPS, durable offline idempotency, scoped public links, and bilingual accessible UX are inseparable product requirements.` --implements--> `Location sampling is consented, minimized, freshness-labeled, and retained by policy; local critical mutations have UUID idempotency, ordering, server-result confirmation, and retry state.`  [EXTRACTED]
   AGENTS.md → docs/product/carrierflow-prd.md
-- `Dokploy production Compose exposes only the TLS proxy and isolates application, self-hosted Supabase/data, and monitoring; backup restore, security, accessibility, device, and CI evidence gate pilot release.` --implements--> `Before pilot, require hardened host access, no public database/internal panels, deployment-injected secrets, encrypted off-host backups, recorded isolated restore, versioned rollback, monitoring, and Cyber Neo review.`  [EXTRACTED]
-  blueprints/carrierflow/blueprint.md → docs/architecture/adr-001-self-hosted-dokploy.md
-- `Pilot requires automated policy tests, physical mobile checks, Cyber Neo remediation report, UI UX review, reproducible Dokploy deployment, encrypted off-host backup, and tested restoration.` --implements--> `Dokploy production Compose exposes only the TLS proxy and isolates application, self-hosted Supabase/data, and monitoring; backup restore, security, accessibility, device, and CI evidence gate pilot release.`  [EXTRACTED]
-  docs/superpowers/specs/2026-08-27-carrierflow-design.md → blueprints/carrierflow/blueprint.md
-- `Administrative and operational load states are server-only; delivery requires pickup plus configured evidence, while incidents preserve the active load.` --implements--> `Ordered-stop loads support multi-stop data despite a one-pickup/one-delivery pilot UI; invalid delivery is rejected, reassignment is audited, and incidents require resolution without auto-cancellation.`  [EXTRACTED]
-  blueprints/carrierflow/blueprint.md → docs/product/carrierflow-prd.md
+- `All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization.` --implements--> `Web and Flutter use validated server handlers/RPC; direct table mutations are prohibited and authorized mutations are transactional, RLS-protected, audited, and typed.`  [EXTRACTED]
+  AGENTS.md → blueprints/carrierflow/blueprint.md
+- `All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization.` --implements--> `Database changes are forward-only; every commercial table has company_id/RLS, SECURITY DEFINER is constrained, audits share the mutation transaction, and private storage is tenant-prefixed.`  [EXTRACTED]
+  AGENTS.md → blueprints/carrierflow/workspace/.codex/rules/database.md
 
 ## Import Cycles
 - None detected.
@@ -119,8 +119,8 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, incremental, jsx, plugins, exclude, extends, include, node_modules (+5 more)
 
 ### Community 16 - "scripts"
-Cohesion: 0.14
-Nodes (13): engines, node, name, packageManager, private, scripts, db:reset, db:start (+5 more)
+Cohesion: 0.13
+Nodes (14): engines, node, name, packageManager, private, scripts, db:reset, db:start (+6 more)
 
 ### Community 17 - "devDependencies"
 Cohesion: 0.15
@@ -135,7 +135,7 @@ Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: How do mandatory assignment, mileage revisions, and tenant security constrain the private pilot?, Source Nodes
 
 ## Knowledge Gaps
-- **114 isolated node(s):** `name`, `private`, `version`, `dev`, `build` (+109 more)
+- **115 isolated node(s):** `name`, `private`, `version`, `dev`, `build` (+110 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -149,7 +149,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `dependencies` connect `dependencies` to `scripts`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _114 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _115 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
 - **Should `All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization.` be split into smaller, more focused modules?**
