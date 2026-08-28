@@ -1,6 +1,6 @@
 # CarrierFlow
 
-[![Verification](https://github.com/zicario20/carrierflow/actions/workflows/verify.yml/badge.svg)](https://github.com/zicario20/carrierflow/actions/workflows/verify.yml)
+[![Verification](https://github.com/zicario20/carrierflow/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/zicario20/carrierflow/actions/workflows/verify.yml)
 
 **A privacy-first carrier operations platform for owners, dispatchers, and drivers.**
 
