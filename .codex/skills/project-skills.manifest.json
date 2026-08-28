@@ -1,0 +1,13 @@
+{
+  "artifact_root": ".codex\\skills",
+  "required": [
+    "architect",
+    "using-superpowers",
+    "cyber-neo",
+    "ui-ux-pro-max",
+    "graphify"
+  ],
+  "verification": "Each required root-relative folder must contain SKILL.md before Bootstrap continues.",
+  "recovery": "Restore the missing tracked project artifact from this repository checkout; do not copy from a user profile or invoke an unknown remote installer."
+}
+
