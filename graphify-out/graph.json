@@ -59,6 +59,71 @@
       "source_location": "L1"
     },
     {
+      "id": "apps_admin_src_app_layout_adminlocale",
+      "label": "AdminLocale",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "adminlocale",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "apps_admin_src_app_layout_adminshellprops",
+      "label": "AdminShellProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "adminshellprops",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L66"
+    },
+    {
+      "id": "apps_admin_src_app_layout_cssvariables",
+      "label": "CssVariables",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "cssvariables",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "apps_admin_src_app_layout_translation",
+      "label": "Translation",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "translation",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "packages_design_tokens_src_tokens_operationaltokens",
+      "label": "OperationalTokens",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "operationaltokens",
+      "source_file": "packages/design-tokens/src/tokens.ts",
+      "source_location": "L75"
+    },
+    {
       "id": "apps_admin_src_server_audit_write_audit_companyinvitation",
       "label": "CompanyInvitation",
       "_callable": true,
@@ -276,6 +341,18 @@
       "source_location": "L13"
     },
     {
+      "id": "apps_admin_src_app_layout_adminshell",
+      "label": "AdminShell()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "adminshell()",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L134"
+    },
+    {
       "id": "apps_admin_src_app_layout_rootlayout",
       "label": "RootLayout()",
       "_callable": true,
@@ -285,7 +362,19 @@
       "file_type": "code",
       "norm_label": "rootlayout()",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L9"
+      "source_location": "L138"
+    },
+    {
+      "id": "apps_admin_src_app_layout_shellcontent",
+      "label": "ShellContent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "shellcontent()",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L71"
     },
     {
       "id": "apps_admin_src_app_page_homepage",
@@ -959,6 +1048,28 @@
       "source_location": "L1"
     },
     {
+      "id": "apps_admin_src_app_layout_adminshellcss",
+      "label": "adminShellCss",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "adminshellcss",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L24"
+    },
+    {
+      "id": "apps_admin_src_app_layout_messages",
+      "label": "messages",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "messages",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L19"
+    },
+    {
       "id": "apps_admin_src_app_layout_metadata",
       "label": "metadata",
       "_origin": "ast",
@@ -967,7 +1078,51 @@
       "file_type": "code",
       "norm_label": "metadata",
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L4"
+      "source_location": "L8"
+    },
+    {
+      "id": "apps_admin_src_app_layout_tokenizedbodystyle",
+      "label": "tokenizedBodyStyle",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "tokenizedbodystyle",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L56"
+    },
+    {
+      "id": "apps_admin_tests_ui_shell_a11y_test",
+      "label": "shell-a11y.test.tsx",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "shell-a11y.test.tsx",
+      "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "packages_design_tokens_src_tokens",
+      "label": "tokens.ts",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "tokens.ts",
+      "source_file": "packages/design-tokens/src/tokens.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "packages_design_tokens_src_tokens_operationalcssvariables",
+      "label": "operationalCssVariables",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "operationalcssvariables",
+      "source_file": "packages/design-tokens/src/tokens.ts",
+      "source_location": "L46"
     },
     {
       "id": "apps_admin_next_env_d",
@@ -1674,6 +1829,222 @@
       "source_location": "L1"
     },
     {
+      "id": "design_system_carrierflow_master",
+      "label": "MASTER.md",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "master.md",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "design_system_carrierflow_master_additional_forbidden_patterns",
+      "label": "Additional Forbidden Patterns",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "additional forbidden patterns",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L209"
+    },
+    {
+      "id": "design_system_carrierflow_master_anti_patterns_do_not_use",
+      "label": "Anti-Patterns (Do NOT Use)",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "anti-patterns (do not use)",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L204"
+    },
+    {
+      "id": "design_system_carrierflow_master_buttons",
+      "label": "Buttons",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "buttons",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L80"
+    },
+    {
+      "id": "design_system_carrierflow_master_cards",
+      "label": "Cards",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "cards",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L112"
+    },
+    {
+      "id": "design_system_carrierflow_master_color_palette",
+      "label": "Color Palette",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "color palette",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "design_system_carrierflow_master_component_specs",
+      "label": "Component Specs",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "component specs",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "design_system_carrierflow_master_design_system_master_file",
+      "label": "Design System Master File",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "design system master file",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "design_system_carrierflow_master_global_rules",
+      "label": "Global Rules",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "global rules",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "design_system_carrierflow_master_inputs",
+      "label": "Inputs",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "inputs",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L130"
+    },
+    {
+      "id": "design_system_carrierflow_master_modals",
+      "label": "Modals",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "modals",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L148"
+    },
+    {
+      "id": "design_system_carrierflow_master_motion",
+      "label": "Motion",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "motion",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L188"
+    },
+    {
+      "id": "design_system_carrierflow_master_page_pattern",
+      "label": "Page Pattern",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "page pattern",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L178"
+    },
+    {
+      "id": "design_system_carrierflow_master_pre_delivery_checklist",
+      "label": "Pre-Delivery Checklist",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pre-delivery checklist",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L220"
+    },
+    {
+      "id": "design_system_carrierflow_master_shadow_depths",
+      "label": "Shadow Depths",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "shadow depths",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L67"
+    },
+    {
+      "id": "design_system_carrierflow_master_spacing_variables",
+      "label": "Spacing Variables",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "spacing variables",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "design_system_carrierflow_master_style_guidelines",
+      "label": "Style Guidelines",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "style guidelines",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L168"
+    },
+    {
+      "id": "design_system_carrierflow_master_typography",
+      "label": "Typography",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "Design System Master File",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "typography",
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L41"
+    },
+    {
       "id": "blueprints_carrierflow_workspace_package",
       "label": "workspace/package.json",
       "_origin": "ast",
@@ -1997,7 +2368,7 @@
       "label": "tsconfig.json",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "tsconfig.json",
       "source_file": "apps/admin/tsconfig.json",
@@ -2008,7 +2379,7 @@
       "label": "compilerOptions",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "compileroptions",
       "source_file": "apps/admin/tsconfig.json",
@@ -2019,18 +2390,18 @@
       "label": "incremental",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "incremental",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L5"
+      "source_location": "L6"
     },
     {
       "id": "apps_admin_tsconfig_compileroptions_jsx",
       "label": "jsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "jsx",
       "source_file": "apps/admin/tsconfig.json",
@@ -2041,40 +2412,51 @@
       "label": "plugins",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "plugins",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L7"
+      "source_location": "L8"
+    },
+    {
+      "id": "apps_admin_tsconfig_compileroptions_resolvejsonmodule",
+      "label": "resolveJsonModule",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "compilerOptions",
+      "file_type": "code",
+      "norm_label": "resolvejsonmodule",
+      "source_file": "apps/admin/tsconfig.json",
+      "source_location": "L5"
     },
     {
       "id": "apps_admin_tsconfig_compileroptions_skiplibcheck",
       "label": "skipLibCheck",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "skiplibcheck",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "apps_admin_tsconfig_exclude",
       "label": "exclude",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "exclude",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "apps_admin_tsconfig_extends",
       "label": "extends",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "extends",
       "source_file": "apps/admin/tsconfig.json",
@@ -2085,62 +2467,62 @@
       "label": "include",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "code",
       "norm_label": "include",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "apps_admin_tsconfig_json_ref_node_modules",
       "label": "node_modules",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "concept",
       "norm_label": "node_modules",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "ref_next_env_d_ts",
       "label": "next-env.d.ts",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "concept",
       "norm_label": "next-env.d.ts",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "ref_next_types_ts",
       "label": ".next/types/**/*.ts",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "concept",
       "norm_label": ".next/types/**/*.ts",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "ref_ts",
       "label": "**/*.ts",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "concept",
       "norm_label": "**/*.ts",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "ref_tsconfig_base_json",
       "label": "../../tsconfig.base.json",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "concept",
       "norm_label": "../../tsconfig.base.json",
       "source_file": "apps/admin/tsconfig.json",
@@ -2151,11 +2533,11 @@
       "label": "**/*.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "tsconfig.json",
+      "community_name": "compilerOptions",
       "file_type": "concept",
       "norm_label": "**/*.tsx",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "apps_admin_src_server_audit_write_audit",
@@ -3175,7 +3557,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -3187,7 +3569,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -3199,7 +3581,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -3211,7 +3593,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -3223,7 +3605,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -3491,6 +3873,30 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_src_app_layout",
+      "target": "packages_design_tokens_src_tokens_operationalcssvariables",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "packages_design_tokens_src_tokens_operationaltokens",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_src_lib_supabase_server",
       "target": "apps_admin_src_lib_env_getsupabasepublicenv",
       "relation": "imports",
@@ -3632,6 +4038,42 @@
       "context": "import",
       "source_file": "apps/admin/src/server/auth/authorize.test.ts",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_ui_shell_a11y_test",
+      "target": "apps_admin_src_app_layout_adminshell",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_ui_shell_a11y_test",
+      "target": "apps_admin_src_app_layout_adminshellcss",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_ui_shell_a11y_test",
+      "target": "packages_design_tokens_src_tokens_operationaltokens",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -3779,6 +4221,18 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_src_app_layout",
+      "target": "packages_design_tokens_src_tokens",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_src_lib_supabase_server",
       "target": "apps_admin_src_lib_env",
       "relation": "imports_from",
@@ -3848,6 +4302,30 @@
       "context": "import",
       "source_file": "apps/admin/src/server/auth/authorize.test.ts",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_ui_shell_a11y_test",
+      "target": "apps_admin_src_app_layout",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_ui_shell_a11y_test",
+      "target": "packages_design_tokens_src_tokens",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -4105,13 +4583,24 @@
     },
     {
       "source": "apps_admin_src_app_layout",
-      "target": "apps_admin_src_app_layout_metadata",
+      "target": "apps_admin_src_app_layout_adminlocale",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L4",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_adminshell",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -4122,7 +4611,95 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/app/layout.tsx",
-      "source_location": "L9",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_translation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_cssvariables",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_messages",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_adminshellcss",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_tokenizedbodystyle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_adminshellprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_shellcontent",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_src_app_layout",
+      "target": "apps_admin_src_app_layout_metadata",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/src/app/layout.tsx",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -4419,18 +4996,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_admin_tsconfig",
-      "target": "apps_admin_tsconfig_exclude",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/admin/tsconfig.json",
-      "source_location": "L19",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -4442,6 +5008,17 @@
       "confidence_score": 1.0,
       "source_file": "apps/admin/tsconfig.json",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tsconfig",
+      "target": "apps_admin_tsconfig_exclude",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/tsconfig.json",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -4468,7 +5045,7 @@
     },
     {
       "source": "apps_admin_tsconfig_compileroptions",
-      "target": "apps_admin_tsconfig_compileroptions_incremental",
+      "target": "apps_admin_tsconfig_compileroptions_resolvejsonmodule",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4479,7 +5056,7 @@
     },
     {
       "source": "apps_admin_tsconfig_compileroptions",
-      "target": "apps_admin_tsconfig_compileroptions_skiplibcheck",
+      "target": "apps_admin_tsconfig_compileroptions_incremental",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4490,13 +5067,24 @@
     },
     {
       "source": "apps_admin_tsconfig_compileroptions",
-      "target": "apps_admin_tsconfig_compileroptions_plugins",
+      "target": "apps_admin_tsconfig_compileroptions_skiplibcheck",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/tsconfig.json",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tsconfig_compileroptions",
+      "target": "apps_admin_tsconfig_compileroptions_plugins",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/tsconfig.json",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -4863,6 +5451,193 @@
       "weight": 1.0
     },
     {
+      "source": "design_system_carrierflow_master",
+      "target": "design_system_carrierflow_master_design_system_master_file",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_anti_patterns_do_not_use",
+      "target": "design_system_carrierflow_master_additional_forbidden_patterns",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_component_specs",
+      "target": "design_system_carrierflow_master_cards",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_component_specs",
+      "target": "design_system_carrierflow_master_inputs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_component_specs",
+      "target": "design_system_carrierflow_master_modals",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_component_specs",
+      "target": "design_system_carrierflow_master_buttons",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_design_system_master_file",
+      "target": "design_system_carrierflow_master_global_rules",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_design_system_master_file",
+      "target": "design_system_carrierflow_master_style_guidelines",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_design_system_master_file",
+      "target": "design_system_carrierflow_master_motion",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_design_system_master_file",
+      "target": "design_system_carrierflow_master_anti_patterns_do_not_use",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_design_system_master_file",
+      "target": "design_system_carrierflow_master_pre_delivery_checklist",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_design_system_master_file",
+      "target": "design_system_carrierflow_master_component_specs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_global_rules",
+      "target": "design_system_carrierflow_master_color_palette",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_global_rules",
+      "target": "design_system_carrierflow_master_typography",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_global_rules",
+      "target": "design_system_carrierflow_master_spacing_variables",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_global_rules",
+      "target": "design_system_carrierflow_master_shadow_depths",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_carrierflow_master_style_guidelines",
+      "target": "design_system_carrierflow_master_page_pattern",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "design-system/carrierflow/MASTER.md",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
       "source": "docs_superpowers_plans_2026_08_27_carrierflow_pilot_build",
       "target": "docs_superpowers_plans_2026_08_27_carrierflow_pilot_build_carrierflow_pilot_build_implementation_plan",
       "relation": "contains",
@@ -5212,6 +5987,28 @@
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "packages_design_tokens_src_tokens",
+      "target": "packages_design_tokens_src_tokens_operationalcssvariables",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/design-tokens/src/tokens.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "packages_design_tokens_src_tokens",
+      "target": "packages_design_tokens_src_tokens_operationaltokens",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/design-tokens/src/tokens.ts",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -5784,5 +6581,5 @@
       "source_file": "AGENTS.md"
     }
   ],
-  "built_at_commit": "de49e7bf1eac4a8d8cc43fe48270dee1fcca3519"
+  "built_at_commit": "ebdefea243c34566eacaa129841ffdb8821b9cbe"
 }

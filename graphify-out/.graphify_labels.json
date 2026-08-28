@@ -5,7 +5,7 @@
   "3": "scripts",
   "4": "scripts",
   "5": "dependencies",
-  "6": "tsconfig.json",
+  "6": "compilerOptions",
   "7": "All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization.",
   "8": "write-audit.ts",
   "9": "compilerOptions",
@@ -32,5 +32,6 @@
   "30": "vitest.workspace.ts",
   "31": "devDependencies",
   "32": "server-only.ts",
-  "33": "vitest.config.ts"
+  "33": "vitest.config.ts",
+  "34": "Design System Master File"
 }

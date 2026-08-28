@@ -1,0 +1,19 @@
+{
+  "brand": "CarrierFlow",
+  "navigation": {
+    "label": "Navegación principal",
+    "operations": "Operaciones",
+    "loads": "Cargas",
+    "drivers": "Conductores",
+    "vehicles": "Vehículos"
+  },
+  "main": {
+    "label": "Espacio de trabajo de operaciones",
+    "heading": "Resumen de operaciones",
+    "description": "El trabajo de despacho se mantiene organizado, visible y listo para la ruta."
+  },
+  "status": {
+    "label": "Estado de la carga",
+    "onTime": "A tiempo"
+  }
+}

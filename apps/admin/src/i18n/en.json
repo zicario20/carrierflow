@@ -1,0 +1,19 @@
+{
+  "brand": "CarrierFlow",
+  "navigation": {
+    "label": "Primary navigation",
+    "operations": "Operations",
+    "loads": "Loads",
+    "drivers": "Drivers",
+    "vehicles": "Vehicles"
+  },
+  "main": {
+    "label": "Operations workspace",
+    "heading": "Operations overview",
+    "description": "Dispatch work stays organized, visible, and ready for the road."
+  },
+  "status": {
+    "label": "Load status",
+    "onTime": "On time"
+  }
+}
