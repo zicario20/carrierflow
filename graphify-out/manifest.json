@@ -1,146 +1,248 @@
 {
   ".codex/hooks.json": {
-    "mtime": 1787858206.9789011,
-    "seen": 1787863836.9087708,
+    "mtime": 1787887563.188389,
+    "seen": 1787888502.517612,
     "ast_hash": "5ebef3dd159986e465ab65e4014107ec",
     "semantic_hash": "5ebef3dd159986e465ab65e4014107ec"
   },
   "blueprints/carrierflow/tasks.json": {
-    "mtime": 1787862883.2605786,
-    "seen": 1787863836.908774,
-    "ast_hash": "395a3efa292e573fdb9b4ee247267a53",
-    "semantic_hash": "395a3efa292e573fdb9b4ee247267a53"
+    "mtime": 1787887563.2841766,
+    "seen": 1787888502.517621,
+    "ast_hash": "7fb154a1250abfca6ea83913a280d818",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/.codex/settings.json": {
-    "mtime": 1787862982.431436,
-    "seen": 1787863836.908775,
-    "ast_hash": "7fae8027f92bafb01f7a65957e9c528f",
-    "semantic_hash": "7fae8027f92bafb01f7a65957e9c528f"
+    "mtime": 1787887563.2861762,
+    "seen": 1787888502.517622,
+    "ast_hash": "b6f2884812c75b2b31710fd0f1dafb9c",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/.codex/skills/project-skills.manifest.json": {
-    "mtime": 1787862966.030229,
-    "seen": 1787863836.9087756,
-    "ast_hash": "c039db5a520360588824adec28198faf",
-    "semantic_hash": "c039db5a520360588824adec28198faf"
+    "mtime": 1787887563.287176,
+    "seen": 1787888502.5176225,
+    "ast_hash": "20d49dca2ab9c23e3499b1c90e16b368",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/package.json": {
-    "mtime": 1787861312.2639356,
-    "seen": 1787863836.9087763,
-    "ast_hash": "7247093f74d06ca9bfb3832ba2ba27d7",
-    "semantic_hash": "7247093f74d06ca9bfb3832ba2ba27d7"
+    "mtime": 1787887563.289176,
+    "seen": 1787888502.517623,
+    "ast_hash": "04edd294ce9c62a9fa983770913668f5",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/playwright.config.ts": {
-    "mtime": 1787861706.5999925,
-    "seen": 1787863836.9087768,
-    "ast_hash": "11d172bfb6c5643230d0339ad14df1b8",
-    "semantic_hash": "11d172bfb6c5643230d0339ad14df1b8"
+    "mtime": 1787887563.289176,
+    "seen": 1787888502.517624,
+    "ast_hash": "1a5f56d183a676d7876d76e81f8ce052",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/tsconfig.base.json": {
-    "mtime": 1787860453.9639308,
-    "seen": 1787863836.9087772,
-    "ast_hash": "fa577e6a8765d1ae0f56df7af1d4eb0f",
-    "semantic_hash": "fa577e6a8765d1ae0f56df7af1d4eb0f"
+    "mtime": 1787887563.2903354,
+    "seen": 1787888502.5176246,
+    "ast_hash": "94d96c2d646f57128831858ad37314d3",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/vitest.workspace.ts": {
-    "mtime": 1787861312.2879913,
-    "seen": 1787863836.9087777,
-    "ast_hash": "1d15e8b44d1c93d527aa3953258023b5",
-    "semantic_hash": "1d15e8b44d1c93d527aa3953258023b5"
+    "mtime": 1787887563.2903354,
+    "seen": 1787888502.517625,
+    "ast_hash": "e63d4003d17cf53f20931d3d5a808aa2",
+    "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1787861719.2309015,
-    "seen": 1787863836.9087782,
-    "ast_hash": "ac155d052fa59439d8add458a9cdcb85",
-    "semantic_hash": "ac155d052fa59439d8add458a9cdcb85"
+    "mtime": 1787887563.2821765,
+    "seen": 1787888502.5176306,
+    "ast_hash": "9c56883850e3e65494b5e25f372ce19b",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/blueprint.md": {
-    "mtime": 1787863042.8713882,
-    "seen": 1787863836.9087787,
-    "ast_hash": "0ef5278f53f68984231cd33efe12615b",
-    "semantic_hash": "0ef5278f53f68984231cd33efe12615b"
+    "mtime": 1787887563.283176,
+    "seen": 1787888502.517631,
+    "ast_hash": "1859f7c090946cf487f72def33720fda",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/epics/01-foundation.md": {
-    "mtime": 1787862961.0261676,
-    "seen": 1787863836.908779,
-    "ast_hash": "575daf6daa721bff378e6872e0954842",
-    "semantic_hash": "575daf6daa721bff378e6872e0954842"
+    "mtime": 1787887563.283176,
+    "seen": 1787888502.5176315,
+    "ast_hash": "5b1dee8a0c967f03f482bcd26080a66c",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/epics/02-dispatch.md": {
-    "mtime": 1787862961.0538025,
-    "seen": 1787863836.9087799,
-    "ast_hash": "f5e04e8369ec3c018725be48197cd5a7",
-    "semantic_hash": "f5e04e8369ec3c018725be48197cd5a7"
+    "mtime": 1787887563.2841766,
+    "seen": 1787888502.517632,
+    "ast_hash": "539d48dfb9c4605fadcbf12c6b9d362f",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/epics/03-reliability-release.md": {
-    "mtime": 1787862961.0803294,
-    "seen": 1787863836.90878,
-    "ast_hash": "986093aa83ac888a723da33249141a7a",
-    "semantic_hash": "986093aa83ac888a723da33249141a7a"
+    "mtime": 1787887563.2841766,
+    "seen": 1787888502.5176325,
+    "ast_hash": "1f9b21e842e6bc65d126d1d5cca773bb",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/.codex/rules/database.md": {
-    "mtime": 1787860453.825477,
-    "seen": 1787863836.9087806,
-    "ast_hash": "745d910a81da5dc04917934ae5d934b3",
-    "semantic_hash": "745d910a81da5dc04917934ae5d934b3"
+    "mtime": 1787887563.2851782,
+    "seen": 1787888502.5176332,
+    "ast_hash": "db13fbd0e2941bf417566ebd1a3e1b29",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/.codex/rules/mobile.md": {
-    "mtime": 1787860453.8683226,
-    "seen": 1787863836.908781,
-    "ast_hash": "ad5709ce8b8eca7d5538773b8bf85aef",
-    "semantic_hash": "ad5709ce8b8eca7d5538773b8bf85aef"
+    "mtime": 1787887563.2851782,
+    "seen": 1787888502.5176337,
+    "ast_hash": "05cf2ad4059c430f968dbaf3d2ad28a9",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/.codex/rules/security.md": {
-    "mtime": 1787860453.838541,
-    "seen": 1787863836.9087813,
-    "ast_hash": "60dbacbd22fded751bc29e3fff7eaeb5",
-    "semantic_hash": "60dbacbd22fded751bc29e3fff7eaeb5"
+    "mtime": 1787887563.2861762,
+    "seen": 1787888502.5176346,
+    "ast_hash": "fb92a2310000dcb7e1c9a8037956dae2",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/.codex/rules/ui.md": {
-    "mtime": 1787860453.852057,
-    "seen": 1787863836.9087818,
-    "ast_hash": "61a313417af212fff2867dfd9e65da95",
-    "semantic_hash": "61a313417af212fff2867dfd9e65da95"
+    "mtime": 1787887563.2861762,
+    "seen": 1787888502.517635,
+    "ast_hash": "582b45724c9b62dc1876d27e7e69ca10",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/.codex/skills/carrierflow-governance/SKILL.md": {
-    "mtime": 1787861325.694297,
-    "seen": 1787863836.9087822,
-    "ast_hash": "a9937a08d811ebab7635da6cb2117504",
-    "semantic_hash": "a9937a08d811ebab7635da6cb2117504"
+    "mtime": 1787887563.287176,
+    "seen": 1787888502.5176356,
+    "ast_hash": "25c1db0fcd195f500bc94ebf7f8821a6",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/AGENTS.md": {
-    "mtime": 1787862202.0256429,
-    "seen": 1787863836.908783,
-    "ast_hash": "de6bbb07b72c36d97ec56bfa2b7fcc24",
-    "semantic_hash": "de6bbb07b72c36d97ec56bfa2b7fcc24"
+    "mtime": 1787887563.2881758,
+    "seen": 1787888502.517636,
+    "ast_hash": "a8647c497eae8b257cd7f0a0148d4d8d",
+    "semantic_hash": ""
   },
   "blueprints/carrierflow/workspace/pnpm-workspace.yaml": {
-    "mtime": 1787860453.8983595,
-    "seen": 1787863836.9087834,
-    "ast_hash": "55ac03bd3708a0a85e586145cd34c516",
-    "semantic_hash": "55ac03bd3708a0a85e586145cd34c516"
+    "mtime": 1787887563.289176,
+    "seen": 1787888502.5176365,
+    "ast_hash": "cfd2b3d11aee8a2168a8cbdd24ceb5b6",
+    "semantic_hash": ""
   },
   "docs/architecture/adr-001-self-hosted-dokploy.md": {
-    "mtime": 1787860267.8394802,
-    "seen": 1787863836.9087837,
-    "ast_hash": "a3855be54e7e791919977923b747e0dc",
-    "semantic_hash": "a3855be54e7e791919977923b747e0dc"
+    "mtime": 1787887563.2903354,
+    "seen": 1787888502.5176375,
+    "ast_hash": "98faab17e38da5e2c487ad7e739ac68c",
+    "semantic_hash": ""
   },
   "docs/product/carrierflow-prd.md": {
-    "mtime": 1787860088.486003,
-    "seen": 1787863836.9087844,
-    "ast_hash": "e8cb81a5ad05a7214e3c3f79fef00c39",
-    "semantic_hash": "e8cb81a5ad05a7214e3c3f79fef00c39"
+    "mtime": 1787887563.2913396,
+    "seen": 1787888502.517638,
+    "ast_hash": "69445601a2b46024f1c83f7ac0d2a137",
+    "semantic_hash": ""
   },
   "docs/superpowers/specs/2026-08-27-carrierflow-design.md": {
-    "mtime": 1787860128.0036426,
-    "seen": 1787863836.9087849,
-    "ast_hash": "e401f8afa7bd94a77cd063b957023fcc",
-    "semantic_hash": "e401f8afa7bd94a77cd063b957023fcc"
+    "mtime": 1787887563.2923396,
+    "seen": 1787888502.5176392,
+    "ast_hash": "274a14cb109d36bcdd49fa021bc17da8",
+    "semantic_hash": ""
   },
   "docs/superpowers/plans/2026-08-27-carrierflow-pilot-build.md": {
-    "mtime": 1787863919.8146338,
-    "seen": 1787863936.1440973,
-    "ast_hash": "ed311d3cebcade0e0ac184318cb04463",
+    "mtime": 1787887563.2913396,
+    "seen": 1787888502.5176384,
+    "ast_hash": "9283eeec56306dcbff28ffc3daf37cc1",
+    "semantic_hash": ""
+  },
+  ".codex/settings.json": {
+    "mtime": 1787887563.2861762,
+    "seen": 1787888502.5176156,
+    "ast_hash": "b6f2884812c75b2b31710fd0f1dafb9c",
+    "semantic_hash": ""
+  },
+  "apps/admin/next-env.d.ts": {
+    "mtime": 1787888414.9411623,
+    "seen": 1787888502.5176172,
+    "ast_hash": "8195d2c60ce847a459ae9d308d6a5724",
+    "semantic_hash": ""
+  },
+  "apps/admin/package.json": {
+    "mtime": 1787888398.0306106,
+    "seen": 1787888502.517618,
+    "ast_hash": "96339c56a43fa8237e939257da9f4831",
+    "semantic_hash": ""
+  },
+  "apps/admin/src/app/layout.tsx": {
+    "mtime": 1787888189.9414375,
+    "seen": 1787888502.5176187,
+    "ast_hash": "6e083d7550c67b7ed6ba272b6a84ed77",
+    "semantic_hash": ""
+  },
+  "apps/admin/src/app/page.tsx": {
+    "mtime": 1787888343.0085075,
+    "seen": 1787888502.5176191,
+    "ast_hash": "7310e70d427cc763ad2c0f78e34dadad",
+    "semantic_hash": ""
+  },
+  "apps/admin/tsconfig.json": {
+    "mtime": 1787888189.9358706,
+    "seen": 1787888502.51762,
+    "ast_hash": "0b4cbad5df13790dc961330c46f5a286",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1787887563.289176,
+    "seen": 1787888502.5176256,
+    "ast_hash": "04edd294ce9c62a9fa983770913668f5",
+    "semantic_hash": ""
+  },
+  "playwright.config.ts": {
+    "mtime": 1787887563.289176,
+    "seen": 1787888502.517626,
+    "ast_hash": "1a5f56d183a676d7876d76e81f8ce052",
+    "semantic_hash": ""
+  },
+  "tests/smoke/admin-http.spec.ts": {
+    "mtime": 1787887835.7597399,
+    "seen": 1787888502.5176265,
+    "ast_hash": "fb30dfaab1023fb8b048ab684a024b34",
+    "semantic_hash": ""
+  },
+  "tsconfig.base.json": {
+    "mtime": 1787888371.2824037,
+    "seen": 1787888502.5176275,
+    "ast_hash": "4a8895f7afa5f52f6315234eaa8bad72",
+    "semantic_hash": ""
+  },
+  "vitest.workspace.ts": {
+    "mtime": 1787887563.2903354,
+    "seen": 1787888502.517628,
+    "ast_hash": "e63d4003d17cf53f20931d3d5a808aa2",
+    "semantic_hash": ""
+  },
+  ".codex/rules/database.md": {
+    "mtime": 1787887563.2851782,
+    "seen": 1787888502.5176282,
+    "ast_hash": "db13fbd0e2941bf417566ebd1a3e1b29",
+    "semantic_hash": ""
+  },
+  ".codex/rules/mobile.md": {
+    "mtime": 1787887563.2851782,
+    "seen": 1787888502.5176287,
+    "ast_hash": "05cf2ad4059c430f968dbaf3d2ad28a9",
+    "semantic_hash": ""
+  },
+  ".codex/rules/security.md": {
+    "mtime": 1787887563.2861762,
+    "seen": 1787888502.5176291,
+    "ast_hash": "fb92a2310000dcb7e1c9a8037956dae2",
+    "semantic_hash": ""
+  },
+  ".codex/rules/ui.md": {
+    "mtime": 1787887563.2861762,
+    "seen": 1787888502.5176296,
+    "ast_hash": "582b45724c9b62dc1876d27e7e69ca10",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260827_205339_how_do_mandatory_assignment__mileage_revisions__an.md": {
+    "mtime": 1787887563.2954135,
+    "seen": 1787888502.5176396,
+    "ast_hash": "0dc18288a7fc8bb33ff1c9676f263808",
+    "semantic_hash": ""
+  },
+  "pnpm-workspace.yaml": {
+    "mtime": 1787887563.289176,
+    "seen": 1787888502.51764,
+    "ast_hash": "cfd2b3d11aee8a2168a8cbdd24ceb5b6",
     "semantic_hash": ""
   }
 }

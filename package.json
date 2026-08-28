@@ -1,0 +1,25 @@
+{
+  "name": "carrierflow",
+  "private": true,
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": ">=24.20.0 <25"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "test:e2e": "playwright test",
+    "db:start": "pnpm exec supabase start",
+    "db:reset": "pnpm exec supabase db reset",
+    "db:test": "pnpm exec supabase test db"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "shadcn": "4.19.0",
+    "supabase": "2.116.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vitest": "4.1.11"
+  }
+}

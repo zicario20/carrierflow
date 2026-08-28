@@ -1,26 +1,26 @@
-# Graph Report - Carrier Flow  (2026-08-27)
+# Graph Report - phase-1-foundation  (2026-08-27)
 
 ## Corpus Check
-- 23 files · ~18,955 words
+- 39 files · ~20,004 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 97 nodes · 85 edges · 16 communities (14 shown, 2 thin omitted)
+- 205 nodes · 178 edges · 30 communities (26 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c3f9df3a`
+- Built from commit: `45f5859b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - scripts
-- Dokploy production Compose exposes only the TLS proxy and isolates application, self-hosted Supabase/data, and monitoring; backup restore, security, accessibility, device, and CI evidence gate pilot release.
+- All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization.
 - devDependencies
 - compilerOptions
-- All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization.
-- paths
+- compilerOptions
+- scripts
 - Accepted decision: operate Dokploy on owner-controlled Ubuntu with Docker Compose and official Docker-based self-hosted Supabase for the private pilot.
 - CarrierFlow is a US/USD multi-tenant B2B private-invitation pilot for carriers, owners, dispatchers, and drivers; Canadian trips do not add Canadian commercial scope.
 - Architect, Superpowers, Cyber Neo, UI UX Pro Max, and Graphify have distinct delivery ownership; Graphify is consulted before broad exploration and updated after durable changes.
@@ -28,19 +28,25 @@
 - Workspace execution contract mandates authorized service/RPC architecture, current/history location separation, TLS-only public exposure, domain rules before edits, and declared verification commands.
 - pnpm workspace intentionally includes only apps and packages, excluding blueprint artifacts from the application workspace.
 - File and authority map
-- package.json
+- tsconfig.json
+- scripts
+- devDependencies
+- dependencies
+- Q: How do mandatory assignment, mileage revisions, and tenant security constrain the private pilot?
+- layout.tsx
+- next-env.d.ts
 
 ## God Nodes (most connected - your core abstractions)
-1. `compilerOptions` - 9 edges
-2. `scripts` - 8 edges
-3. `File and authority map` - 5 edges
-4. `paths` - 4 edges
-5. `exclude` - 4 edges
-6. `Accepted decision: operate Dokploy on owner-controlled Ubuntu with Docker Compose and official Docker-based self-hosted Supabase for the private pilot.` - 4 edges
-7. `CarrierFlow Pilot Build Implementation Plan` - 3 edges
-8. `Dokploy production Compose exposes only the TLS proxy and isolates application, self-hosted Supabase/data, and monitoring; backup restore, security, accessibility, device, and CI evidence gate pilot release.` - 3 edges
-9. `Administrative and operational load states are server-only; delivery requires pickup plus configured evidence, while incidents preserve the active load.` - 3 edges
-10. `Flutter persists mutations before networking and represents denied, approximate, stale, and force-quit location states as degraded; background tracking is best effort for active loads.` - 3 edges
+1. `compilerOptions` - 10 edges
+2. `compilerOptions` - 9 edges
+3. `scripts` - 8 edges
+4. `scripts` - 8 edges
+5. `scripts` - 7 edges
+6. `include` - 5 edges
+7. `File and authority map` - 5 edges
+8. `compilerOptions` - 4 edges
+9. `paths` - 4 edges
+10. `exclude` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Server-enforced auditable transitions, configurable evidence, consented GPS, durable offline idempotency, scoped public links, and bilingual accessible UX are inseparable product requirements.` --implements--> `Administrative and operational load states are server-only; delivery requires pickup plus configured evidence, while incidents preserve the active load.`  [EXTRACTED]
@@ -62,31 +68,31 @@
 - **Pilot readiness combines self-hosted operational controls, reliability/release implementation, and cross-role physical, security, accessibility, and restore review.** — docs_architecture_adr_001_self_hosted_dokploy_pre_pilot_controls, blueprints_carrierflow_epics_03_reliability_pilot_release, docs_superpowers_specs_2026_08_27_carrierflow_design_pre_pilot_review_gates [EXTRACTED 1.00]
 - **Tenant authorization, server-audited state/evidence enforcement, and durable offline idempotency jointly define a retry-safe trusted mutation boundary.** — agents_tenant_authorization_boundary, blueprints_carrierflow_blueprint_load_state_and_evidence_contract, docs_product_carrierflow_prd_privacy_offline_contract [INFERRED 0.95]
 
-## Communities (16 total, 2 thin omitted)
+## Communities (30 total, 4 thin omitted)
 
 ### Community 0 - "scripts"
-Cohesion: 0.25
-Nodes (8): scripts, db:reset, db:start, db:test, lint, test, test:e2e, typecheck
+Cohesion: 0.14
+Nodes (13): engines, node, name, packageManager, private, scripts, db:reset, db:start (+5 more)
 
-### Community 1 - "Dokploy production Compose exposes only the TLS proxy and isolates application, self-hosted Supabase/data, and monitoring; backup restore, security, accessibility, device, and CI evidence gate pilot release."
-Cohesion: 0.18
-Nodes (11): Server-enforced auditable transitions, configurable evidence, consented GPS, durable offline idempotency, scoped public links, and bilingual accessible UX are inseparable product requirements., Dokploy production Compose exposes only the TLS proxy and isolates application, self-hosted Supabase/data, and monitoring; backup restore, security, accessibility, device, and CI evidence gate pilot release., Administrative and operational load states are server-only; delivery requires pickup plus configured evidence, while incidents preserve the active load., Flutter persists mutations before networking and represents denied, approximate, stale, and force-quit location states as degraded; background tracking is best effort for active loads., Dispatch sequence models ordered loads/evidence/state, versioned pricing estimates, mandatory web assignment, and a current-first Flutter execution flow., Reliability sequence adds exactly-once offline sync, privacy-safe tracking, minimal push/public links, pilot entitlements and Dokploy/CI security-accessibility gates., Driver UX is current-load-first, has no decision controls, uses durable ordered client_mutation_id retries, and reports platform-limited tracking honestly., Before pilot, require hardened host access, no public database/internal panels, deployment-injected secrets, encrypted off-host backups, recorded isolated restore, versioned rollback, monitoring, and Cyber Neo review. (+3 more)
+### Community 1 - "All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization."
+Cohesion: 0.10
+Nodes (21): Only authorized admin/dispatcher roles can assign, reassign, cancel, or close loads; drivers never receive those controls., Server-enforced auditable transitions, configurable evidence, consented GPS, durable offline idempotency, scoped public links, and bilingual accessible UX are inseparable product requirements., All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization., Web and Flutter use validated server handlers/RPC; direct table mutations are prohibited and authorized mutations are transactional, RLS-protected, audited, and typed., Dokploy production Compose exposes only the TLS proxy and isolates application, self-hosted Supabase/data, and monitoring; backup restore, security, accessibility, device, and CI evidence gate pilot release., Administrative and operational load states are server-only; delivery requires pickup plus configured evidence, while incidents preserve the active load., Empty, loaded, total estimated miles, and quote per total mile are separately persisted; next-load deadhead begins at the active load's final planned stop and invalidations create immutable revisions and notifications., Flutter persists mutations before networking and represents denied, approximate, stale, and force-quit location states as degraded; background tracking is best effort for active loads. (+13 more)
 
 ### Community 2 - "devDependencies"
 Cohesion: 0.15
 Nodes (13): devDependencies, @playwright/test, shadcn, supabase, tailwindcss, typescript, vitest, @playwright/test (+5 more)
 
 ### Community 3 - "compilerOptions"
-Cohesion: 0.15
-Nodes (12): compilerOptions, baseUrl, module, moduleResolution, noImplicitOverride, noUncheckedIndexedAccess, strict, target (+4 more)
+Cohesion: 0.10
+Nodes (19): compilerOptions, baseUrl, module, moduleResolution, noImplicitOverride, noUncheckedIndexedAccess, paths, strict (+11 more)
 
-### Community 4 - "All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization."
-Cohesion: 0.20
-Nodes (10): Only authorized admin/dispatcher roles can assign, reassign, cancel, or close loads; drivers never receive those controls., All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization., Web and Flutter use validated server handlers/RPC; direct table mutations are prohibited and authorized mutations are transactional, RLS-protected, audited, and typed., Empty, loaded, total estimated miles, and quote per total mile are separately persisted; next-load deadhead begins at the active load's final planned stop and invalidations create immutable revisions and notifications., Foundation sequence establishes reproducible workspace, tenant/RLS schema, invitations and audit, bilingual accessible admin shell, and eligible fleet shifts., Database changes are forward-only; every commercial table has company_id/RLS, SECURITY DEFINER is constrained, audits share the mutation transaction, and private storage is tenant-prefixed., The operational light-first UI uses approved tokens, non-color state cues, 44px targets, keyboard/focus/landmarks, EN/ES parity, and reduced motion., Dispatcher-entered USD quote yields separate empty, loaded, total, and quote-per-total-mile values; calculations are auditable estimates and driver compensation visibility is dispatch-authorized. (+2 more)
+### Community 4 - "compilerOptions"
+Cohesion: 0.10
+Nodes (20): compilerOptions, baseUrl, ignoreDeprecations, module, moduleResolution, noImplicitOverride, noUncheckedIndexedAccess, paths (+12 more)
 
-### Community 5 - "paths"
-Cohesion: 0.29
-Nodes (7): paths, @carrierflow/contracts/*, @carrierflow/design-tokens/*, @carrierflow/routing-contract/*, packages/contracts/src/*, packages/design-tokens/src/*, packages/routing-contract/src/*
+### Community 5 - "scripts"
+Cohesion: 0.11
+Nodes (17): devDependencies, @types/node, @types/react, @types/react-dom, name, private, scripts, build (+9 more)
 
 ### Community 6 - "Accepted decision: operate Dokploy on owner-controlled Ubuntu with Docker Compose and official Docker-based self-hosted Supabase for the private pilot."
 Cohesion: 0.33
@@ -108,23 +114,45 @@ Nodes (3): Private evidence needs authorized short-lived signed access, while pu
 Cohesion: 0.25
 Nodes (7): CarrierFlow Pilot Build Implementation Plan, Coverage review, File and authority map, Task 1: Freeze the approved execution contract, Task 2: Bootstrap a dedicated implementation worktree, Task 3: Execute the 15-task DAG in three reviewable epics, Task 4: Certify the private-pilot gate
 
-### Community 15 - "package.json"
-Cohesion: 0.33
-Nodes (5): engines, node, name, packageManager, private
+### Community 15 - "tsconfig.json"
+Cohesion: 0.14
+Nodes (13): compilerOptions, incremental, jsx, plugins, exclude, extends, include, node_modules (+5 more)
+
+### Community 16 - "scripts"
+Cohesion: 0.14
+Nodes (13): engines, node, name, packageManager, private, scripts, db:reset, db:start (+5 more)
+
+### Community 17 - "devDependencies"
+Cohesion: 0.15
+Nodes (13): devDependencies, @playwright/test, shadcn, supabase, tailwindcss, typescript, vitest, @playwright/test (+5 more)
+
+### Community 18 - "dependencies"
+Cohesion: 0.22
+Nodes (9): dependencies, maplibre-gl, next, react, react-dom, maplibre-gl, next, react (+1 more)
+
+### Community 19 - "Q: How do mandatory assignment, mileage revisions, and tenant security constrain the private pilot?"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: How do mandatory assignment, mileage revisions, and tenant security constrain the private pilot?, Source Nodes
 
 ## Knowledge Gaps
-- **53 isolated node(s):** `name`, `private`, `packageManager`, `node`, `typecheck` (+48 more)
+- **114 isolated node(s):** `name`, `private`, `version`, `dev`, `build` (+109 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
-  _High betweenness centrality (0.050) - this node is a cross-community bridge._
-- **Why does `scripts` connect `scripts` to `package.json`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
-- **Why does `compilerOptions` connect `compilerOptions` to `paths`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
-- **What connects `name`, `private`, `packageManager` to the rest of the system?**
-  _53 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `devDependencies` connect `devDependencies` to `scripts`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `devDependencies` to `scripts`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `scripts`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **What connects `name`, `private`, `version` to the rest of the system?**
+  _114 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `scripts` be split into smaller, more focused modules?**
+  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+- **Should `All records and queries are organization-scoped with server-side authorization and database RLS; client filtering is never authorization.` be split into smaller, more focused modules?**
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
+- **Should `compilerOptions` be split into smaller, more focused modules?**
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._

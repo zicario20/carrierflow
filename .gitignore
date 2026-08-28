@@ -1,2 +1,20 @@
 # Local implementation worktrees must never be committed.
 .worktrees/
+
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+*.tsbuildinfo
+coverage/
+playwright-report/
+test-results/
+.dart_tool/
+.build/
+build/
+ios/Pods/
+android/.gradle/
+supabase/.temp/
+infra/data/
+infra/backups/
