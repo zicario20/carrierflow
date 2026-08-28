@@ -1,16 +1,16 @@
 # Graph Report - phase-1-foundation  (2026-08-27)
 
 ## Corpus Check
-- 58 files · ~25,043 words
+- 58 files · ~25,130 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 280 nodes · 277 edges · 35 communities (32 shown, 3 thin omitted)
+- 285 nodes · 282 edges · 35 communities (32 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ebdefea2`
+- Built from commit: `93de0ac9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -82,8 +82,8 @@ Cohesion: 0.15
 Nodes (13): devDependencies, @playwright/test, shadcn, supabase, tailwindcss, typescript, vitest, @playwright/test (+5 more)
 
 ### Community 2 - "admin/package.json"
-Cohesion: 0.11
-Nodes (18): devDependencies, @types/node, @types/react, @types/react-dom, name, private, scripts, build (+10 more)
+Cohesion: 0.09
+Nodes (22): devDependencies, jsdom, @testing-library/react, @types/node, @types/react, @types/react-dom, name, private (+14 more)
 
 ### Community 3 - "scripts"
 Cohesion: 0.13
@@ -138,8 +138,8 @@ Cohesion: 0.67
 Nodes (3): Architect, Superpowers, Cyber Neo, UI UX Pro Max, and Graphify have distinct delivery ownership; Graphify is consulted before broad exploration and updated after durable changes., Five tracked project-scoped skills are required build artifacts; governance augments but never replaces them, and bootstrap is idempotent without overwriting existing artifacts., CarrierFlow governance assigns architecture, disciplined implementation, security remediation, UX accessibility, and graph memory to named roles while allowing safe autonomous action.
 
 ### Community 16 - "layout.tsx"
-Cohesion: 0.17
-Nodes (11): AdminLocale, AdminShell(), adminShellCss, AdminShellProps, CssVariables, messages, metadata, tokenizedBodyStyle (+3 more)
+Cohesion: 0.16
+Nodes (12): AdminLocale, AdminShell(), adminShellCss, AdminShellProps, CssVariables, messages, metadata, tokenizedBodyStyle (+4 more)
 
 ### Community 17 - "Private evidence needs authorized short-lived signed access, while public tracking is a load-scoped expiring/revocable minimal-data token with no session creation."
 Cohesion: 0.67
@@ -154,7 +154,7 @@ Cohesion: 0.11
 Nodes (17): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, Cards, Color Palette, Component Specs, Design System Master File, Global Rules (+9 more)
 
 ## Knowledge Gaps
-- **151 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+146 more)
+- **154 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+149 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -162,16 +162,16 @@ Nodes (17): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, 
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `admin/package.json`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `devDependencies` to `scripts`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `scripts`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _151 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _154 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
 - **Should `admin/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+- **Should `scripts` be split into smaller, more focused modules?**
+  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._

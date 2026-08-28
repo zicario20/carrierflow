@@ -156,9 +156,9 @@
     "semantic_hash": "8195d2c60ce847a459ae9d308d6a5724"
   },
   "apps/admin/package.json": {
-    "mtime": 1787891037.099108,
-    "seen": 1787891161.0227644,
-    "ast_hash": "b8e9bf7b1f4422d5bdeea5e33249f3d0",
+    "mtime": 1787892561.1182497,
+    "seen": 1787892599.6080556,
+    "ast_hash": "cd5fa5c65b1adf84a11dc5647010e311",
     "semantic_hash": ""
   },
   "apps/admin/src/app/layout.tsx": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "pnpm-workspace.yaml": {
-    "mtime": 1787888583.839984,
-    "seen": 1787889148.9097233,
-    "ast_hash": "652a696e4fb61d6ae691660bcdc9aeee",
+    "mtime": 1787892564.6755002,
+    "seen": 1787892599.610787,
+    "ast_hash": "94959a14ffe26db859e218b25f9b1f52",
     "semantic_hash": ""
   },
   "apps/admin/src/lib/env.ts": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "apps/admin/tests/ui/shell-a11y.test.tsx": {
-    "mtime": 1787892021.001642,
-    "seen": 1787892056.6990168,
-    "ast_hash": "36495f31146eda0bc708a91d241634b8",
+    "mtime": 1787892501.433982,
+    "seen": 1787892599.6087885,
+    "ast_hash": "7b55c36ca53b8f0efc277f89bceaae3c",
     "semantic_hash": ""
   },
   "packages/design-tokens/src/tokens.ts": {

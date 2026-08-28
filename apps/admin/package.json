@@ -21,8 +21,10 @@
     "server-only": "0.0.1"
   },
   "devDependencies": {
+    "@testing-library/react": "16.2.0",
     "@types/node": "^26.4.0",
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5"
+    "@types/react-dom": "^19.2.5",
+    "jsdom": "30.0.1"
   }
 }

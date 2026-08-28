@@ -1103,6 +1103,17 @@
       "source_location": "L1"
     },
     {
+      "id": "apps_admin_tests_ui_shell_a11y_test_localeexpectations",
+      "label": "localeExpectations",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "layout.tsx",
+      "file_type": "code",
+      "norm_label": "localeexpectations",
+      "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
+      "source_location": "L10"
+    },
+    {
       "id": "packages_design_tokens_src_tokens",
       "label": "tokens.ts",
       "_origin": "ast",
@@ -1180,6 +1191,28 @@
       "source_location": "L23"
     },
     {
+      "id": "apps_admin_package_devdependencies_jsdom",
+      "label": "jsdom",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "jsdom",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "apps_admin_package_devdependencies_testing_library_react",
+      "label": "@testing-library/react",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "code",
+      "norm_label": "@testing-library/react",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L24"
+    },
+    {
       "id": "apps_admin_package_devdependencies_types_node",
       "label": "@types/node",
       "_origin": "ast",
@@ -1188,7 +1221,7 @@
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "apps/admin/package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "apps_admin_package_devdependencies_types_react",
@@ -1199,7 +1232,7 @@
       "file_type": "code",
       "norm_label": "@types/react",
       "source_file": "apps/admin/package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "apps_admin_package_devdependencies_types_react_dom",
@@ -1210,7 +1243,7 @@
       "file_type": "code",
       "norm_label": "@types/react-dom",
       "source_file": "apps/admin/package.json",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "apps_admin_package_name",
@@ -1334,6 +1367,28 @@
       "source_location": "L4"
     },
     {
+      "id": "jsdom",
+      "label": "jsdom",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "concept",
+      "norm_label": "jsdom",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "testing_library_react",
+      "label": "@testing-library/react",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "admin/package.json",
+      "file_type": "concept",
+      "norm_label": "@testing-library/react",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L24"
+    },
+    {
       "id": "types_node",
       "label": "@types/node",
       "_origin": "ast",
@@ -1342,7 +1397,7 @@
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "apps/admin/package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "types_react",
@@ -1353,7 +1408,7 @@
       "file_type": "concept",
       "norm_label": "@types/react",
       "source_file": "apps/admin/package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "types_react_dom",
@@ -1364,7 +1419,7 @@
       "file_type": "concept",
       "norm_label": "@types/react-dom",
       "source_file": "apps/admin/package.json",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "blueprints_carrierflow_workspace_playwright_config",
@@ -3837,6 +3892,30 @@
       "weight": 1.0
     },
     {
+      "source": "apps_admin_package_devdependencies_jsdom",
+      "target": "jsdom",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_package_devdependencies_testing_library_react",
+      "target": "testing_library_react",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/admin/package.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
       "source": "apps_admin_package_devdependencies_types_node",
       "target": "types_node",
       "relation": "imports",
@@ -3845,7 +3924,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -3857,7 +3936,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -3869,7 +3948,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -4049,7 +4128,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
-      "source_location": "L4",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -4061,7 +4140,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
-      "source_location": "L4",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -4073,7 +4152,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
-      "source_location": "L5",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -4313,7 +4392,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
-      "source_location": "L4",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -4325,7 +4404,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
-      "source_location": "L5",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -4484,7 +4563,7 @@
     },
     {
       "source": "apps_admin_package_devdependencies",
-      "target": "apps_admin_package_devdependencies_types_node",
+      "target": "apps_admin_package_devdependencies_testing_library_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4495,7 +4574,7 @@
     },
     {
       "source": "apps_admin_package_devdependencies",
-      "target": "apps_admin_package_devdependencies_types_react",
+      "target": "apps_admin_package_devdependencies_types_node",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4506,13 +4585,35 @@
     },
     {
       "source": "apps_admin_package_devdependencies",
-      "target": "apps_admin_package_devdependencies_types_react_dom",
+      "target": "apps_admin_package_devdependencies_types_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/admin/package.json",
       "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_package_devdependencies",
+      "target": "apps_admin_package_devdependencies_types_react_dom",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/package.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_package_devdependencies",
+      "target": "apps_admin_package_devdependencies_jsdom",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/package.json",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -4986,6 +5087,17 @@
       "confidence_score": 1.0,
       "source_file": "apps/admin/src/server/result.ts",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_admin_tests_ui_shell_a11y_test",
+      "target": "apps_admin_tests_ui_shell_a11y_test_localeexpectations",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/admin/tests/ui/shell-a11y.test.tsx",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -6581,5 +6693,5 @@
       "source_file": "AGENTS.md"
     }
   ],
-  "built_at_commit": "ebdefea243c34566eacaa129841ffdb8821b9cbe"
+  "built_at_commit": "93de0ac97163e865d0e67177fcb5a1016af9b017"
 }
