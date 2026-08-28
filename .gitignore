@@ -1,0 +1,2 @@
+# Local implementation worktrees must never be committed.
+.worktrees/
