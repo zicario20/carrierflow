@@ -60,7 +60,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
 
-  database:
+  pgtap:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
