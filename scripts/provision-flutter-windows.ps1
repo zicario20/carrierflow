@@ -21,10 +21,30 @@ if ([string]::IsNullOrWhiteSpace($ArchivePath)) {
 }
 
 function Assert-FlutterSdk([string]$FlutterBatchPath) {
-  $versionInfo = (& $FlutterBatchPath --version --machine | ConvertFrom-Json)
+  # The first Flutter invocation can emit bootstrap progress before its machine JSON.
+  # Capture it completely, then parse only the JSON document rather than piping it line-by-line.
+  $versionLines = @(& $FlutterBatchPath --version --machine 2>&1 | ForEach-Object { [string]$_ })
   if ($LASTEXITCODE -ne 0) {
     throw 'Could not read the Flutter SDK version.'
   }
+
+  $jsonStart = -1
+  for ($index = 0; $index -lt $versionLines.Count; $index++) {
+    if ($versionLines[$index].TrimStart().StartsWith('{')) {
+      $jsonStart = $index
+      break
+    }
+  }
+  if ($jsonStart -lt 0) {
+    throw 'Flutter did not return machine-readable version data.'
+  }
+
+  try {
+    $versionInfo = (($versionLines[$jsonStart..($versionLines.Count - 1)] -join [Environment]::NewLine) | ConvertFrom-Json -ErrorAction Stop)
+  } catch {
+    throw 'Could not parse the Flutter SDK version data.'
+  }
+
   if ($versionInfo.frameworkVersion -ne $expectedFlutterVersion -or $versionInfo.dartSdkVersion -ne $expectedDartVersion) {
     throw "Expected Flutter $expectedFlutterVersion / Dart $expectedDartVersion; found Flutter $($versionInfo.frameworkVersion) / Dart $($versionInfo.dartSdkVersion)."
   }

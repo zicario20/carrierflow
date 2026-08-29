@@ -115,14 +115,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: 3.47.2
-          channel: stable
-          cache: true
-      - working-directory: apps/driver
-        run: flutter pub get
-      - working-directory: apps/driver
-        run: flutter test
-      - working-directory: apps/driver
-        run: flutter analyze
+      - name: Provision Flutter SDK
+        shell: pwsh
+        run: pwsh -NoProfile -File scripts/provision-flutter-windows.ps1 -Download
+      - name: Test and analyze the driver app
+        shell: pwsh
+        run: pwsh -NoProfile -File scripts/test-driver-windows.ps1
